@@ -1,0 +1,3416 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1b231e">
+  <meta name="description" content="《大卫与弯刀2》剧本五完整 20 回合。双图兵棋桌游，线上免登录单人游玩。">
+  <title>大卫与弯刀 2｜剧本五 · 全景战役</title>
+  <link rel="icon" href="data:,">
+  <style>
+.offline-download { display: none !important; }
+:root {
+  color-scheme: dark;
+  --bg: #1d241f;
+  --mast: #1a201c;
+  --panel: #262e27;
+  --panel-low: #202821;
+  --ink: #f2e9d5;
+  --muted: #bec3b1;
+  --dim: #a3af9d;
+  --line: #3d493d;
+  --line-bright: #576752;
+  --gold: #e7c78a;
+  --gold-deep: #332b1c;
+  --arab: #c9745c;
+  --israel: #83adca;
+  --mint: #b6d4a9;
+  --font: "Inter", "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --mono: "IBM Plex Mono", "Noto Sans Mono CJK SC", ui-monospace, monospace;
+  --serif: "Instrument Serif", "Noto Serif CJK SC", "Songti SC", SimSun, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: radial-gradient(ellipse at 48% 0%, #313b2f, transparent 61%), var(--bg); font: 14px/1.55 var(--font); }
+button, input { font: inherit; }
+button { cursor: pointer; color: inherit; }
+button:disabled { cursor: not-allowed; opacity: .5; }
+button:focus-visible, input:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+h1, h2, h3, p, ol, dl, dd { margin: 0; }
+[hidden] { display: none !important; }
+.wrap { max-width: 1460px; width: calc(100% - 72px); margin: 0 auto; }
+
+.masthead { background: rgba(26, 32, 28, .96); border-bottom: 1px solid #43503e; }
+.masthead-inner { display: flex; align-items: center; justify-content: space-between; min-height: 94px; gap: 18px; }
+.brand { display: flex; align-items: center; gap: 16px; }
+.brand p { font-size: 11px; letter-spacing: .17em; color: var(--gold); margin-bottom: 1px; }
+.brand h1 { font: 700 clamp(26px, 3vw, 38px)/1.17 var(--serif); letter-spacing: .035em; }
+.brand h1 span { color: var(--gold); font: 400 1.04em/1 var(--serif); }
+.brand-mark { display: grid; width: 48px; height: 48px; place-items: center; background: #2e382b; border: 1px solid #4f6149; border-radius: 9px; }
+.brand-mark i { position: relative; width: 29px; height: 26px; background: var(--gold); clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); }
+.brand-mark i::before { content: ""; position: absolute; inset: 2px; background: #2e382b; clip-path: inherit; }
+.brand-mark i::after { content: ""; position: absolute; inset: 6px; background: var(--gold); clip-path: polygon(50% 0,63% 37%,100% 50%,63% 63%,50% 100%,37% 63%,0 50%,37% 37%); }
+.header-buttons, .map-controls { display: flex; align-items: center; gap: 8px; }
+.ghost, .chip, .primary, .secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  border: 1px solid var(--line-bright); border-radius: 6px; background: transparent;
+  min-height: 36px; padding: 7px 12px; color: var(--ink); font-weight: 580;
+  transition: background .16s, border-color .16s, color .16s;
+}
+.ghost:hover:not(:disabled), .secondary:hover:not(:disabled), .chip:hover:not(:disabled) { background: #394638; border-color: #7c8f72; }
+.book-icon { display: block; width: 14px; height: 12px; border: 1.4px solid currentColor; border-radius: 2px; position: relative; }
+.book-icon::before { content: ""; position: absolute; width: 1px; height: 100%; top: 0; left: 50%; background: currentColor; }
+.restart span { font-size: 18px; line-height: 16px; color: var(--dim); }
+.primary {
+  min-height: 43px; color: #221e14; background: var(--gold); border-color: #e9ce9a;
+  padding: 10px 15px; font-weight: 750;
+}
+.primary:hover:not(:disabled) { background: #f4dca7; border-color: #fff2d0; }
+.secondary { background: #303b30; min-height: 39px; font-size: 13px; }
+.chip { min-height: 30px; padding: 4px 9px; font-size: 12px; color: var(--muted); }
+.chip[aria-pressed="true"] { color: var(--gold); border-color: #aba174; background: #413c2b; }
+.zoc-sample { width: 12px; height: 12px; background: repeating-linear-gradient(135deg,#8cafc9 0 1px, transparent 1px 4px); border: 1px solid #8cafc9; border-radius: 3px; }
+.supply-sample { width: 13px; height: 2px; border-top: 2px dashed #c9d7b0; }
+
+.phase-track { margin: 18px 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 3px; border: 1px solid var(--line); border-radius: 8px; padding: 5px; background: #232b24; }
+.phase { position: relative; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--dim); min-height: 39px; padding: 3px 6px; border-radius: 5px; white-space: nowrap; }
+.phase:not(:last-child)::after { position: absolute; right: -2px; height: 16px; width: 1px; background: #3a463b; content: ""; }
+.phase-index { width: 20px; height: 20px; display: inline-grid; place-items: center; border: 1px solid #556154; font: 11px var(--mono); border-radius: 50%; }
+.phase.done { color: var(--muted); }
+.phase.done .phase-index { border-color: #7f9974; color: #b8d6a6; }
+.phase.current { background: #414934; color: var(--gold); font-weight: 700; }
+.phase.current .phase-index { background: var(--gold); color: var(--gold-deep); border-color: var(--gold); }
+
+.game-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 335px); gap: 16px; align-items: start; margin-bottom: 36px; }
+.board-column, .side-column { display: grid; gap: 14px; min-width: 0; }
+.panel { min-width: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 9px; box-shadow: 0 3px 10px #10161026; }
+.section-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 42px; }
+.section-title { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+.section-head h2 { font-size: 15px; font-weight: 740; letter-spacing: .04em; }
+.map-caption { color: var(--dim); font-size: 11px; letter-spacing: .04em; }
+.maps-panel { padding: 4px 13px 0; }
+.map-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.front { min-width: 0; overflow: hidden; border: 1px solid #677462; border-radius: 6px; background: #d7c9a4; color: #25271f; box-shadow: 0 3px 8px #0d140d30; }
+.front-head { display: flex; gap: 6px; align-items: baseline; padding: 8px 11px 7px; min-height: 38px; background: #e5d7b5; border-bottom: 1px solid #86795b80; }
+.front.golan .front-head { background: #dce1c2; border-color: #87927580; }
+.front-head h3 { font-weight: 750; font-size: 15px; letter-spacing: .03em; }
+.front-head .front-en { color: #535643; font: 10px var(--mono); letter-spacing: .15em; }
+.front-head .front-nation { margin-left: auto; font-size: 10px; color: #694236; white-space: nowrap; }
+.board { position: relative; width: 100%; aspect-ratio: 460 / 356; isolation: isolate; container-type: inline-size; }
+.board canvas { position: absolute; pointer-events: none; inset: 0; width: 100%; height: 100%; }
+.overlay { z-index: 2; }
+.board-grid { position: absolute; inset: 0; z-index: 3; }
+.tile {
+  position: absolute; width: 15.87%; height: 17.77%; transform: translate(-50%, -50%);
+  padding: 0; border: 0; background: transparent; color: #242a20; display: grid; place-items: center;
+  clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
+}
+.tile::before {
+  content: ""; position: absolute; inset: 1px; clip-path: inherit; z-index: -1;
+  transition: background .14s;
+}
+.tile:hover::before, .tile:focus-visible::before { background: #f5eed581; }
+.tile.selected::before { background: #f8eabbaf; }
+.tile.legal::before { background: #476a3d64; }
+.tile.legal::after { content: ""; position: absolute; width: 12%; aspect-ratio: 1; border-radius: 50%; background: #325739; border: 1px solid #faf3d7; box-shadow: 0 0 0 3px #f2edde3f; z-index: 0; }
+.tile.legal:hover::before { background: #6785459c; }
+.tile.target::before, .tile.declared::before { background: #973e3f52; }
+.tile.target:hover::before { background: #b05b507b; }
+.tile.target .counter, .tile.declared .counter { outline: 1px dashed #f8e7b0; outline-offset: 2px; }
+.tile.advance::before { background: #a17b2b8a; }
+.tile:focus-visible { outline: none; }
+.tile:focus-visible::before { background: #ffe6a2; }
+.tile-address { position: absolute; font: 6.3px var(--mono); opacity: .38; top: 11%; left: 48%; }
+.map-label { position: absolute; line-height: 1.08; bottom: 7%; left: 1%; right: 1%; text-align: center; font-size: clamp(6px, 2.48cqw, 11px); font-weight: 780; color: #343225; white-space: nowrap; text-shadow: 0 1px 2px #f5ecd4, 0 -1px 1px #eee5c6; z-index: 2; }
+.point-pin { display: inline-flex; align-items: center; gap: 2px; padding: 1px 3px; margin-left: 2px; border-radius: 2px; background: #5a4725; color: #fff6d8; font: 650 clamp(6px, 2cqw, 9px)/1 var(--mono); text-shadow: none; vertical-align: .11em; }
+.counter {
+  display: flex; position: relative; z-index: 1; width: 55%; min-width: 20px; height: 64%; border-radius: 3px;
+  flex-direction: column; align-items: center; justify-content: space-evenly; background: #953c33; color: #fff2d9;
+  border: 1px solid #ffdbad; box-shadow: 1px 2px 3px #22160e80, inset 0 0 5px #501e1b60;
+  font: 700 clamp(6px, 2.3cqw, 10px)/1 var(--mono);
+}
+.counter.israel { background: #284e68; border-color: #dce9ec; box-shadow: 1px 2px 3px #171c2180, inset 0 0 5px #13233578; }
+.counter .unit-name { font: 680 clamp(5px, 1.78cqw, 8px)/1 var(--font); white-space: nowrap; }
+.counter .type { width: 47%; height: 24%; border: 1px solid currentColor; position: relative; border-radius: 1px; }
+.counter .type.armor::after { content: ""; position: absolute; inset: 13% 23%; border: .9px solid currentColor; border-radius: 50%; }
+.counter .type.infantry::before, .counter .type.infantry::after, .counter .type.mechanized::before, .counter .type.mechanized::after { content: ""; width: 96%; height: 1px; background: currentColor; position: absolute; left: 2%; top: 43%; transform: rotate(29deg); }
+.counter .type.infantry::after, .counter .type.mechanized::after { transform: rotate(-29deg); }
+.counter .type.mechanized, .counter .type.garrison { border-radius: 5px; }
+.counter .type.garrison::after { display: block; content: ""; position: absolute; inset: 18% 32%; border: 1px solid currentColor; }
+.unit-quality { position: absolute; top: 35%; right: 3%; font-size: .84em; color: #f5dfa2; }
+.token-status { position: absolute; top: -5px; right: -8px; background: #261e1a; color: #ffe1ae; border: 1px solid #f4d9a2; border-radius: 2px; padding: 2px 3px; font: 600 clamp(6px,1.8cqw,8px)/1 var(--font); }
+.counter.under-label { margin-top: -8%; }
+.geo-note { position: absolute; z-index: 1; font-size: clamp(7px, 2.05cqw, 10px); font-weight: 720; white-space: nowrap; color: #424b50; padding: 1px 3px; text-shadow: 0 1px 2px #e9dfc2; pointer-events: none; }
+.geo-note.river { left: 23%; top: 15%; writing-mode: vertical-rl; letter-spacing: .22em; color: #174652; background: #d8dfc294; }
+.geo-note.deep { right: 15%; top: 7%; font-size: clamp(5px,1.6cqw,8px); color: #744833; }
+.bridge-state { position: absolute; left: 32.3%; top: 44%; z-index: 4; transform: translateX(-50%); border: 1px solid #8a663c; background: #f0e3c0; color: #482f15; border-radius: 3px; padding: 1px 3px; white-space: nowrap; font-size: clamp(6px,1.65cqw,8px); pointer-events: none; }
+.bridge-state.open { background: #513b25; color: #fff0c9; border-color: #f0d9a0; }
+.source-icon { display: inline-grid; place-items: center; border: 1px solid #9cb391; color: #d6e6c9; background: #354c34; width: 13px; height: 13px; font: bold 12px/1 var(--mono); }
+.tile .source-icon { width: 25%; min-width: 11px; height: auto; aspect-ratio: 1; border-radius: 50%; color: #fbf1d0; font-size: clamp(7px,2.5cqw,11px); box-shadow: 0 0 0 1px #4a5d4a; }
+.tile .source-icon.israel { background: #31546a; border-color: #e4e6d0; }
+.tile .objective-icon { position: absolute; width: 12%; height: auto; aspect-ratio: 1; left: 14%; top: 42%; }
+.objective-icon { display: inline-block; width: 9px; height: 9px; transform: rotate(45deg); background: #b28c41; border: 1px solid #f3d99e; }
+.board-legend { display: flex; min-height: 39px; align-items: center; gap: 16px; color: var(--muted); font-size: 11px; padding: 5px 2px; flex-wrap: wrap; }
+.board-legend span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.legend-block { width: 12px; height: 11px; border-radius: 2px; border: 1px solid #e4b39b; background: #9b4e3c; }
+.legend-block.israel { background: #3e6885; border-color: #afc3d3; }
+.board-legend .legend-hint { margin-left: auto; color: var(--dim); }
+
+.track-panel, .hand-panel { padding: 3px 13px 12px; }
+.turn-key { display: flex; align-items: center; gap: 12px; font-size: 11px; color: var(--dim); }
+.turn-key span:first-child { color: var(--gold); }
+.rounds { display: grid; grid-template-columns: 65px repeat(10, minmax(0, 1fr)) 68px; align-items: center; gap: 4px; }
+.track-side { font-size: 11px; font-weight: 650; }
+.track-side.arab { color: #f3a28a; }
+.track-side.israel { color: #a9cbe0; }
+.round-cell { display: grid; align-items: center; justify-content: center; height: 24px; background: #333c31; border: 1px solid #445340; border-radius: 3px; font: 11px var(--mono); color: #bfc8b3; }
+.round-cell.night { background: #222a30; border-color: #3a4b58; }
+.round-cell.current { color: #1f2520; font-weight: 900; border-color: #e6c3a5; background: #d38b74; box-shadow: 0 0 10px #c4765833; }
+.round-cell.current.israel { background: #8aafca; border-color: #bbd6dc; box-shadow: 0 0 10px #82abc733; }
+.pass-left { color: var(--dim); font-size: 10px; text-align: right; white-space: nowrap; }
+
+.coach { padding: 19px 18px 17px; border-color: #657052; background: radial-gradient(ellipse 115% 140px at 34% 0%, #3d4634, transparent), #2c352b; box-shadow: 0 5px 14px #11171145; }
+.coach-meta { display: flex; align-items: center; justify-content: space-between; gap: 4px; color: var(--gold); font-weight: 700; font-size: 11px; letter-spacing: .07em; padding-bottom: 10px; }
+.coach-meta span:last-child { color: var(--muted); font-weight: 500; letter-spacing: 0; }
+.coach h2 { font: 700 25px/1.22 var(--serif); letter-spacing: .025em; text-wrap: balance; }
+.coach .lede { color: var(--muted); font-size: 13px; line-height: 1.67; margin: 9px 0 13px; }
+.coach .primary { width: 100%; justify-content: space-between; margin-top: 7px; }
+.coach .secondary { width: 100%; margin-top: 7px; }
+.coach .subtle { font-size: 11px; color: var(--dim); margin-top: 9px; line-height: 1.55; }
+.coach .rule-ref { display: block; color: var(--dim); font-size: 10px; margin-top: 10px; }
+.coach-actions { display: grid; gap: 2px; }
+.callout { padding: 9px 10px; border: 1px solid #56674e; border-left: 2px solid #93a57e; border-radius: 4px; background: #273125; font-size: 12px; line-height: 1.55; margin-bottom: 8px; color: #dbe0c9; }
+.callout.warn { border-color: #8d724a; border-left-color: var(--gold); color: #f7d9a2; background: #3a3326; }
+.callout.danger { border-color: #996453; background: #3d2e29; color: #ffceb7; }
+.guide-list { display: grid; gap: 7px; padding: 0; list-style: none; margin: 12px 0; }
+.guide-list li { display: flex; gap: 9px; align-items: center; color: var(--muted); font-size: 12px; border-top: 1px solid #454f3f; padding: 7px 0 0; }
+.guide-list li b { font-weight: 700; color: var(--ink); min-width: 44px; white-space: nowrap; }
+.guide-list li .arab { color: #f1a58f; }
+.guide-list li .israel { color: #abcee3; }
+.coach .move-list { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin: 10px 0 0; }
+.coach .move-list .subtle { font-size: 10px; margin: 0; }
+.move-tag { border: 1px solid #4b5947; border-radius: 4px; padding: 5px 6px; background: #273027; color: #cddbc4; font-size: 11px; }
+.button-row { display: flex; gap: 8px; align-items: center; justify-content: end; flex-wrap: wrap; }
+.choice-front { display: grid; gap: 5px; margin-bottom: 9px; }
+.choice-front .choice-label { font-size: 11px; color: var(--muted); }
+.choice-group { display: flex; gap: 5px; }
+.choice-group button { flex: 1; min-height: 34px; font-size: 11px; padding: 4px 5px; }
+.choice-group [aria-pressed="true"] { background: #50543b; border-color: var(--gold); color: var(--gold); }
+
+.resources, .inspect, .log-panel { padding: 3px 13px 11px; }
+.resources .section-head, .log-panel .section-head { min-height: 36px; }
+.resource-row { display: grid; grid-template-columns: minmax(60px, 1fr) 57px 75px; align-items: center; gap: 5px; border-top: 1px solid #455044; min-height: 31px; }
+.resource-row small { color: var(--dim); font-size: 10px; }
+.resource-row strong { font: 650 12px var(--mono); color: var(--ink); }
+.resource-row .nation { color: var(--muted); font-size: 12px; font-weight: 650; }
+.resource-dot { display: inline-block; width: 7px; height: 7px; margin-right: 6px; border-radius: 50%; background: var(--arab); }
+.resource-dot.israel { background: var(--israel); }
+.inspect { padding-top: 10px; }
+.inspect h3 { font-size: 14px; margin: 2px 0 5px; }
+.inspect p { font-size: 12px; color: var(--muted); }
+.inspect .stats { color: #e9d8ae; margin: 3px 0; }
+.log { padding: 0; list-style: none; max-height: 198px; overflow: auto; scrollbar-color: #586751 #272e27; }
+.log-item { padding: 7px 0 6px 11px; border-top: 1px solid #424e40; position: relative; }
+.log-item::before { content: ""; position: absolute; width: 4px; border-radius: 2px; left: 0; top: 11px; bottom: 9px; background: #809174; }
+.log-item.arab::before { background: var(--arab); }
+.log-item.israel::before { background: var(--israel); }
+.log-item b { font-size: 11px; font-weight: 750; color: var(--ink); }
+.log-item p { color: var(--dim); font-size: 11px; line-height: 1.45; overflow-wrap: anywhere; }
+.log-empty { color: var(--dim); font-size: 12px; padding-bottom: 4px; }
+
+.hand-panel .section-head { min-height: 44px; }
+.preview-hand, .plan-list { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+.hand-empty { padding-bottom: 1px; color: var(--muted); font-size: 12px; }
+.hand-empty strong { color: var(--gold); }
+.plan-zone { min-height: 44px; display: flex; align-items: center; padding: 6px; border: 1px solid #53634e; border-radius: 6px; background: #222a22; }
+.plan-zone > p { color: var(--dim); font-size: 12px; padding: 4px 6px; }
+.plan-entry { display: flex; align-items: center; gap: 5px; padding: 4px 6px; border: 1px solid #657357; background: #374433; border-radius: 4px; white-space: nowrap; }
+.plan-entry b { font-size: 12px; }
+.plan-entry small { font: 10px var(--mono); color: var(--muted); }
+.plan-entry.night small { color: #aac8db; }
+.plan-entry button { border: 0; background: #263025; width: 22px; height: 24px; border-radius: 3px; color: var(--muted); padding: 0; }
+.plan-entry button:hover:not(:disabled) { background: #52624a; color: var(--ink); }
+.plan-cost { color: var(--gold); font: 650 12px var(--mono); white-space: nowrap; }
+.plan-cost.invalid { color: #ffc3a9; }
+.hand-cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 7px; margin-top: 9px; }
+.hand-cards.spares { grid-template-columns: repeat(auto-fit,minmax(min(132px,100%),1fr)); }
+.hand-card { display: flex; flex-direction: column; gap: 5px; text-align: left; color: #eee4d1; padding: 8px; background: #333d32; border: 1px solid #57684f; border-radius: 5px; min-width: 0; height: 100%; }
+.hand-card:hover:not(:disabled) { background: #43513c; border-color: #b0a775; }
+.hand-card[aria-pressed="true"] { background: #4a4d34; border-color: var(--gold); }
+.card-top { display: flex; align-items: center; gap: 5px; justify-content: space-between; color: #d4c69e; font-size: 10px; }
+.card-top i { font: 17px/1 var(--mono); color: #ecce8c; }
+.card-top span:last-child { margin-left: auto; }
+.card-name { font-size: clamp(12px,1.25vw,15px); font-weight: 750; }
+.card-desc { font-size: 11px; line-height: 1.46; color: #d5dac9; }
+.card-foot { font-size: 10px; color: #c7bd9d; margin-top: auto; border-top: 1px solid #53634c; padding-top: 5px; }
+.opp-preview { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; margin-top: 8px; color: var(--muted); font-size: 12px; }
+.opp-preview b { font-weight: 680; color: var(--israel); }
+.opp-preview span { padding: 2px 6px; border: 1px solid #465966; border-radius: 4px; background: #2b383d; }
+.opp-preview span.arab { background: #3b3029; border-color: #685347; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 9px 0; }
+.allocation { margin: 8px 0; font-size: 12px; }
+.allocation .split-labels { display: flex; align-items: center; justify-content: space-between; gap: 5px; color: var(--muted); }
+.allocation b { color: var(--gold); }
+.allocation input { display: block; width: 100%; accent-color: var(--gold); height: 24px; }
+.check-list { margin: 9px 0; display: grid; gap: 4px; }
+.check-list label { display: flex; align-items: center; gap: 7px; cursor: pointer; font-size: 12px; }
+.check-list input { accent-color: var(--gold); width: 15px; height: 15px; flex-shrink: 0; }
+.score-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 8px; }
+.score-table tr { border-bottom: 1px solid #56614b; }
+.score-table td { padding: 5px 2px; }
+.score-table td:last-child { text-align: right; font: 650 12px var(--mono); color: var(--gold); }
+.total-row { display: flex; gap: 8px; margin: 10px 0; }
+.total { flex: 1; border: 1px solid #5c6754; border-radius: 5px; background: #293228; padding: 7px; }
+.total b { color: var(--gold); font: 700 22px/1 var(--mono); }
+.total small { display: block; color: var(--muted); margin-bottom: 5px; font-size: 10px; }
+.fine-print { font-size: 11px; color: var(--dim); padding-top: 4px; }
+.fine-print button { border: 0; padding: 0 2px; color: var(--gold); background: transparent; text-decoration: underline; text-underline-offset: 3px; }
+
+.rules { background: #2a352a; color: var(--ink); border: 1px solid #67765c; border-radius: 10px; width: min(610px,calc(100% - 26px)); padding: 20px; max-height: 88vh; box-shadow: 0 15px 60px #070a08b3; }
+.rules::backdrop { background: #111711b8; }
+.dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #51604d; padding-bottom: 10px; }
+.dialog-head h2 { font: 700 24px/1.35 var(--serif); }
+.eyebrow { color: var(--gold); font-size: 11px; letter-spacing: .1em; }
+.rule-item { margin-top: 12px; padding: 8px 0; border-bottom: 1px solid #43513f; }
+.rule-item strong { color: var(--gold); }
+.rule-item p { color: var(--muted); font-size: 13px; margin-top: 4px; line-height: 1.65; }
+.rule-item small { display: block; color: var(--dim); margin-top: 4px; }
+.rules.confirm { width: min(400px,calc(100% - 26px)); }
+.confirm p { margin: 13px 0; color: var(--muted); }
+
+@media (max-width: 1170px) {
+  .wrap { width: calc(100% - 36px); }
+  .game-layout { grid-template-columns: minmax(0, 1fr) 295px; gap: 11px; }
+  .board-legend { gap: 10px; }
+  .board-legend .legend-hint { display: none; }
+  .coach { padding: 16px 13px; }
+}
+@media (max-width: 910px) {
+  .wrap { width: calc(100% - 24px); }
+  .game-layout { grid-template-columns: minmax(0, 1fr); }
+  .side-column { display: contents; }
+  .coach { grid-row: 1; }
+  .hand-cards { grid-template-columns: repeat(5,minmax(0,1fr)); }
+  .inspect { grid-row: 3; }
+}
+@media (max-width: 570px) {
+  .masthead-inner { min-height: 74px; }
+  .brand-mark { display: none; }
+  .brand h1 { font-size: 26px; }
+  .brand p { font-size: 9px; }
+  .header-buttons { gap: 4px; }
+  .header-buttons .ghost { font-size: 11px; padding: 5px 7px; min-height: 32px; gap: 4px; }
+  .phase-track { margin: 10px 0; grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .phase { font-size: 11px; min-height: 30px; gap: 4px; }
+  .phase-index { width: 16px; height: 16px; font-size: 9px; }
+  .map-pair { grid-template-columns: 1fr; }
+  .front-head h3 { font-size: 13px; }
+  .maps-panel, .track-panel, .hand-panel { padding-left: 8px; padding-right: 8px; }
+  .section-head h2 { font-size: 13px; }
+  .section-title { gap: 4px; }
+  .map-caption { font-size: 9px; }
+  .map-controls .chip { padding: 4px 6px; font-size: 10px; }
+  .board-legend { gap: 8px; font-size: 10px; }
+  .turn-key { gap: 5px; font-size: 9px; }
+  .rounds { grid-template-columns: 42px repeat(10,minmax(0,1fr)) 38px; gap: 3px; }
+  .track-side, .round-cell, .pass-left { font-size: 8px; }
+  .hand-cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0s !important; } }
+
+.board-column.planning .hand-panel { grid-row: 1; }
+
+.intro-foot { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; }
+.offline-download, .coach-jump { color: var(--gold); text-underline-offset: 3px; font-size: 11px; }
+.coach-jump { display: none; margin-left: auto; white-space: nowrap; }
+@media (max-width: 910px) { .coach-jump { display: inline; } }
+
+.calendar { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:17px 0 0; }
+.calendar-turn { display:flex; align-items:center; gap:10px; border-radius:7px; min-height:55px; padding:7px 12px;
+  border:1px solid var(--line); background:#262e26; color:var(--muted); }
+.calendar-turn.current { border-color:#a59360; background:#414832; color:var(--gold); }
+.calendar-turn.done { border-color:#53684c; }
+.calendar-turn .calendar-num { font:700 24px/1 var(--mono); color:var(--gold); }
+.calendar-turn .calendar-name { font-size:12px; font-weight:700; }
+.calendar-turn .calendar-event { margin-left:auto; font-size:10px; color:var(--muted); text-align:right; }
+.phase-track { margin:10px 0 15px; }
+.board-column.planning .hand-panel { grid-row:1; }
+.board-controls { display:flex; align-items:center; justify-content:space-between; gap:8px; margin:0 0 7px; }
+.front-tabs, .zoom { display:flex; align-items:center; gap:5px; min-width:0; }
+.front-tab { display:flex; align-items:center; min-height:33px; padding:5px 11px; gap:7px; border:1px solid #475741; border-radius:5px;
+  background:#2d382b; color:var(--muted); font-size:12px; font-weight:720; }
+.front-tab[aria-pressed="true"] { border-color:#a09260; background:#464833; color:var(--gold); }
+.latin { font:9px var(--mono); letter-spacing:.1em; color:var(--dim); }
+.zoom .chip { min-width:29px; font-variant-numeric:tabular-nums; }
+.scenario-front { max-width:100%; background:#7d7f62; border-color:#718060; }
+.map-scroll { max-height:min(58vh,565px); height:515px; min-height:280px; width:100%; overflow:auto; position:relative;
+  background:radial-gradient(ellipse at 40% 40%,#7c8162,#636853); scrollbar-color:#b3a67f #5c604b; }
+.scenario-map { position:relative; width:calc(var(--map-width)*var(--zoom,1)); height:calc(var(--map-height)*var(--zoom,1)); }
+.scenario-map canvas,.map-grid { width:100%; height:100%; position:absolute; inset:0; }
+.scenario-map canvas { pointer-events:none; }
+.scenario-map .map-overlay { z-index:1; }
+.map-grid { z-index:2; }
+.scenario-tile { position:absolute; transform:translate(-50%,-50%); display:grid; place-items:center; border:0; padding:0;
+  background:transparent; color:#3f4936; container-type:inline-size;
+  clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); }
+.scenario-tile::before { content:""; position:absolute; inset:1px; clip-path:inherit; z-index:-1; }
+.scenario-tile:hover::before, .scenario-tile:focus-visible::before { background:#f9e7a289; }
+.scenario-tile.selected::before { background:#ffe2a4b5; }
+.scenario-tile.legal::before { background:#66835089; }
+.scenario-tile.legal::after { content:""; width:13%; aspect-ratio:1; position:absolute; top:45%; left:68%;
+  border-radius:50%; border:1px solid #fff5ce; background:#274e36; z-index:3; }
+.scenario-tile.target::before { background:#963e3b81; }
+.scenario-tile.declared::before { background:#85533aa2; }
+.scenario-tile.target .counter,.scenario-tile.declared .counter { outline:1px dashed #fff5c4; outline-offset:1px; }
+.scenario-tile .grid-address { position:absolute; top:3%; font:600 15cqw/1.15 var(--mono); color:#4e5141;
+  text-shadow:0 0 2px #f1e4bb; opacity:.75; }
+.scenario-tile .town-name { position:absolute; bottom:1%; left:10%; right:10%; text-align:center; font-size:16cqw; font-weight:800; line-height:1.18;
+  white-space:nowrap; color:#202821; text-shadow:0 0 1px #fff4cb, 0 0 3px #fff3cd; }
+.scenario-tile .counter.tile-counter { width:58%; height:67%; min-width:0; margin-top:-2%; container-type:normal;
+  border-radius:3px; font-size:17cqw; }
+.scenario-tile .counter .unit-name { font-size:14cqw; }
+.scenario-tile .counter .type { width:45%; height:24%; }
+.scenario-tile .counter.stacked { box-shadow:2px 2px 0 #ead7ab,3px 3px 1px #433b2f; }
+.scenario-tile .token-status,.token-count { position:absolute; color:#fff0c8; background:#2f362b; border:1px solid #d4c28d;
+  border-radius:2px; padding:1px 2px; font:600 14cqw/1.1 var(--mono); white-space:nowrap; }
+.scenario-tile .token-status { top:-2px; right:-4px; }
+.token-count { right:-4px; bottom:-2px; }
+.special-type { font:750 15cqw/1 var(--font); }
+.point-mark,.entry-mark,.battery-mark,.water-mark { position:absolute; z-index:2; font:750 13cqw/1.1 var(--mono); font-style:normal; }
+.point-mark { left:9%; top:39%; width:12%; aspect-ratio:1; transform:rotate(45deg); background:#91703b; border:1px solid #fcdfa1; }
+.entry-mark { right:7%; top:50%; border-radius:50%; padding:1px 3px; background:#863c31; border:1px solid #f1d0a1; color:#fff4c9; }
+.entry-mark.israel { background:#355c72; }
+.battery-mark { color:#823a30; bottom:21%; left:14%; text-shadow:0 0 1px #fff2d2; }
+.battery-mark.used { opacity:.47; }
+.water-mark { color:#f4e2b3; background:#4a4c40; top:19%; left:12%; padding:1px 2px; border-radius:1px; }
+.order-tags { display:flex; flex-wrap:wrap; align-items:center; gap:4px; }
+.order-tags button { font-size:11px; min-height:30px; padding:4px 6px; }
+.order-tags .fold { font-size:11px; color:var(--muted); }
+.stack-list { display:grid; gap:4px; margin-top:6px; }
+.stack-row { gap:3px; text-align:left; justify-content:space-between; width:100%; font-size:11px; min-height:30px; padding:4px 6px; }
+.stack-row b { color:#f2a988; }
+.stack-row.israel b { color:#add1e6; }
+.stack-row[aria-pressed="true"] { border-color:var(--gold); color:var(--gold); }
+.stack-row small { color:var(--muted); font:10px var(--mono); }
+.unit-status { margin-top:5px; }
+.inspection-key { color:var(--gold)!important; }
+.front-modes { display:grid; gap:5px; margin-bottom:8px; }
+.front-modes .chip { justify-self:start; }
+.front-modes .selected-tool { color:var(--gold); border-color:#a69868; background:#414734; }
+.panel details { border:1px solid var(--line-bright); border-radius:5px; padding:5px 7px; margin:7px 0; }
+.panel summary { cursor:pointer; color:var(--muted); font-size:12px; }
+.panel .detail-stack { display:grid; gap:5px; max-height:180px; overflow:auto; padding:5px 0 1px; }
+.card-nr { font:9px var(--mono); opacity:.7; }
+.scenario-cards .card-top { line-height:1.4; }
+.phase .phase-index { flex-shrink:0; }
+.score-table .minor { color:var(--muted); }
+.score-summary { display:grid; grid-template-columns:1fr 1fr; gap:7px; margin:6px 0 9px; font-size:12px; }
+.score-summary span { border:1px solid #52634d; border-radius:4px; background:#28342a; padding:5px; color:var(--muted); }
+.score-summary b { color:var(--gold); }
+.opponent-wrap { border-top:1px solid var(--line); margin-top:10px; }
+.rule-item:last-child { border-bottom:0; }
+.route-instructions { color:var(--muted); font-size:12px; margin-top:6px; }
+@media(max-width:910px) {
+  .game-layout .coach { grid-row:1; }
+  .map-scroll { height:min(55vh,460px); }
+}
+@media(max-width:570px) {
+  .calendar { gap:5px; margin-top:10px; }
+  .calendar-turn { min-height:47px; padding:5px 6px; gap:6px; }
+  .calendar-turn .calendar-num { font-size:17px; }
+  .calendar-turn .calendar-name,.calendar-turn .calendar-event { font-size:9px; }
+  .calendar-turn .calendar-event { display:none; }
+  .front-tab { padding:4px 6px; font-size:11px; }
+  .front-tab .latin { display:none; }
+  .map-scroll { min-height:290px; height:52vh; }
+}
+
+.satellite-mark { position:absolute; right:15%; bottom:14%; color:#f8edbc; background:#43534a; border:1px solid #fbefc0; padding:1px 2px; border-radius:2px; font:700 13cqw/1 var(--font); z-index:4; }
+
+.calendar { display:block; background:#252e26; border:1px solid var(--line); border-radius:9px; padding:7px 9px 9px; }
+.calendar-head { display:flex; justify-content:space-between; align-items:center; gap:8px; margin:0 2px 6px; color:var(--ink); font-size:12px; }
+.calendar-head strong span { color:var(--dim); font-weight:500; margin-left:7px; }
+.calendar-key { color:var(--gold); font-size:10px; }
+.calendar-grid { display:grid; grid-template-columns:repeat(10,minmax(0,1fr)); gap:4px; }
+.calendar-grid .calendar-turn { min-height:34px; padding:3px 5px; gap:6px; }
+.calendar-grid .calendar-num { font-size:17px; }
+.calendar-grid .calendar-name { font-size:10px; white-space:nowrap; }
+.calendar-grid .calendar-event { color:var(--gold); white-space:nowrap; font:700 11px var(--mono); }
+.calendar-turn.done .calendar-num { color:#b9cbae; }
+.calendar-turn.beyond { opacity:.43; }
+.campaign-mini { color:var(--dim); font-size:10px; }
+.campaign-results { max-height:370px; overflow:auto; scrollbar-color:#69785a #29342a; }
+.score-table th { position:sticky; top:0; background:#374231; text-align:left; color:var(--gold); font-size:11px; padding:3px; }
+.option-list { display:grid; gap:9px; padding:7px 0; }
+.option-list label { display:grid; grid-template-columns:17px 1fr; gap:5px; align-items:start; color:var(--ink); font-size:12px; }
+.option-list label small { display:block; color:var(--muted); line-height:1.4; font-size:11px; }
+.option-list input { accent-color:var(--gold); }
+.arrival-list { display:grid; gap:7px; margin:9px 0; }
+.arrival-select { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:5px; color:var(--muted); font-size:12px; }
+.arrival-select select { width:100%; color:var(--ink); background:#333d30; border:1px solid #607459; border-radius:4px; font:inherit; padding:3px; }
+@media(max-width:650px) {
+  .calendar-grid .calendar-turn { min-height:29px; justify-content:center; gap:3px; padding:2px; }
+  .calendar-grid .calendar-num { font-size:13px; }
+  .calendar-grid .calendar-name { display:none; }
+  .calendar-grid .calendar-event { display:block; margin-left:0; font-size:8px; }
+}
+
+</style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <div>
+          <p>剧本五 · 赎罪日战争</p>
+          <h1>大卫与弯刀<span> 2</span></h1>
+        </div>
+      </div>
+      <div class="header-buttons">
+        <button class="ghost" id="rule-button" type="button"><span aria-hidden="true" class="book-icon"></span>规则速查</button>
+        <button class="ghost restart" id="reset-button" type="button"><span aria-hidden="true">↺</span>重开</button>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <nav class="calendar" id="calendar" aria-label="剧本回合"></nav>
+    <nav class="phase-track" aria-label="当前回合的阶段" id="phases"></nav>
+
+    <div class="game-layout">
+      <section class="board-column" aria-label="棋盘与行动方案">
+        <section class="panel maps-panel" aria-labelledby="map-title">
+          <div class="section-head maps-head">
+            <div class="section-title"><h2 id="map-title">战场棋盘</h2><span class="map-caption">剧本一、二初设</span></div>
+            <div class="map-controls">
+              <button type="button" class="chip" id="zoc-button" aria-pressed="false"><span class="zoc-sample" aria-hidden="true"></span>控制区</button>
+              <button type="button" class="chip" id="supply-button" aria-pressed="false"><span class="supply-sample" aria-hidden="true"></span>补给线</button>
+            </div>
+          </div>
+          <div class="board-controls">
+            <div class="front-tabs" role="group" aria-label="切换战场">
+              <button id="sinai-tab" type="button" class="front-tab" data-action="front" data-value="sinai"><span>西奈半岛</span><span class="latin">SINAI</span></button>
+              <button id="golan-tab" type="button" class="front-tab" data-action="front" data-value="golan"><span>戈兰高地</span><span class="latin">GOLAN</span></button>
+            </div>
+            <div class="zoom" role="group" aria-label="地图缩放">
+              <button class="chip" type="button" data-action="zoom-fit" title="显示战场全图">全图</button>
+              <button class="chip" type="button" data-action="zoom-out" aria-label="缩小地图">−</button>
+              <button class="chip" type="button" data-action="zoom-in" aria-label="放大地图">+</button>
+            </div>
+          </div>
+          <div id="maps"></div>
+          <div class="board-legend">
+            <span><i class="legend-block arab"></i>阿拉伯方</span>
+            <span><i class="legend-block israel"></i>以色列方</span>
+            <span><i class="objective-icon" aria-hidden="true"></i>关键点</span>
+            <span><i class="source-icon" aria-hidden="true">+</i>补给源</span>
+            <span class="legend-hint">点选六角格查看堆叠</span>
+            <a class="coach-jump" href="#coach">当前操作 ↑</a>
+          </div>
+        </section>
+        <section class="panel hand-panel" id="hand-panel" aria-label="行动牌与战备"></section>
+        <section class="panel track-panel" aria-labelledby="track-title">
+          <div class="section-head">
+            <div class="section-title"><h2 id="track-title">行动轮次</h2><span class="map-caption" id="round-note"></span></div>
+            <div class="turn-key"><span>☀ 1–7 昼间</span><span>◐ 8–9 夜间</span></div>
+          </div>
+          <div class="rounds" id="rounds"></div>
+        </section>
+      </section>
+
+      <aside class="side-column" aria-label="试玩指南">
+        <section class="panel coach" id="coach" tabindex="-1"></section>
+        <section class="panel resources" aria-labelledby="resource-title">
+          <div class="section-head"><h2 id="resource-title">资源与得分</h2><span class="map-caption">全景记账</span></div>
+          <div id="resources"></div>
+        </section>
+        <section class="panel inspect" id="inspect" aria-label="选中的算子或格子" hidden></section>
+        <section class="panel log-panel" aria-labelledby="log-title">
+          <div class="section-head"><h2 id="log-title">行动记录</h2><span class="map-caption" id="log-count"></span></div>
+          <ol class="log" id="log" tabindex="0" aria-label="行动历史"></ol>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <dialog id="rules" class="rules">
+    <div class="dialog-head">
+      <div><p class="eyebrow">桌游规则</p><h2>规则速查</h2></div>
+      <form method="dialog"><button class="ghost" type="submit" aria-label="关闭规则">✕</button></form>
+    </div>
+    <div class="rules-content">
+      <div class="rule-item"><strong>剧本五开局</strong><p>第 1 回合阿方先手，以方轮次从 6 开始。阿方拿计划条令和炮火准备，另抽 3 张。以方拿紧急服役，另抽 2 张。四座埃及舟桥展开，跳过首轮舟桥调整。首回合阿方红色虚线内的单位不能移动，阿方火力打击骰点 +1。</p><small>剧本五，结合剧本一、二</small></div>
+      <div class="rule-item"><strong>战备与行动</strong><p>从第 2 回合起把手牌补到 5 张，方案合计 6–9 轮。先推轮次，再按牌面行动。仍落后时继续，追平或领先后交手。跳过推进 1 轮，每回合最多 3 次。落在 8–9 的牌整张按夜间处理。双图分别执行牌效，推进轮次只做一次。</p><small>规则书 §7–8、§20</small></div>
+      <div class="rule-item"><strong>算子与控制区</strong><p>算子列出攻击、防御、移动与素质。点击有堆叠的格，逐个查看。战斗单位进入敌控制区即停，不能在两个敌控格之间直接移动。河流阻隔控制区。西奈舟桥每回合最多通行 9 堆叠值，从第 2 回合起每座展开需 2 埃及物资。</p><small>§3–4、§9–10</small></div>
+      <div class="rule-item"><strong>打击和战斗</strong><p>昼间可按牌面进行火力打击。陆战需要宣告目标与参战算子。算出攻防比、列修正与骰点修正后查表。掷骰前可选择昼间支援。控制关键点要留有战斗单位，战后选择挺进可占领目标。</p><small>§11–12，辅助卡</small></div>
+      <div class="rule-item"><strong>补给与计分</strong><p>回合收尾检查补给，第 3、6、8、10、13、16、19 回合固定召开安理会，其他回合用牌触发，同一回合只召开一次。战果领先 1 点得 1 分，至少领先 2 点得 2 分。消灭敌方指挥部或合资格的敌方断补战斗单位也得分。战果和累计分分开记录。</p><small>§13、§16–17，剧本五</small></div>
+      <div class="rule-item"><strong>终局与停战</strong><p>剧本覆盖第 1–20 回合。调停达到 5 进入停战裁定，调停值 6 时双方骰点 +1，7 以上双方 +2。按骰点可即时、下一回合或两回合后停战。累计分相同由以方获胜。阿方领先 7 分，或连续两次收尾时两条战线均无越入指定区域的阿方单位，分别触发相应的突然胜利。</p><small>§16–17，剧本五</small></div>
+      <div class="rule-item"><strong>增援与大国援助</strong><p>初设与回合增援沿用剧本一、二。舆论升级时，符合资格的安理会主导方获得援助，可按牌面规则加入或替换牌组。大国支援单位可选补给源，伞兵可选合法空降格。已加入的一方会限制另一大国介入。</p><small>§6、§16、§18–19</small></div>
+      <div class="rule-item"><strong>数字版操作</strong><p>单人操作阿方，以方由电脑处理。开局可选剧本五的四项专属规则和牌面引用的行进动员。棋盘按照片重绘，局部地形、部分受损面数值及战斗中的选择由教学近似和电脑策略处理。进度保存在本机浏览器。</p></div>
+    </div>
+  </dialog>
+  <dialog id="reset-dialog" class="rules confirm">
+    <div class="dialog-head"><h2>重新开始试玩？</h2></div>
+    <p>当前回合、盘面和累计分数会清除。</p>
+    <form method="dialog" class="button-row">
+      <button type="submit" value="cancel" class="ghost">继续当前局</button>
+      <button type="submit" value="restart" class="primary">重新开始</button>
+    </form>
+  </dialog>
+  <script>
+const ARAB = "arab";
+const ISRAEL = "israel";
+const fronts = ["sinai", "golan"];
+const sides = [ARAB, ISRAEL];
+const sideName = { arab: "阿拉伯方", israel: "以色列方" };
+const phases = ["增援", "战备", "舟桥调整", "执行方案", "补给检查", "后方动员", "安理会", "结束"];
+const finalRound = 20;
+const dates = ["", ...Array.from({ length:finalRound },(_,i)=>`10 月 ${i+6} 日`)];
+const councilRounds = new Set([3,6,8,10,13,16,19]);
+const scenarioOptions = {
+  independentRebuild:{ label:"阿方独立战斗单位重建", detail:"符合资格的独立战斗单位每个耗 3 物资。两栖、联军及断补时消灭的单位除外。" },
+  thirdMechanized:{ label:"埃及第 3 摩步师", detail:"阿方首次执行休整牌时，3Mot、39Art、23 从埃及补给源待命。" },
+  israeliReserves:{ label:"以军休整获得预备单位", detail:"每张休整牌从预备池取 1 枚，放以军后方中部。预备池共 5 枚。" },
+  lateAir:{ label:"美国援助后补充空军", detail:"以方第 2 次获得美援后，可在回合结束时每花 2 物资补 1 点空军。" },
+  mobilizationMove:{ label:"行进动员（规则书 21.11）", detail:"选择后，动员阶段牌结算完允许本方以 0.5 系数移动，夜间系数不叠加。" }
+};
+const other = side => side === ARAB ? ISRAEL : ARAB;
+const coord = tile => [tile.charCodeAt(0) - 65, Number(tile.slice(1))];
+const address = (col, row) => String.fromCharCode(65 + col) + String(row).padStart(2, "0");
+const words = text => text.trim().split(/\s+/);
+const group = text => new Set(words(text));
+
+function mapTiles(ranges) {
+  return new Set(ranges.flatMap(([start, end], col) =>
+    Array.from({ length: end - start + 1 }, (_, i) => address(col, i + start))));
+}
+
+function points(data) {
+  return Object.fromEntries(data.map(([tile, name, arab, israel]) => [tile, { name, arab, israel }]));
+}
+
+function sources(side, list) {
+  return list.map(([name, tile, rear]) => ({ name, tile, rear, side }));
+}
+
+const fields = {
+  sinai: {
+    name: "西奈半岛", english: "SINAI", nation: "埃及", front: "sinai", focus: "F09",
+    tiles: mapTiles([[2,19],[2,20],[1,19],[1,20],[1,20],[1,20],[2,20],[3,20],[4,20],[4,20],[3,20],[4,20],[3,20],[4,20],[3,20],[3,20],[3,19]]),
+    water: group("F01 G02 H03 I04 J04 K03 K04 L04 M03 N04 O03 P03 Q03 F14 F15 G15 H16 H20"),
+    marsh: group("C01 C02 C03 C04 C05 D01 D02 D03 D04 D06 E02 E03 E04 E05 E06 F02 F03 F04 G03 G04 H04"),
+    hills: group("H08 H09 I08 K08 K09 L09 H10 I10 K10 L10 H12 H13 I13 J12 I14 I15 D15 E16 F16 O16 P16 O17"),
+    rough: group("B17 B18 C18 C19 D19 E19 F19 A19 A20 B19 C20 D20 E20 F20 M19 M20 N20 O19 O20 P14 P19 P20 Q15 Q16 Q17 Q18 Q19"),
+    towns: { E01:"塞得港", F07:"坎塔腊", E11:"伊斯梅利亚", G13:"中国农场", M05:"鲁马纳", L13:"塔萨", Q13:"吉夫加法", O16:"吉迪山路", O18:"米特拉山路", H19:"苏伊士城" },
+    points: points([
+      ["E01","塞得港",0,1],["F07","坎塔腊",1,0],["E11","伊斯梅利亚",0,1],["G13","中国农场",1,1],
+      ["M05","鲁马纳",1,1],["Q05","北部出口",1,0],["L13","塔萨",1,1],["Q13","吉夫加法",2,0],
+      ["J19","运河南段要点",1,0],["O18","米特拉山路",1,1],["H19","苏伊士城",0,1],
+      ["A11","埃及 A 补给口",0,2],["A14","埃及 B 补给口",0,2],["A17","埃及 C 补给口",0,2],["A18","埃及 D 补给口",0,2]
+    ]),
+    sources: [...sources(ARAB,[["A","A11","egypt"],["B","A14","egypt"],["C","A17","egypt"],["D","A18","egypt"]]),
+      ...sources(ISRAEL,[["A","Q05","center"],["B","Q13","south"],["C","Q18","south"]])],
+    sites: words("F05 F06 F07 F08 F09 F10 F11 F12 F13 I15 I16 I17 I18 I19 I20"),
+    batteries: words("E04 C07 E09 A11 D13 E15 B16 E18 G18").map(tile => ({ tile, range:3 })),
+    roads: [
+      words("E01 E02 E03 E04 E05 E06 E07 E08 E09 E10 E11"),
+      words("F04 F05 F06 F07 F08 F09 F10 F11 F12 F13 G13 G14 H14 H15 I15 I16 I17 I18 I19 I20"),
+      words("M05 L05 K05 J05 I05 H06 G06 F06 F07"),
+      words("M05 N05 O05 P05 Q05"),
+      words("A11 B11 C11 D11 E11"), words("F11 G11 H11 I11 J11 K11 L12 L13 M12 N12 O12 P13 Q13"),
+      words("A14 B13 C13 D13 E13"), words("G13 H13 I13 J14 J15 J16 J17 J18 J19"),
+      words("A17 B17 C17 D17 E17 F17 G16 H17 H18 H19"),words("A18 B18 C18 D18 E18 F18 G18 H19"),
+      words("M05 M06 M07 M08 M09 M10 L11 L12 L13 L14 L15 L16 L17 L18 M18 N18 O18 P18 Q18"),
+      words("J19 K19 L19 M19 N18 O18")
+    ]
+  },
+  golan: {
+    name: "戈兰高地", english: "GOLAN", nation: "叙利亚", front: "golan", focus: "G11",
+    tiles: mapTiles([[2,12],[1,13],[2,13],[2,15],[1,16],[1,15],[1,16],[2,16],[2,16],[1,15],[2,16],[1,15],[2,16],[1,15],[2,14]]),
+    water: group("I16 K16"),
+    marsh: group("F14"),
+    hills: group("D07 D08 D09 D10 D11 E06 E07 E10 E11 E12 F06 F07 F11 F12 F13 G04 G05 G07 G08 G12 G13 G14 H04 H05 H06 H07 H08 H09 H10 H11 H12 H13 H14 H15 I09 I10 J10 J11 J15 K10 K11 K15 M02 M03 M04 M05 N02 N03 N04 N15 O03 O04 O14"),
+    rough: group("A02 A03 A04 A05 A06 A07 A08 A09 A12 B01 B02 B03 B04 B05 B06 B07 B08 B09 B10 B13 C06 C08 C09 D14 D15 E14 E15 E16 F15 G16"),
+    towns: { D03:"大马士革", E05:"萨萨", C10:"赫尔蒙山", G11:"库奈特拉", H14:"纳法赫", K12:"拉菲德", L15:"艾尔阿尔", M10:"纳瓦" },
+    points: points([
+      ["C10","赫尔蒙山",1,0],["C13","约旦河西岸",2,0],["G15","南部渡口",2,0],["G11","库奈特拉",1,1],
+      ["H14","纳法赫",1,1],["E05","萨萨",0,2],["H04","北部公路",0,2],["F09","戈兰西北据点",0,1],
+      ["K12","拉菲德",0,1],["M07","东部公路",0,1],["M11","纳瓦南侧",0,1]
+    ]),
+    sources: [...sources(ARAB,[["E","E02","syria"],["F","G01","syria"],["G","H02","syria"],["H","L02","syria"],
+      ["I","O04","syria"],["J","O08","syria"],["K","O09","syria"]]), ...sources(ISRAEL,[["D","G16","north"],["E","H16","north"]])],
+    sites: [], batteries: words("D05 I03 I07 M06 N09").map(tile => ({ tile, range:3 })),
+    roads: [
+      words("D03 E03 E04 E05 E06 E07 E08 F08 G09 G10 G11 G12 H13 H14 H15 H16"),
+      words("A12 B12 C12 D12 E12 F11 G11 H12 I12 J12 K12 L12 M11 N10 N09 O08"),
+      words("B12 C12 C13 D13 E14 F14 G15 G16"), words("G15 H15 H16"),
+      words("H02 H03 H04 I04 J05 K05 L06 M06 N05 O04"),words("L02 L03 L04 K04 J05 I05 I06 I07 H08 G08"),
+      words("K12 K13 L13 L14 L15"), words("M06 M07 N08 N09 O09")
+    ]
+  }
+};
+
+function adjacent(front, tile) {
+  const [col, row] = coord(tile);
+  const offset = col % 2 ? -1 : 1;
+  return [[col,row-1],[col,row+1],[col-1,row],[col-1,row+offset],[col+1,row],[col+1,row+offset]]
+    .map(([c,r]) => address(c,r)).filter(k => fields[front].tiles.has(k));
+}
+
+const edge = (from, to) => [from, to].sort().join(":");
+for (const field of Object.values(fields)) {
+  field.roadEdges = new Set(field.roads.flatMap(path => path.slice(1).flatMap((to, i) =>
+    adjacent(field.front, path[i]).includes(to) ? [edge(path[i], to)] : [])));
+}
+
+const road = (f, a, b) => fields[f].roadEdges.has(edge(a,b));
+const westCanal = tile => {
+  const [col,row] = coord(tile);
+  return col < (row <= 14 ? 5 : row === 15 ? 6 : 8);
+};
+const westJordan = tile => {
+  const [col,row] = coord(tile);
+  return row >= ([12,12,13,13,14,14,15,16,16][col] ?? 30);
+};
+const westCeasefire = tile => {
+  const [col,row] = coord(tile);
+  return row >= ([10,11,10,10,10,11,11,12,12,12,12,13,17,17,17][col] ?? 30);
+};
+function waterEdge(front, from, to) {
+  const divide = front === "sinai" ? westCanal : westJordan;
+  return divide(from) !== divide(to);
+}
+function restriction(front, tile) {
+  const [col,row] = coord(tile);
+  return front === "sinai" ? col === 0 || (col === 1 && row <= 5) :
+    row <= ([6,6,6,5,5,4,3,3,2,2,1][col] ?? 0);
+}
+const deepSinai = tile => {
+  const [col,row] = coord(tile);
+  return col >= (row <= 12 ? 10 : 11);
+};
+const terrain = (front,tile) => {
+  const map = fields[front];
+  for (const kind of ["water","marsh","rough","hills"]) if (map[kind].has(tile)) return kind;
+  return "plain";
+};
+const terrainNames = { plain:"开阔地", hills:"起伏地", rough:"崎岖地", water:"湖泊／海域", marsh:"沼泽" };
+const tileName = (front, tile) => fields[front].towns[tile] ?? fields[front].points[tile]?.name ?? tile;
+
+const typeNames = { i:"步兵",m:"机步",t:"装甲",p:"炮兵",a:"两栖",b:"舟桥",d:"机动防空",h:"指挥部",g:"守备队",x:"伞兵",n:"山地步兵" };
+const fullSpec = (type, id, attack, defense, move, quality, stack, division = "") =>
+  ({ name:id, type, typeName:typeNames[type], attack, defense, move, quality, stack, division });
+
+function parseUnit(front, side, spec, tile, extra) {
+  const [id, type, a, d, m, q, s, division] = spec.split("/");
+  return { id:front + "-" + side + "-" + id, front, side, tile, ...fullSpec(type,id,+a,+d,+m,+q,+s,division),
+    suppressed:false, used:false, out:false, damaged:false, dead:false,
+    ...(["Morocco","Palestine"].includes(id)?{coalition:id==="Morocco"?"摩洛哥":"巴勒斯坦"}:{}),
+    ...(type==="b"?{bridgeOpen:false,crossed:0}:{}), ...extra };
+}
+
+function deploy(front, side, rows, extra = {}) {
+  return Object.entries(rows).flatMap(([tile, specs]) => words(specs).map(spec =>
+    parseUnit(front, side, spec, /^[A-Q]\d\d$/.test(tile) ? tile : null,
+      { rear:["egypt","syria","north","center","south"].includes(tile) ? tile : null, ...extra })));
+}
+
+function makeUnits() {
+  return [
+    ...deploy("sinai", ARAB, {
+      E01:"30/a/2/2/4/2/2", E04:"135/a/2/2/4/2/2", C07:"15/t/4/1/4/2/2",
+      E06:"18Inf/i/2/4/3/1/4/18 136/m/2/3/4/1/2/18 45Art/p/1/1/3/1/1/18",
+      E09:"2Inf/i/2/4/3/1/4/2 117/m/2/3/4/1/2/2 59Art/p/1/1/3/1/1/2",
+      E12:"16Inf/i/2/4/3/1/4/16 3/m/2/3/4/1/2/16 41Art/p/1/1/3/1/1/16",
+      E17:"6Mot/m/3/5/4/1/4/6 22/t/3/1/4/1/2/6 43Art/p/2/1/4/1/1/6",
+      H17:"7Inf/i/2/4/3/1/4/7 8/m/2/3/4/1/2/7 49Art/p/1/1/3/1/1/7",
+      H19:"19Inf/i/2/4/3/1/4/19 2/m/2/3/4/1/2/19 69Art/p/1/1/3/1/1/19",
+      B09:"23Mot/m/3/5/4/1/4/23 24/t/3/1/4/1/2/23 67Art/p/2/1/4/1/1/23", G15:"130/a/2/3/4/2/2", E16:"25/t/4/1/4/2/2",
+      egypt:"35/t/3/1/4/1/2 Pri.Gd/t/4/1/4/2/2 Nasser/t/4/1/4/2/2 140/i/1/2/3/2/2 150/i/1/2/3/2/2 170/i/1/2/3/2/2"
+    }),
+    ...deploy("sinai", ARAB, {
+      A10:"4Tk/t/4/2/4/2/4/4 17/m/2/3/4/1/2/4 44Art/p/1/1/4/1/1/4",
+      A14:"21Tk/t/4/2/4/2/4/21 18/m/2/3/4/2/2/21 51Art/p/2/1/4/2/1/21",
+      A16:"Palestine/i/2/2/3/0/2"
+    }, { free:"cairo" }),
+    ...deploy("sinai", ARAB, {
+      F06:"舟桥1/b/0/0/0/1/0", F08:"舟桥2/b/0/0/0/1/0", F12:"舟桥3/b/0/0/0/1/0", I18:"舟桥4/b/0/0/0/1/0"
+    }, { free:"bridge", bridgeOpen:true, crossed:0 }),
+    ...deploy("sinai", ARAB, {
+      E06:"SA-6①/d/0/0/3/1/0", E08:"SA-6②/d/0/0/3/1/0", E12:"SA-6③/d/0/0/3/1/0", H18:"SA-6④/d/0/0/3/1/0"
+    }, { free:"egyptAA" }),
+    ...deploy("sinai", ISRAEL, {
+      F05:"SN1/g/0/1/2/2/1", F07:"SN2/g/0/1/2/2/1", F09:"SN3/g/0/1/2/2/1", F11:"SN4/g/0/1/2/2/1",
+      F13:"SN5/g/0/1/2/2/1", I15:"SN6/g/0/1/2/2/1", I17:"SN7/g/0/1/2/2/1", I19:"SN8/g/0/1/2/2/1",
+      M04:"460/t/8/3/4/3/3", L12:"14/t/6/3/4/2/3", O17:"401/t/8/3/4/3/3", Q12:"252Arm/h/2/1/4/2/1",
+      south:"162Arm/h/2/1/4/3/1 217/t/8/3/4/2/3 204/m/2/5/4/2/3 600/t/6/3/4/2/3",
+      center:"421/t/6/3/4/2/3 500/t/8/3/4/2/3"
+    }),
+    ...deploy("golan", ARAB, {
+      E04:"3Tk/t/4/2/4/2/4/3 15/m/2/3/4/1/2/3 81Art/p/2/1/4/2/1/3",
+      H03:"1Tk/t/4/2/4/2/4/1 58/m/2/3/4/1/2/1 64Art/p/2/1/4/2/1/1",
+      E08:"7Inf/i/2/4/3/1/4/7 121/m/2/3/4/1/2/7 70Art/p/1/1/3/1/1/7",
+      G09:"9Inf/i/2/4/3/1/4/9 90/i/1/2/3/1/2/9 89Art/p/1/1/3/1/1/9",
+      L11:"5Inf/i/2/4/3/1/4/5 132/m/2/3/4/1/2/5 50Art/p/1/1/3/1/1/5",
+      E07:"78/t/3/1/4/2/2", E05:"Assad/t/4/1/4/2/2", M10:"47/t/3/1/4/1/2",
+      I06:"51/t/3/1/4/1/2", M11:"46/t/3/1/4/2/2", G08:"43/t/3/1/4/1/2",
+      D09:"Morocco/m/2/2/4/1/2",
+      syria:"141/t/3/1/4/2/2 62/i/1/2/3/2/2 30/i/1/2/3/1/2 82Com/x/2/2/3/2/2"
+    }),
+    ...deploy("golan", ARAB, { G08:"SA-6⑤/d/0/0/3/1/0", J10:"SA-6⑥/d/0/0/3/1/0" }, { free:"syriaAA" }),
+    ...deploy("golan", ISRAEL, {
+      C10:"1/i/1/5/3/3/3 GL1/g/0/1/2/2/1", E09:"GL2/g/0/1/2/2/1", H11:"GL3/g/0/1/2/2/1",
+      K11:"GL4/g/0/1/2/2/1", L13:"GL5/g/0/1/2/2/1", L15:"GL6/g/0/1/2/2/1",
+      F11:"7/t/6/3/4/3/3", H14:"36Arm/h/2/1/4/3/1 188/t/8/3/4/3/3",
+      north:"210Arm/h/2/1/4/2/1 179/t/8/3/4/3/3",
+      center:"679/t/8/3/4/2/3 4/m/2/5/4/2/3 317/m/2/5/4/2/3 9/m/2/5/4/2/3"
+    }),
+    ...deploy("sinai", ISRAEL, { center:"143Arm/h/2/1/4/2/1 164/t/8/3/4/2/3" }, { rear:null, arrival:3 }),
+    ...deploy("golan", ISRAEL, { center:"146Arm/h/2/1/4/2/1 205/t/8/3/4/2/3" }, { rear:null, arrival:3 }),
+    ...deploy("sinai", ISRAEL, { center:"440Arm/h/2/1/4/2/1 875/m/2/5/4/2/3 Pontoon/b/0/0/3/2/0" }, { rear:null, arrival:4 }),
+    ...deploy("sinai", ISRAEL, { center:"11/m/2/5/4/2/3" }, { rear:null, arrival:5 }),
+    ...deploy("sinai", ISRAEL, { center:"35/m/2/5/4/2/3" }, { rear:null, arrival:6 }),
+    ...deploy("sinai", ISRAEL, { center:"247/m/2/5/4/2/3" }, { rear:null, arrival:7 }),
+    ...deploy("sinai", ISRAEL, { center:"274/t/8/3/4/2/3" }, { rear:null, arrival:8 }),
+    ...deploy("golan", ISRAEL, { center:"670/m/2/5/4/2/3" }, { rear:null, arrival:5 }),
+    ...deploy("golan", ARAB, { syria:"2/t/7/2/4/0/4 3/t/7/2/4/0/4" }, { rear:null, arrival:5, coalition:"伊拉克" }),
+    ...deploy("golan", ARAB, { syria:"5/n/1/3/3/1/2" }, { rear:null, arrival:6, coalition:"伊拉克" }),
+    ...deploy("golan", ARAB, { syria:"3JR/t/4/2/4/1/4" }, { rear:null, arrival:7, coalition:"约旦", display:"3" }),
+    ...deploy("golan", ARAB, { syria:"20/m/2/2/4/0/2" }, { rear:null, arrival:8, coalition:"沙特" }),
+    ...deploy("sinai", ARAB, { egypt:"3Mot/m/3/5/4/1/4/3M 39Art/p/2/1/4/2/1/3M 23/t/3/1/4/2/2/3M" },
+      { rear:null, reservePool:"thirdMechanized" }),
+    ...deploy("sinai", ISRAEL, { center:"63/m/2/5/4/2/3 9100/m/2/2/3/1/3 5/m/2/2/3/1/3 99/m/2/2/3/1/3 16/m/2/2/3/1/3" },
+      { rear:null, reservePool:"israeliReserves" })
+  ];
+}
+
+const card = (id, name, kind, goods, cost, effect, desc) => ({ id, name, kind, goods, cost, ...effect, desc });
+const cards = Object.fromEntries([
+  card(1,"空地协同","作战",3,3,{air:1,fire:"air",move:1,attack:1},"补 1 空军，可空袭，随后移动 ×1、战斗 ×1。"),
+  card(2,"炮兵协同","作战",3,3,{restore:1,fire:"gun",move:1,attack:1},"可恢复 1 个指挥部、炮击，随后移动 ×1、战斗 ×1。"),
+  card(3,"步坦协同","作战",3,3,{move:1,attack:1,combined:true},"移动 ×1、战斗 ×1。装甲配合步兵或机步进攻时右修 1 列。"),
+  card(4,"紧急服役","作战",3,3,{mobilize:2,move:1,attack:1},"获得 2 动员点，双图以方翻倍。随后移动 ×1、战斗 ×1。"),
+  card(5,"有限打击","火力",2,2,{air:1,restore:1,fire:"both"},"补 1 空军，可恢复 1 个指挥部，允许炮击和空袭。"),
+  card(6,"有限打击","火力",2,2,{air:1,restore:1,fire:"both"},"补 1 空军，可恢复 1 个指挥部，允许炮击和空袭。"),
+  card(7,"全面打击","火力",4,3,{air:3,restore:2,fire:"both"},"补 3 空军，可恢复 2 个指挥部，允许炮击和空袭。"),
+  card(8,"举国体制","休整",4,3,{refit:true,grant:1},"获得 1 物资，清除压制和已使用标记，补足空军，可补员与重建。"),
+  card(9,"举国体制","休整",4,3,{refit:true,grant:1},"获得 1 物资，清除压制和已使用标记，补足空军，可补员与重建。"),
+  card(10,"对簿公堂","安理会",3,2,{council:true},"回合收尾召开安理会，计分并更新舆论、调停。"),
+  card(11,"火线入列","动员",4,2,{mobilize:1,rebuild:true},"获得 1 动员点，双图以方翻倍，随后可重建。"),
+  card(12,"战地维修","动员",3,1,{mobilize:1,fieldRefit:true},"获得 1 动员点，随后可免费为 1 个与指挥部同格的装甲或机步补员。"),
+  card(13,"计划条令","作战",6,5,{fire:"both",move:.5,attack:2,orders:true},"可炮击和空袭，随后非联军移动 ×0.5、战斗 ×2。每参战单位耗 1 物资。"),
+  card(14,"空袭准备","作战",4,2,{air:1,fire:"air",move:1,attack:1,choice:true},"补 1 空军，可空袭。每图在移动 ×1、战斗 ×1 中选一项。"),
+  card(15,"炮火准备","作战",4,2,{restore:2,fire:"gun",move:1,attack:1,choice:true},"可恢复 2 个炮兵、炮击。每图在移动 ×1、战斗 ×1 中选一项。"),
+  card(16,"夜战突击","作战",3,2,{move:.5,attack:1,choice:true,bothAtNight:true},"昼间每图择一项。夜间先移动 ×0.5，再战斗 ×1。"),
+  card(17,"夜战突击","作战",3,2,{move:.5,attack:1,choice:true,bothAtNight:true},"昼间每图择一项。夜间先移动 ×0.5，再战斗 ×1。"),
+  card(18,"饱和打击","火力",5,4,{air:"all",restore:"all",fire:"both",missile:1},"补足空军、恢复所有炮兵，可炮击、空袭和 1 次导弹打击。"),
+  card(19,"后勤转运","休整",6,5,{refit:true,grant:2},"获得 2 物资，清除压制和已使用标记，补足空军，可补员和重建。"),
+  card(20,"后勤转运","休整",6,5,{refit:true,grant:2},"获得 2 物资，清除压制和已使用标记，补足空军，可补员和重建。"),
+  card(21,"预备力量","动员",4,1,{mobilize:2,rebuild:true},"获得 2 动员点，随后可重建。"),
+  card(22,"对簿公堂","安理会",2,1,{council:true},"回合收尾召开安理会，计分并更新舆论、调停。"),
+  card(23,"战略内耗","指挥失灵",0,2,{grant:4,command:true},"只获得 4 物资。阿方越线且手牌有此类牌时，至少排入 1 张。"),
+  card(24,"战略内耗","指挥失灵",0,2,{grant:4,command:true},"只获得 4 物资。阿方越线且手牌有此类牌时，至少排入 1 张。"),
+  card(25,"精确打击","火力",4,2,{air:3,restore:2,fire:"both",satellite:true,replace:[5,6,7]},"补 3 空军、可恢复 2 个指挥部，使用卫星，可炮击和空袭。"),
+  card(26,"空输入场","动员",6,1,{mobilize:1,rebuild:true,para:1,replace:[11,12]},"获得 1 动员点及美军伞兵，随后可重建。"),
+  card(27,"北约援助","休整",6,2,{refit:true,grant:2,discount:1,replace:[8,9]},"获得 2 物资并休整，补员和重建每个单位减 1 物资。"),
+  card(28,"灵活部署","作战",5,2,{air:1,fire:"both",move:1,attack:1,flex:true,replace:[1,2,3,4]},"补 1 空军，可炮击和空袭，随后任选顺序移动 ×1 和战斗 ×1。"),
+  card(29,"灵活部署","作战",5,2,{air:1,fire:"both",move:1,attack:1,flex:true,replace:[1,2,3,4]},"补 1 空军，可炮击和空袭，随后任选顺序移动 ×1 和战斗 ×1。"),
+  card(30,"密室政治","安理会",6,2,{grant:4,council:true,diplomacy:true,mustReplace:true,replace:[10]},"获得 4 物资并触发安理会。本回合阿方安理会得分上限为 1。"),
+  card(31,"决战当量","火力",6,1,{air:"all",restore:"all",fire:"both",missile:2,satellite:true,mustReplace:true,replace:[18]},"补足空军、恢复炮兵，使用卫星，可炮击、空袭和两次导弹打击。"),
+  card(32,"空降驰援","动员",8,1,{mobilize:2,rebuild:true,para:1, reserveRefit:true, mustReplace:true,replace:[21]},"获得 2 动员点和苏军伞兵，首次获额外指挥部，可补员和重建。"),
+  card(33,"钢铁洪流","动员",9,2,{mobilize:1,rebuild:true,armor:2,reserveRefit:true,replace:[21]},"获得 1 动员点及两个苏军装甲或机步单位，可补员与重建。"),
+  card(34,"华约援助","休整",8,4,{refit:true,grant:4,replace:[19,20]},"获得 4 物资并完整休整，可补员与重建。"),
+  card(35,"计划条令","作战",4,5,{fire:"both",move:1,attack:2,orders:true,mustReplace:true,replace:[13]},"可炮击、空袭，随后非联军移动 ×1、战斗 ×2。每参战单位耗 1 物资。"),
+  card(36,"纵深突破","作战",4,2,{move:.5,attack:1,attackFirst:true,replace:[14,15,16,17]},"先战斗 ×1，再移动 ×0.5。")
+].map(c => [c.id,c]));
+
+const ratios = [0.5,1,1.5,2,3,4,5,6];
+const ratioNames = ["1:2","1:1","1.5:1","2:1","3:1","4:1","5:1","6:1"];
+const combatTable = [
+  ["3/1","2/1","2/1","2/1","1/-","-/-","-/-","1/1"],
+  ["2/1","1/-","1/-","1/-","-/-","-/-","1/1","-/1"],
+  ["1/-","1/-","-/-","-/-","-/-","1/1","-/1","1/2"],
+  ["1/-","-/-","-/-","-/-","1/1","-/1","1/2","1/2"],
+  ["-/-","-/-","-/-","1/1","-/1","1/2","1/2","-/2"],
+  ["-/-","1/1","1/1","-/1","1/2","1/2","-/2","-/2"],
+  ["1/1","-/1","-/1","-/1","1/2","-/2","-/2","-/2"],
+  ["-/1","-/1","1/2","1/2","-/2","-/2","-/2","1/3"],
+  ["-/1","1/2","1/2","-/2","-/2","-/2","1/3","-/3"]
+];
+
+
+{ finalRound };
+const airMax = { arab:{sinai:4,golan:2}, israel:{sinai:4,golan:4} };
+const goodsMax = 39;
+const rearNames = { egypt:"埃及后方",syria:"叙利亚后方",north:"以军北部",center:"以军中部",south:"以军南部" };
+const combatTypes = new Set(["i","t","m","a","g","x","n"]);
+const singleFace = new Set(["p","d","b","h","g"]);
+const rollD6 = () => Math.floor(Math.random() * 6) + 1;
+const sum = values => values.reduce((result,value) => result + value,0);
+
+function shuffle(items) {
+  const output = [...items];
+  for (let i = output.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [output[i],output[j]] = [output[j],output[i]];
+  }
+  return output;
+}
+
+function newGame() {
+  const redDeck = shuffle(Array.from({ length:12 },(_,i)=>i+13).filter(id=>![13,15,24].includes(id)));
+  const blueDeck = shuffle(Array.from({ length:12 },(_,i)=>i+1).filter(id=>id!==4));
+  return {
+    schema:3, options:Object.fromEntries(Object.keys(scenarioOptions).map(key=>[key,false])),
+    round:1, phase:-1, first:ARAB, turn:ARAB, rounds:{arab:0,israel:6}, passes:{arab:3,israel:3},
+    stock:{egypt:19,syria:15,israel:14}, air:{arab:{sinai:4,golan:2},israel:{sinai:4,golan:4}},
+    points:{arab:0,israel:0}, opinion:0, mediation:0, quietRounds:0, ceasefire:null,
+    officialEnd:finalRound, intervention:null, satellites:{arab:null,israel:null}, aidCount:{arab:0,israel:0}, aidDeck:{arab:shuffle([31,32,33,34,35,36]),israel:shuffle([25,26,27,28,29,30])},
+    hand:{arab:[13,15,...redDeck.splice(0,3)],israel:[4,...blueDeck.splice(0,2)]},
+    deck:{arab:[...redDeck,24],israel:blueDeck}, discard:{arab:[],israel:[]},
+    plan:{arab:[],israel:[]}, queues:{arab:[],israel:[]}, spare:[], prepare:"plan", actionsEnded:false,
+    councilCards:{arab:false,israel:false}, diplomacy:false, card:null, report:null, exhausted:false,
+    units:makeUnits(), batteries:Object.fromEntries(fronts.map(f=>[f,fields[f].batteries.map(b=>({...b,used:false,out:false}))])),
+    roundsHistory:[], logs:[], supplyChecked:false, rearDone:false, bridgesChosen:[], arrivals:{}, endReason:null, winner:null
+  };
+}
+
+function upgradeGame(saved) {
+  if (!saved||saved.round<1||saved.round>finalRound||!Array.isArray(saved.units)||!Array.isArray(saved.roundsHistory)) return null;
+  if(saved.schema===3) return saved;
+  const base=newGame();
+  const previous=new Set(saved.units.map(u=>u.id));
+  const units=saved.units.map(u=>({...u,coalition:u.coalition??base.units.find(v=>v.id===u.id)?.coalition}));
+  for(const u of base.units) {
+    if(!previous.has(u.id)&&(u.reservePool||u.arrival>saved.round)) units.push(u);
+  }
+  const demoEnded=saved.round===3&&saved.endReason?.startsWith("已完成前三回合");
+  const report=saved.report?{aidNeed:saved.report.aid?.length?2:0,aidQueue:[],aidRemove:false,aidResource:null,...saved.report}:null;
+  return {...base,...saved,schema:3,units,options:{...base.options,...saved.options},report,
+    endReason:demoEnded?null:saved.endReason,winner:demoEnded?null:saved.winner};
+}
+
+function log(game, text, detail="", side="") {
+  game.logs.unshift({ text,detail,side,round:game.round });
+  if(game.logs.length>2900) game.logs.length=2900;
+}
+
+function mapUnits(game, front, side) {
+  return game.units.filter(u=>u.front===front && u.tile && !u.dead && (!side || u.side===side));
+}
+const stackAt = (game,front,tile) => mapUnits(game,front).filter(u=>u.tile===tile);
+const findUnit = (game,id) => game.units.find(u=>u.id===id);
+const stockKey = (side,front) => side===ISRAEL?"israel":front==="sinai"?"egypt":"syria";
+const activeBridge = u => u.type==="b" && u.bridgeOpen && !u.suppressed && !u.dead;
+
+function unitStats(u) {
+  if (!u.damaged) return u;
+  if (u.type==="t") {
+    const israel=u.side===ISRAEL;
+    const reducedAttack=israel?u.attack>=8?3:2:[ "15","25" ].includes(u.name)&&u.front==="sinai"?2:1;
+    return {...u,attack:Math.max(1,u.attack-reducedAttack),defense:israel?2:1,
+      move:israel?u.move:u.move-1,stack:Math.max(1,u.stack-1)};
+  }
+  if (u.type==="a") return {...u,attack:1,defense:Math.max(1,u.defense-1),stack:1};
+  return {...u,attack:Math.max(0,u.attack-1),defense:Math.max(1,u.defense-(u.defense===5?2:1)),
+    move:u.type==="m"?u.move-1:u.move,stack:Math.max(1,u.stack-2)};
+}
+
+function actualDistance(a,b) {
+  const axial = tile => {
+    const [c,r] = coord(tile);
+    const q = r - Math.ceil(c/2);
+    return [c,q,-c-q];
+  };
+  const first = axial(a);
+  const second = axial(b);
+  return Math.max(...first.map((value,i)=>Math.abs(value-second[i])));
+}
+
+function canStack(game,u,tile) {
+  const allies = stackAt(game,u.front,tile).filter(v=>v.id!==u.id);
+  if (allies.some(v=>v.side!==u.side)) return false;
+  const members = [...allies,u];
+  const weight = sum(members.map(v=>unitStats(v).stack));
+  if (weight <= 6) return true;
+  if (weight > 7) return false;
+  if (members.every(v=>v.foreign==="soviet")) return members.filter(v=>combatTypes.has(v.type)).length<=2&&members.filter(v=>v.type==="h").length<=1;
+  if (u.side===ISRAEL) return members.filter(v=>combatTypes.has(v.type)).length<=2 && members.filter(v=>v.type==="h").length<=1;
+  const weightUnits = members.filter(v=>v.stack>0);
+  return Boolean(weightUnits[0]?.division && weightUnits.every(v=>v.division===weightUnits[0].division));
+}
+
+function control(game, front, side) {
+  const result = new Set();
+  for (const u of mapUnits(game,front,side)) {
+    if (!combatTypes.has(u.type) || !unitStats(u).attack || u.suppressed || ["rough","water"].includes(terrain(front,u.tile))) continue;
+    result.add(u.tile);
+    for (const tile of adjacent(front,u.tile)) {
+      if (!waterEdge(front,u.tile,tile) && !["rough","water"].includes(terrain(front,tile))) result.add(tile);
+    }
+  }
+  return result;
+}
+
+function bridgesAcross(game,front,from,to) {
+  if (front!=="sinai" || !waterEdge(front,from,to)) return [];
+  const east = westCanal(from) ? to : from;
+  return stackAt(game,front,east).filter(activeBridge);
+}
+
+function crossingRoad(game,front,from,to) {
+  if (front==="sinai" && waterEdge(front,from,to)) return bridgesAcross(game,front,from,to).length>0;
+  return road(front,from,to);
+}
+
+function legalEdge(game,u,from,to) {
+  const { front } = u;
+  const land = terrain(front,to);
+  if (u.foreign==="soviet" && (front==="sinai"?deepSinai(to):westJordan(to))) return false;
+  if (u.foreign==="us" && (front==="sinai"?westCanal(to):!westCeasefire(to))) return false;
+  const naval = u.type==="a" || u.type==="b";
+  const onRoad = crossingRoad(game,front,from,to);
+  if (land==="water" && !naval) return false;
+  if (land==="rough" && !["i","x","g","n"].includes(u.type) && !onRoad) return false;
+  if (u.type==="g" && (front==="sinai" ? westCanal(to) : !westCeasefire(to))) return false;
+  return !waterEdge(front,from,to) || onRoad || naval;
+}
+
+function possibleMoves(game,u,scale=1,night=false) {
+  const result = new Map();
+  if ((!u.tile && !u.entry) || u.dead || (u.foreign&&game.intervention&&u.side!==game.intervention) || (u.type==="b" && u.bridgeOpen)) return result;
+  if (game.round===1 && u.side===ARAB && u.tile && restriction(u.front,u.tile)) return result;
+  const {front,side} = u;
+  const start = u.tile || u.entry;
+  if (!u.tile && stackAt(game,front,start).some(v=>v.side!==side)) return result;
+  const stats = unitStats(u);
+  const budget = Math.ceil((u.type==="b"?3:stats.move)*scale*(night && side===ISRAEL ?.5:1));
+  if (!budget) return result;
+  const zoc = control(game,front,other(side));
+  const queue = [{ tile:start,cost:u.tile?0:1,path:[start],march:!u.suppressed&&!zoc.has(start),bridgeIds:[] }];
+  const traversed = new Map();
+  if (!u.tile && canStack(game,u,start) && !(u.suppressed && zoc.has(start))) {
+    result.set(start,{tile:start,cost:1,path:[start],bridgeIds:[]});
+  }
+  while (queue.length) {
+    const current = queue.shift();
+    if (current.cost && zoc.has(current.tile)) continue;
+    for (const tile of adjacent(front,current.tile)) {
+      if (tile===start || stackAt(game,front,tile).some(v=>v.side!==side)) continue;
+      const enemy = zoc.has(tile);
+      if (enemy && (zoc.has(current.tile) || u.suppressed)) continue;
+      if (u.suppressed && u.side===ISRAEL && zoc.has(current.tile)) continue;
+      if (!legalEdge(game,u,current.tile,tile)) continue;
+      const across = waterEdge(front,current.tile,tile);
+      const ferry = bridgesAcross(game,front,current.tile,tile);
+      const bridge = ferry.find(b=>b.crossed+stats.stack<=9 && !current.bridgeIds.includes(b.id));
+      if (ferry.length && !bridge && u.type!=="a" && u.type!=="b") continue;
+      if (!bridge && across && zoc.has(current.tile) && !road(front,current.tile,tile)) continue;
+      const land = terrain(front,tile);
+      const onRoad = crossingRoad(game,front,current.tile,tile);
+      const march = current.march && onRoad && !enemy;
+      const stress = onRoad ? 1 : ["water","marsh"].includes(land) || across ? budget : land==="rough" ? (["x","n"].includes(u.type)?2:3) : land==="hills" ? (["x","n"].includes(u.type)?1:2) : 1;
+      const cost = current.cost + stress;
+      const mark = tile + (march ? ":road" : ":normal");
+      if (cost>budget+(march?(night?1:2):0) || (traversed.has(mark) && traversed.get(mark)<=cost)) continue;
+      traversed.set(mark,cost);
+      const next = {tile,cost,path:[...current.path,tile],bridgeIds:bridge?[...current.bridgeIds,bridge.id]:current.bridgeIds};
+      if (canStack(game,u,tile) && (!result.has(tile) || cost<result.get(tile).cost)) result.set(tile,next);
+      if (!enemy && !["water","marsh"].includes(land)) queue.push({...next,march});
+    }
+  }
+  return result;
+}
+
+function clearFixedAirDefense(game,u,path) {
+  if(u.side!==ISRAEL||!combatTypes.has(u.type)) return;
+  for(const b of game.batteries[u.front]) {
+    if(b.destroyed||!path.includes(b.tile)) continue;
+    b.destroyed=true;
+    log(game,"固定防空设施已摧毁",fields[u.front].name+" · "+b.tile,ISRAEL);
+  }
+}
+
+function move(game,u,route) {
+  for (const id of route.bridgeIds) findUnit(game,id).crossed += unitStats(u).stack;
+  u.tile = route.tile;
+  clearFixedAirDefense(game,u,route.path);
+  if(u.foreign) game.intervention??=u.side;
+  u.entry = null;
+  u.rear = null;
+}
+
+function relocateFree(game,u,tile) {
+  if (!u?.free || game.phase!==-1 || stackAt(game,u.front,tile).some(v=>v.side!==u.side) || !canStack(game,u,tile)) return false;
+  const dry = !["water","rough"].includes(terrain(u.front,tile));
+  const valid = { cairo:dry&&restriction("sinai",tile), bridge:fields.sinai.sites.includes(tile)&&!stackAt(game,"sinai",tile).some(v=>v.id!==u.id&&v.type==="b"),
+    egyptAA:dry&&westCanal(tile), syriaAA:dry&&!westCeasefire(tile) };
+  if (!valid[u.free]) return false;
+  u.tile=tile;
+  return true;
+}
+
+const availableSources = u => Object.values(fields).flatMap(field => field.sources
+  .filter(s=>s.side===u.side && s.rear===u.rear).map(s=>({...s,front:field.front})));
+
+function sourceEquip(game,u,source) {
+  const blocked = stackAt(game,source.front,source.tile).some(v=>v.side!==u.side);
+  if (blocked) return false;
+  u.front=source.front;
+  u.entry=source.tile;
+  u.rear=null;
+  return true;
+}
+
+function supplyMap(game,front,side) {
+  const zoc = control(game,front,other(side));
+  const allow = tile => {
+    const pile = stackAt(game,front,tile);
+    return !pile.some(u=>u.side!==side) && (!zoc.has(tile) || pile.some(u=>u.side===side));
+  };
+  const sources = fields[front].sources.filter(s=>s.side===side&&allow(s.tile));
+  const queue = sources.map(source=>source.tile);
+  const trail = new Map(queue.map(tile=>[tile,null]));
+  while (queue.length) {
+    const tile = queue.shift();
+    for (const next of adjacent(front,tile)) {
+      if (trail.has(next) || !allow(next)) continue;
+      const onRoad = crossingRoad(game,front,tile,next);
+      if (!onRoad && (waterEdge(front,tile,next) || ["rough","water"].includes(terrain(front,next)))) continue;
+      trail.set(next,tile);
+      queue.push(next);
+    }
+  }
+  return trail;
+}
+
+function pathToSource(trace,tile) {
+  if (!trace.has(tile)) return null;
+  const path = [tile];
+  while (trace.get(path.at(-1))) path.push(trace.get(path.at(-1)));
+  return path;
+}
+
+function checkSupplies(game) {
+  const outs = [];
+  for (const front of fronts) {
+    for (const side of sides) {
+      const trace = supplyMap(game,front,side);
+      if(side===ARAB) for (const battery of game.batteries[front].filter(b=>!b.destroyed)) battery.out=!trace.has(battery.tile);
+      for (const u of mapUnits(game,front,side)) {
+        u.out = u.type!=="b" && !trace.has(u.tile);
+        if (u.out) outs.push(u);
+      }
+    }
+  }
+  game.supplyChecked=true;
+  return outs;
+}
+
+const arrivingUnits = game=>game.units.filter(u=>u.arrival===game.round);
+function putAtSource(game,u,preferred) {
+  const choices=availableSources(u);
+  const next=choices.find(s=>s.tile===preferred);
+  return Boolean((next&&sourceEquip(game,u,next)) || choices.some(s=>sourceEquip(game,u,s)));
+}
+function revealReinforcements(game) {
+  const units=arrivingUnits(game);
+  for (const u of units) {
+    u.rear=u.side===ISRAEL?"center":"syria";
+    u.arrival=null;
+    if(u.side===ARAB) putAtSource(game,u,game.arrivals[u.id]);
+  }
+  return units;
+}
+
+function forthDeck(game,side) {
+  if (!game.deck[side].length && game.discard[side].length) {
+    game.deck[side]=shuffle(game.discard[side]);
+    game.discard[side]=[];
+  }
+  return game.deck[side];
+}
+
+function refill(game) {
+  if (game.round===1) return;
+  for (const side of sides) {
+    while(game.hand[side].length<5 && forthDeck(game,side).length) game.hand[side].push(game.deck[side].shift());
+  }
+}
+
+const planSize = ids => sum(ids.map(id=>cards[id].cost));
+const mustCommand = game => game.hand.arab.some(id=>cards[id].command) &&
+  fronts.some(front=>mapUnits(game,front,ARAB).some(u=>front==="sinai"?deepSinai(u.tile):westJordan(u.tile)));
+const validPlan = (game,side,ids) => planSize(ids)>=6 && planSize(ids)<=9 &&
+  (side!==ARAB || !mustCommand(game) || ids.some(id=>cards[id].command));
+
+function suggestedPlan(game,side) {
+  const options = [];
+  function visit(rest,list,count) {
+    if (count>9) return;
+    if (count>=6 && validPlan(game,side,list)) options.push(list);
+    for (const id of rest) visit(rest.filter(value=>value!==id),[...list,id],count+cards[id].cost);
+  }
+  visit(game.hand[side],[],0);
+  const grade = list => {
+    let round=game.rounds[side];
+    let score=0;
+    for (const [i,id] of list.entries()) {
+      const c = cards[id];
+      round += c.cost;
+      if (round>9) break;
+      const night = round>=8;
+      score += round*.18 + Math.max(0,4-i)*.08;
+      if (c.orders) score += night?-3:game.round===1?14:7;
+      else if (c.move) score += c.bothAtNight&&night?8:game.round===1&&side===ISRAEL&&id===4?25:5;
+      else if (c.refit) score += night?3:2;
+      else if (c.fire) score += night?0:2;
+      else if (c.mobilize) score += 3;
+      else if (c.council) score += game.round===3?.25:1.25;
+    }
+    return score;
+  };
+  return options.sort((a,b)=>grade(b)-grade(a))[0] ?? [];
+}
+
+function commitPlans(game) {
+  for (const side of sides) {
+    game.queues[side]=[...game.plan[side]];
+    game.hand[side]=game.hand[side].filter(id=>!game.queues[side].includes(id));
+  }
+}
+
+function stockAdd(game,key,amount) {
+  game.stock[key]=Math.min(goodsMax,game.stock[key]+amount);
+}
+
+function grant(game,total,toEgypt) {
+  stockAdd(game,"egypt",toEgypt);
+  stockAdd(game,"syria",total-toEgypt);
+}
+
+function resourceValue(game,id) {
+  const c=cards[id];
+  const side=id>=31?ARAB:ISRAEL;
+  const excluded=(c.para||c.armor)&&game.intervention&&game.intervention!==side;
+  return c.goods+(excluded?4:0);
+}
+
+function dropResourceCards(game,side,ids) {
+  const total = sum(ids.map(id=>resourceValue(game,id)*2));
+  game.hand[side]=game.hand[side].filter(id=>!ids.includes(id));
+  game.discard[side].push(...ids);
+  return total;
+}
+
+function adjustBridges(game,ids,side=ARAB) {
+  const boats=mapUnits(game,"sinai",side).filter(u=>u.type==="b");
+  const key=stockKey(side,"sinai");
+  const open=boats.filter(u=>ids.includes(u.id)&&!u.suppressed&&fields.sinai.sites.includes(u.tile));
+  const cost=open.length*2;
+  if (game.stock[key]<cost) return false;
+  for (const u of boats) u.bridgeOpen=open.includes(u);
+  game.stock[key]-=cost;
+  return true;
+}
+
+function choicesFor(card,night) {
+  if (card.choice && !(night&&card.bothAtNight)) return "choices";
+  return undefined;
+}
+
+function canPlay(game,side) {
+  const id=game.queues[side][0];
+  return Boolean(id && game.rounds[side]+cards[id].cost<=9);
+}
+const canPass = (game,side) => game.passes[side]>0 && game.rounds[side]<9;
+const canAct = (game,side) => canPlay(game,side) || canPass(game,side);
+
+function readyTurn(game) {
+  if (!game.queues.arab.length && !game.queues.israel.length) {
+    game.actionsEnded=true;
+    return;
+  }
+  if (!canAct(game,game.turn)) game.turn=other(game.turn);
+  game.actionsEnded=!canAct(game,game.turn);
+}
+
+function finishAction(game,side) {
+  for (const s of sides) {
+    if (game.queues[s].length && !canPlay(game,s)) {
+      game.discard[s].push(...game.queues[s]);
+      log(game,sideName[s]+"弃置剩余方案","行动轮次不足，剩余牌进入弃牌堆。",s);
+      game.queues[s]=[];
+    }
+  }
+  const rival=other(side);
+  game.turn=game.rounds[side]<game.rounds[rival]?side:rival;
+  readyTurn(game);
+}
+
+function startAction(game,side) {
+  if (!canPlay(game,side) || game.turn!==side || game.card) return null;
+  const id=game.queues[side].shift();
+  const old=game.rounds[side];
+  game.rounds[side]+=cards[id].cost;
+  const night=game.rounds[side]>=8;
+  if (night) game.satellites[side]=null;
+  log(game,sideName[side]+" · "+cards[id].name,`轮次 ${old} → ${game.rounds[side]} · ${night?"夜间":"昼间"}`,side);
+  return { id,side,night };
+}
+
+function skip(game,side) {
+  if (game.card || game.turn!==side || !canPass(game,side)) return;
+  const start=game.rounds[side]++;
+  if (game.rounds[side]>=8) game.satellites[side]=null;
+  game.passes[side]--;
+  log(game,sideName[side]+"跳过",`${start} → ${start+1}，剩 ${game.passes[side]} 次。`,side);
+  finishAction(game,side);
+}
+
+function spendCard(game,action) {
+  game.discard[action.side].push(action.id);
+  game.card=null;
+  finishAction(game,action.side);
+}
+
+function nextChooser(game) {
+  return game.rounds.arab===game.rounds.israel ? other(game.first) : game.rounds.arab<game.rounds.israel ? ARAB : ISRAEL;
+}
+
+function tally(game) {
+  const rows=fronts.flatMap(front=>Object.entries(fields[front].points).map(([tile,point])=>{
+    const occupier=stackAt(game,front,tile).find(u=>combatTypes.has(u.type));
+    return {front,tile,...point,side:occupier?.side??null,value:occupier?point[occupier.side]:0};
+  }));
+  const battle=Object.fromEntries(sides.map(side=>[side,sum(rows.filter(row=>row.side===side).map(row=>row.value))]));
+  const diff=battle.arab-battle.israel;
+  const scored=diff>0?ARAB:diff<0?ISRAEL:null;
+  return {rows,battle,diff,scored,earned:Math.min(diff>0&&game.diplomacy?1:2,Math.abs(diff))};
+}
+
+function aidReplacementOptions(game,side,id) {
+  for(const zone of ["discard","deck","hand"]) {
+    const ids=game[zone][side].filter(old=>cards[id].replace.includes(old));
+    if(ids.length) return {zone,ids};
+  }
+  return {zone:null,ids:[]};
+}
+
+function applySingleAid(game,side,id,replacement) {
+  if(!game.aidDeck[side].includes(id)) return false;
+  const options=aidReplacementOptions(game,side,id);
+  if(replacement&&!options.ids.includes(replacement)) return false;
+  if(cards[id].mustReplace&&options.ids.length&&!replacement) return false;
+  game.aidDeck[side]=game.aidDeck[side].filter(item=>item!==id);
+  if(cards[id].mustReplace&&!replacement) {
+    log(game,"大国援助 · "+cards[id].name,"相应原牌已离开牌组，本张不能加入。",side);
+    return true;
+  }
+  if(replacement) {
+    game[options.zone][side]=game[options.zone][side].filter(old=>old!==replacement);
+    if(options.zone==="deck") game.deck[side]=shuffle(game.deck[side]);
+  }
+  game.discard[side].push(id);
+  log(game,(side===ARAB?"苏联":"美国")+"援助 · "+cards[id].name,
+    replacement?"替换 "+cards[replacement].name+"（#"+replacement+"），新牌加入弃牌堆。":"新牌加入弃牌堆。",side);
+  return true;
+}
+
+function retireCard(game,side,id) {
+  for(const zone of ["discard","deck"]) {
+    if(!game[zone][side].includes(id)) continue;
+    game[zone][side]=game[zone][side].filter(old=>old!==id);
+    log(game,"大国援助 · 移除原牌",cards[id].name+"（#"+id+"）移出本局。",side);
+    return true;
+  }
+  return false;
+}
+
+function advanceAid(game,report) {
+  const side=report.aidSide;
+  const number=++game.aidCount[side];
+  if(number>=4) {
+    const top=forthDeck(game,side)[0];
+    if(!top) return;
+    if(side===ARAB) report.aidResource=top;
+    else settleRepeatedAid(game,side,top,0,game.discard[side].length>=3);
+    return;
+  }
+  const need=number===2?2:1;
+  const deck=game.aidDeck[side];
+  if(!deck.length) return;
+  const picks=number===2?[...deck]:deck.slice(0,1);
+  if(side===ARAB) {
+    report.aid=picks;
+    report.aidNeed=Math.min(need,picks.length);
+  } else {
+    const priority=id=>(cards[id].mobilize?4:0)+(cards[id].refit?3:0)+(cards[id].move?2:0);
+    for(const id of (need===2?picks.sort((a,b)=>priority(b)-priority(a)):picks).slice(0,need)) {
+      const replace=aidReplacementOptions(game,side,id).ids;
+      applySingleAid(game,side,id,replace[0]);
+    }
+    if(number===2) {
+      const old=game.discard[side].find(id=>id<=12&&["火力","动员"].includes(cards[id].kind));
+      if(old) retireCard(game,side,old);
+    }
+  }
+}
+
+function settleRepeatedAid(game,side,id,egypt,reshuffle) {
+  const total=resourceValue(game,id)*2;
+  if(side===ARAB) grant(game,total,egypt);
+  else stockAdd(game,"israel",total);
+  log(game,"大国援助 · 取得物资","牌库顶部 #"+id+"，获得 "+total+" 物资。"+(reshuffle?"重新洗入弃牌堆。":"将牌留在牌库顶。"),side);
+  if(reshuffle) {
+    game.deck[side]=shuffle([...game.deck[side],...game.discard[side]]);
+    game.discard[side]=[];
+  }
+}
+
+function council(game,dice=rollD6) {
+  const meeting=councilRounds.has(game.round) || sides.some(side=>game.councilCards[side]);
+  const report={meeting,aidSide:null,aid:[],aidNeed:0,aidQueue:[],aidRemove:false,aidResource:null,ceasefireRoll:null};
+  if (meeting) {
+    Object.assign(report,tally(game));
+    if (report.scored) game.points[report.scored]+=report.earned;
+    game.opinion+=report.battle.arab+report.battle.israel;
+    const raised=game.opinion>=11;
+    if (raised) {
+      game.mediation++;
+      game.opinion-=11;
+      while (game.opinion>11) game.opinion-=11;
+    }
+    if (Math.abs(report.diff)>=3) game.mediation++;
+    if (raised && game.round<game.officialEnd) {
+      report.aidSide = game.councilCards.arab===game.councilCards.israel?game.first:game.councilCards.arab?ARAB:ISRAEL;
+    }
+    log(game,"安理会计分",`战果 ${report.battle.arab}:${report.battle.israel}。${report.scored?sideName[report.scored]+" +"+report.earned+" 分。":"双方同分。"}`);
+  }
+  if (!game.ceasefire && game.mediation>=5) {
+    const bonus=game.mediation>=7?2:game.mediation===6?1:0;
+    const a=Math.min(6,dice()+bonus);
+    const b=Math.min(6,dice()+bonus);
+    report.ceasefireRoll=[a,b];
+    if (a>=4&&b>=4) {
+      const delay=a===b?(a===6?0:1):2;
+      game.ceasefire=game.round+delay;
+      game.officialEnd=Math.min(game.officialEnd,game.ceasefire);
+      log(game,"停战裁定",delay?`在第 ${game.officialEnd} 回合结束。`:"立即停战。");
+    }
+  }
+  if(game.round>=game.officialEnd) report.aidSide=null;
+  if(report.aidSide) advanceAid(game,report);
+  game.report=report;
+  return report;
+}
+
+function endRound(game) {
+  game.roundsHistory.push({ round:game.round, arab:game.points.arab, israel:game.points.israel, council:game.report.meeting,
+    ...(game.report.meeting?{outcomes:game.report.battle}:{}), mediation:game.mediation, opinion:game.opinion });
+  const entered=mapUnits(game,"sinai",ARAB).some(u=>!westCanal(u.tile)) || mapUnits(game,"golan",ARAB).some(u=>westCeasefire(u.tile));
+  game.quietRounds=entered?0:game.quietRounds+1;
+  if (game.points.arab-game.points.israel>=7) {
+    game.winner=ARAB;
+    game.endReason="阿方领先至少 7 分，触发突然胜利。";
+  } else if (game.quietRounds>=2) {
+    game.winner=ISRAEL;
+    game.endReason="连续两个回合收尾均满足两条战线清空条件，以方突然胜利。";
+  } else if (game.round>=game.officialEnd) {
+    game.winner=game.points.arab>game.points.israel?ARAB:ISRAEL;
+    game.endReason=game.ceasefire&&game.ceasefire<=game.round?"按停战裁定终局。同分时以色列方获胜。":"第 20 回合结束，按累计分判胜。同分时以色列方获胜。";
+  }
+  if(game.options.lateAir&&game.aidCount.israel>=2&&!game.endReason) {
+    const prior=game.stock.israel;
+    for(const front of fronts) {
+      const bought=Math.min(Math.floor(game.stock.israel/2),airMax.israel[front]-game.air.israel[front]);
+      game.stock.israel-=2*bought;
+      game.air.israel[front]+=bought;
+    }
+    if(prior!==game.stock.israel) log(game,"以方回合末补充空军","消耗 "+(prior-game.stock.israel)+" 物资。",ISRAEL);
+  }
+}
+
+function nextRound(game,first) {
+  game.round++;
+  Object.assign(game,{
+    phase:0, first,turn:first, arrivals:{}, rounds:{arab:0,israel:0},passes:{arab:3,israel:3},prepare:"plan",plan:{arab:[],israel:[]},
+    queues:{arab:[],israel:[]},spare:[],actionsEnded:false,councilCards:{arab:false,israel:false},diplomacy:false,
+    card:null,report:null,supplyChecked:false,rearDone:false,bridgesChosen:mapUnits(game,"sinai",ARAB).filter(u=>u.type==="b"&&u.bridgeOpen).map(u=>u.id)
+  });
+  game.units.filter(u=>u.type==="b").forEach(u=>{u.crossed=0;});
+}
+
+
+const coalition = u => Boolean(u.coalition);
+const rollsName = ["-","D1","DD"];
+const ordnance = { air:"空袭",gun:"炮击",missile:"导弹打击" };
+
+function removeUnit(game,u,enemies) {
+  if (u.dead) return;
+  const givesPoint=u.type==="h" || (u.out && combatTypes.has(u.type) && u.type!=="g" && !coalition(u));
+  u.dead=true;
+  u.tile=null;
+  u.entry=null;
+  u.rear=null;
+  if (givesPoint) {
+    game.points[enemies]++;
+    log(game,sideName[enemies]+" +1 分",u.name+(u.type==="h"?" 指挥部被消灭。":" 在断补时被消灭。"),enemies);
+  }
+}
+
+function suppressUnit(game,u) {
+  if (u.suppressed) return;
+  u.suppressed=true;
+  if (activeBridge({...u,suppressed:false})) {
+    for (const across of stackAt(game,u.front,u.tile).filter(v=>v.id!==u.id)) removeUnit(game,across,other(across.side));
+  }
+}
+
+function airDefense(game,front,tile) {
+  const coverage=entity=>actualDistance(tile,entity.tile)<=entity.range;
+  return game.batteries[front].find(b=>!b.destroyed&&!b.used&&!b.out&&coverage(b)) ??
+    mapUnits(game,front,ARAB).find(u=>u.type==="d"&&!u.used&&!u.out&&!u.suppressed&&coverage({...u,range:2}));
+}
+
+function intercept(game,front,side,tile,automatic=false) {
+  if (side===ARAB) {
+    if (automatic && game.air.israel[front]>0) {
+      game.air.israel[front]--;
+      return "以军消耗 1 空军点拦截。";
+    }
+  } else {
+    const intercept=airDefense(game,front,tile);
+    if (intercept) {
+      intercept.used=true;
+      return "阿方防空拦截。";
+    }
+  }
+  return "";
+}
+
+function availableGuns(game,front,side,tile) {
+  return mapUnits(game,front,side).filter(u=>["p","h"].includes(u.type) && u.foreign!=="soviet" && u.attack>0 && !u.out && !u.suppressed &&
+    !u.used && actualDistance(u.tile,tile)<=3);
+}
+
+function strike(game,action,front,tile,mode,sourceId,dice=rollD6) {
+  const {side,night,id} = action;
+  const c=cards[id];
+  const targets=stackAt(game,front,tile).filter(u=>u.side!==side);
+  if (night || !targets.length) return null;
+  let fireValue=0;
+  let hqBonus=0;
+  if (mode==="gun") {
+    const gun=availableGuns(game,front,side,tile).find(u=>u.id===sourceId);
+    if (!gun || !["gun","both"].includes(c.fire)) return null;
+    gun.used=true;
+    fireValue=gun.attack;
+    hqBonus=gun.type==="h"?1:0;
+  } else if (mode==="air") {
+    if (!["air","both"].includes(c.fire)||game.air[side][front]<1) return null;
+    game.air[side][front]--;
+    const priority=targets.some(u=>u.type==="h" || u.type==="b");
+    const cancellation=intercept(game,front,side,tile,priority);
+    if (cancellation) {
+      log(game,fields[front].name+" · "+ordnance[mode],tile+" "+cancellation,side);
+      return cancellation;
+    }
+    fireValue=side===ARAB?1:2;
+  } else if (mode==="missile") {
+    if (!action.missile?.[front]) return null;
+    action.missile[front]--;
+  } else return null;
+  const raw=dice();
+  const highest=Math.max(...targets.map(u=>u.quality));
+  const land=Number(["hills","rough"].includes(terrain(front,tile)) || Boolean(fields[front].towns[tile]));
+  const opening=Number(side===ARAB&&game.round===1);
+  const adjusted=raw+fireValue+hqBonus+opening-highest-land;
+  const code=adjusted>=6?2:[2,4,5].includes(adjusted)||raw===6?1:0;
+  const airLoss=mode==="air"&&adjusted<=2&&!(raw===6&&code===1)&&game.air[side][front]>0;
+  if (airLoss) game.air[side][front]--;
+  const chosen=targets.find(u=>u.id===action.strikeTarget&&!u.suppressed)??targets.find(u=>!u.suppressed&&combatTypes.has(u.type)) ?? targets.find(u=>!u.suppressed) ?? targets[0];
+  const hitList=code===2?targets:code===1?[chosen]:[];
+  hitList.forEach(u=>suppressUnit(game,u));
+  const result=`${tile} · 骰点 ${raw} → ${adjusted}（${rollsName[code]}${airLoss?"+A1":""}）${hitList.length?"，压制 "+hitList.map(u=>u.name).join("、"):""}。`;
+  log(game,fields[front].name+" · "+ordnance[mode],result,side);
+  return result;
+}
+
+function fightCandidates(game,action,front,tile,used=[]) {
+  const c=cards[action.id];
+  const next=adjacent(front,tile);
+  if (!c.attack || (action.night&&c.orders)) return [];
+  return mapUnits(game,front,action.side).filter(u=>
+    (combatTypes.has(u.type)||u.foreign==="soviet"&&u.type==="h") && unitStats(u).attack>0 && !u.suppressed && !used.includes(u.id) && next.includes(u.tile) &&
+    (!c.orders||(!u.out&&!coalition(u))) && (!u.foreign||foreignArea(u,front,tile)) &&
+    !(front==="sinai"&&waterEdge(front,u.tile,tile)&&!bridgesAcross(game,front,u.tile,tile).length));
+}
+
+function foreignArea(u,front,tile) {
+  if(u.foreign==="us") return front==="sinai"?!westCanal(tile):westCeasefire(tile);
+  return front==="sinai"?!deepSinai(tile):!westJordan(tile);
+}
+
+function satelliteApplies(game,action,front,tile) {
+  const marker=game.satellites[action.side];
+  return Boolean(marker&&marker.front===front&&!action.night&&actualDistance(marker.tile,tile)<=1);
+}
+
+function fightOdds(game,action,front,tile,attackers,support={}) {
+  const c=cards[action.id];
+  const target=stackAt(game,front,tile).filter(u=>u.side!==action.side);
+  const atk=sum(attackers.map(u=>Math.ceil(unitStats(u).attack*c.attack*(u.out?.5:1))));
+  const def=sum(target.map(u=>unitStats(u).defense));
+  const base=def?ratios.findLastIndex(ratio=>ratio<=atk/def):7;
+  const terrainType=terrain(front,tile);
+  const land=terrainType==="rough"||fields[front].towns[tile]?2:terrainType==="hills"?1:0;
+  const across=attackers.length>0&&attackers.every(u=>waterEdge(front,u.tile,tile))?1:0;
+  const dark=action.night?(action.side===ARAB?1:-1):0;
+  const combined=c.combined&&attackers.some(u=>u.type==="t")&&attackers.some(u=>["i","m"].includes(u.type))?1:0;
+  const gun=availableGuns(game,front,action.side,tile).find(u=>u.id===support.gun);
+  const defendingGun=availableGuns(game,front,other(action.side),tile)[0];
+  const defender=other(action.side);
+  const nearby=adjacent(front,tile);
+  const attackerZone=new Set(attackers.flatMap(u=>u.suppressed||terrain(front,u.tile)==="rough"?[]:
+    [u.tile,...adjacent(front,u.tile).filter(to=>!waterEdge(front,u.tile,to)&&!["water","rough"].includes(terrain(front,to)))]));
+  const surrounded=target.length>0&&nearby.length>0 && !nearby.some(to=>stackAt(game,front,to).some(u=>u.side===defender)) &&
+    nearby.every(to=>attackerZone.has(to)||stackAt(game,front,to).some(u=>u.side===action.side)||
+      target.every(u=>!legalEdge(game,u,tile,to)));
+  const sovietHQ=attackers.some(u=>u.foreign==="soviet"&&u.type==="h"&&!u.out&&!u.suppressed);
+  const gunUsed=Boolean(gun&&!action.night);
+  const totalShift=dark-(support.satellite>=5?0:land+across)+Number(support.satellite>=2&&support.satellite<=4)+combined+Number(gunUsed)* (gun?.attack??0) + Number(Boolean(support.air)&&!action.night)
+    - (support.defending?defendingGun?.attack??0:0) - Number(Boolean(support.antiTank)) + Number(surrounded) + Number(sovietHQ);
+  const column=Math.min(7,Math.max(0,base+totalShift));
+  const quality=Math.max(0,...attackers.map(u=>u.quality))-Math.max(0,...target.map(u=>u.quality));
+  const depressed=Number(target.some(u=>u.suppressed));
+  return { atk,def,base,column,quality,depressed,totalShift,ratio:ratioNames[column],target,gunUsed,gun,defendingGun };
+}
+
+function losses(game,units,count,enemy) {
+  const alive=()=>units.filter(u=>!u.dead);
+  const notes=[];
+  for (let i=0;i<count&&alive().length;i++) {
+    const charging=alive().sort((a,b)=>Number(!combatTypes.has(a.type))-Number(!combatTypes.has(b.type)) ||
+      Number(a.damaged)-Number(b.damaged)||a.quality-b.quality||a.defense-b.defense);
+    const u=charging[0];
+    if (u.damaged||singleFace.has(u.type)) {
+      removeUnit(game,u,enemy);
+      notes.push(u.name+" 消灭");
+    } else {
+      u.damaged=true;
+      notes.push(u.name+" 受损");
+    }
+  }
+  return notes;
+}
+
+function retreat(game,units,front,tile,hostiles,mandatory) {
+  const side=units[0].side;
+  const danger=control(game,front,other(side));
+  const options=adjacent(front,tile).filter(to=>!stackAt(game,front,to).some(u=>u.side!==side)).sort((a,b)=>
+    Number(danger.has(a))-Number(danger.has(b))||
+    Math.min(...hostiles.map(u=>actualDistance(b,u.tile??tile)))-Math.min(...hostiles.map(u=>actualDistance(a,u.tile??tile))));
+  const original=units.map(u=>u.tile);
+  const assignments=[];
+  for (const u of units) {
+    const to=!(u.type==="b"&&u.bridgeOpen)&&options.find(dest=>legalEdge(game,u,tile,dest)&&canStack(game,u,dest)&&
+      (!waterEdge(front,tile,dest)||road(front,tile,dest)||bridgesAcross(game,front,tile,dest).length));
+    assignments.push([u,to]);
+    if (to) u.tile=to;
+  }
+  if (!mandatory&&assignments.some(([,to])=>!to)) {
+    units.forEach((u,i)=>{u.tile=original[i];});
+    return [];
+  }
+  for (const [u,to] of assignments) {
+    if (!to) removeUnit(game,u,other(side));
+    else {
+      clearFixedAirDefense(game,u,[to]);
+      if(danger.has(to)) losses(game,[u],1,other(side));
+    }
+  }
+  return assignments.map(([u,to])=>u.name+(to?" 撤往 "+to:" 无处撤退"));
+}
+
+function retreatAttackers(game,attackers,target,hostiles) {
+  const front=attackers[0].front;
+  const side=attackers[0].side;
+  const zone=control(game,front,other(side));
+  const originals=attackers.map(u=>u.tile);
+  for(const u of attackers) {
+    const from=u.tile;
+    const to=adjacent(front,from).find(tile=>tile!==target&&!zone.has(tile)&&canStack(game,u,tile)&&legalEdge(game,u,from,tile)&&
+      (!waterEdge(front,from,tile)||road(front,from,tile)||bridgesAcross(game,front,from,tile).length)&&
+      hostiles.every(enemy=>!enemy.tile||actualDistance(tile,enemy.tile)>=actualDistance(from,enemy.tile)));
+    if(!to) {
+      attackers.forEach((v,i)=>{v.tile=originals[i];delete v.withdrawn;});
+      return false;
+    }
+    u.tile=to;
+    u.withdrawn=true;
+  }
+  for(const u of attackers) clearFixedAirDefense(game,u,[u.tile]);
+  return true;
+}
+
+function fight(game,action,entry,support={},dice=rollD6) {
+  const {front,tile}=entry;
+  const attackers=entry.ids.map(id=>findUnit(game,id)).filter(u=>u?.tile&&!u.dead);
+  const defender=other(action.side);
+  const goods=stockKey(action.side,front);
+  const order=cards[action.id].orders;
+  const stats=fightOdds(game,action,front,tile,attackers);
+  if (!stats.target.length||!attackers.length||stats.base<0||(order&&game.stock[goods]<attackers.length)) return null;
+  if (order) game.stock[goods]-=attackers.length;
+  const inflicted=[];
+  let die=null;
+  let adjusted=null;
+  let result="0/0";
+  const bridges=stats.target.filter(u=>u.type==="b").map(u=>({unit:u,open:u.bridgeOpen}));
+  if (!stats.def) {
+    for(const u of stats.target) {
+      removeUnit(game,u,action.side);
+      inflicted.push(u.name+" 消灭");
+    }
+  } else {
+    const air=Boolean(support.air && !action.night && game.air[action.side][front]>0 && attackers.some(u=>!u.out&&!coalition(u)));
+    let airWorks=air;
+    if (air) {
+      game.air[action.side][front]--;
+      airWorks=!intercept(game,front,action.side,tile,stats.target.some(u=>u.type==="h"));
+      inflicted.push(airWorks?"攻方空军支援":"攻方空军被拦截");
+    }
+    const defenseReady=!action.night && stats.target.some(u=>!u.out&&!coalition(u)) && stats.atk>=stats.def*2;
+    const hasGroundSupply=attackers.some(u=>!u.out&&!coalition(u));
+    const satellite=support.satellite&&satelliteApplies(game,action,front,tile)?dice():0;
+    if(satellite) {
+      game.satellites[action.side]=null;
+      inflicted.push("卫星骰点 "+satellite+(satellite>=5?"，取消地形修正":satellite>=2?"，右修一列":"，无修正"));
+    }
+    const arabStock=stockKey(ARAB,front);
+    const antiTank=action.side===ISRAEL&&!action.night&&attackers.every(u=>["t","m"].includes(u.type))&&
+      stats.target.some(u=>["i","m"].includes(u.type)&&!u.out&&!u.suppressed&&!coalition(u))&&game.stock[arabStock]>=2;
+    if(antiTank) {
+      game.stock[arabStock]-=2;
+      inflicted.push("阿方支出 2 物资投入反坦克支援");
+    }
+    const supportValues={air:airWorks,gun:hasGroundSupply?support.gun:null,defending:defenseReady,antiTank,satellite};
+    const values=fightOdds(game,action,front,tile,attackers,supportValues);
+    Object.assign(stats,values);
+    if (values.gunUsed) values.gun.used=true;
+    if (defenseReady && values.defendingGun) {
+      values.defendingGun.used=true;
+      inflicted.push("守方投入炮兵支援");
+    }
+    die=dice();
+    adjusted=Math.min(8,Math.max(0,die+values.quality+values.depressed));
+    result=combatTable[adjusted][values.column];
+    const [a,d]=result.split("/").map(value=>value==="-"?0:Number(value));
+    const attackerWithdraw=action.side===ISRAEL&&a>0&&attackers.every(u=>!u.suppressed)?
+      retreatAttackers(game,attackers,tile,stats.target):false;
+    inflicted.push(...losses(game,attackers,Math.max(0,a-Number(attackerWithdraw)),defender));
+    if(attackerWithdraw) inflicted.push("以方攻方单位撤退，抵消 1 点损失");
+    const fallback=defender===ISRAEL&&d>0&&stats.target.every(u=>!u.suppressed)?retreat(game,stats.target,front,tile,attackers,false):[];
+    inflicted.push(...fallback,...losses(game,stats.target,Math.max(0,d-Number(fallback.length>0)),action.side));
+    const remaining=stats.target.filter(u=>u.tile&&!u.dead);
+    if (defender===ARAB&&d>=2&&remaining.length) inflicted.push(...retreat(game,remaining,front,tile,attackers,true));
+  }
+  const cleared=!stackAt(game,front,tile).some(u=>u.side===defender);
+  const captured=bridges.find(({unit})=>unit.dead);
+  if(cleared&&action.side===ISRAEL&&captured) {
+    const pontoon=findUnit(game,"sinai-israel-Pontoon");
+    if(pontoon) {
+      Object.assign(pontoon,{tile,entry:null,rear:null,arrival:null,dead:false,suppressed:false,out:false,bridgeOpen:captured.open,crossed:0});
+      inflicted.push("以军缴获 "+captured.unit.name+"，放置己方舟桥");
+    }
+  }
+  const legalFirst=u=>u.tile&&!u.suppressed&&legalEdge(game,u,u.tile,tile)&&canStack(game,u,tile);
+  const advancing=!cleared||action.side===ISRAEL&&attackers.some(u=>u.withdrawn)?[]:attackers.filter(legalFirst);
+  const followingHQ=mapUnits(game,front,action.side).filter(u=>u.type==="h"&&!advancing.includes(u)&&
+    advancing.some(attacker=>attacker.tile===u.tile)&&legalFirst(u));
+  const advance=[...advancing,...followingHQ].map(u=>u.id);
+  const bonus=action.night||terrain(front,tile)!=="plain"||fields[front].towns[tile]?[]:
+    advancing.filter(u=>["t","m"].includes(u.type)&&!u.out&&!waterEdge(front,u.tile,tile)&&adjacent(front,u.tile).includes(tile)).map(u=>u.id);
+  for(const u of attackers) delete u.withdrawn;
+  const resultText=stats.def?`攻防比 ${stats.ratio}，骰点 ${die} → ${adjusted}，表结果 ${result}。`:"防御值为 0，直接处理守方算子。";
+  log(game,`${fields[front].name} · ${tile} 战斗`,resultText+inflicted.join("、"),action.side);
+  return { front,tile,advance,bonus,die,adjusted,result,notes:inflicted,resultText };
+}
+
+function addAir(game,action) {
+  const { side,id }=action;
+  const c=cards[id];
+  if (c.refit||c.air==="all") {
+    for (const front of fronts) game.air[side][front]=airMax[side][front];
+  } else if (c.air&&side===ISRAEL) {
+    for(let point=0;point<c.air*2;point++) {
+      const front=[...fronts].sort((a,b)=>(airMax[side][b]-game.air[side][b])-(airMax[side][a]-game.air[side][a]))[0];
+      if(game.air[side][front]>=airMax[side][front]) break;
+      game.air[side][front]++;
+    }
+  } else if (c.air) {
+    for(const front of fronts) game.air[side][front]=Math.min(airMax[side][front],game.air[side][front]+c.air);
+  }
+}
+
+function beginEffects(game,action) {
+  const c=cards[action.id];
+  if (c.council) game.councilCards[action.side]=true;
+  if (c.diplomacy) game.diplomacy=true;
+  addAir(game,action);
+  action.mobilize=action.side===ARAB?Object.fromEntries(fronts.map(f=>[f,c.mobilize??0])):{israel:(c.mobilize??0)*2};
+  action.restore=Object.fromEntries(fronts.map(f=>[f,c.restore==="all"||c.refit?99:c.restore??0]));
+  action.missile=Object.fromEntries(fronts.map(f=>[f,c.missile??0]));
+  action.moved=[];
+  action.declarations=[];
+  action.extraAsked=false;
+  if (c.refit) {
+    for(const u of game.units.filter(u=>u.side===action.side)) u.suppressed=false;
+    awardOptionalReserves(game,action);
+  }
+  if (c.grant && action.side===ISRAEL) stockAdd(game,"israel",c.grant*2);
+}
+
+function awardOptionalReserves(game,action) {
+  if(action.side===ARAB&&game.options.thirdMechanized) {
+    const group=game.units.filter(u=>u.reservePool==="thirdMechanized");
+    for(const u of group) {
+      u.reservePool=null;
+      u.rear="egypt";
+      putAtSource(game,u);
+    }
+    if(group.length) log(game,"埃及第 3 摩步师到达",group.map(u=>u.name+(u.entry?" → "+u.entry:" 留在后方")).join("、"),ARAB);
+  } else if(action.side===ISRAEL&&game.options.israeliReserves) {
+    const u=game.units.find(u=>u.reservePool==="israeliReserves");
+    if(!u) return;
+    u.reservePool=null;
+    u.rear="center";
+    log(game,"以军预备单位到达",u.name+" → 后方中部",ISRAEL);
+  }
+}
+
+function restorativeItems(game,action,front) {
+  const c=cards[action.id];
+  const result=[];
+  const {side}=action;
+  const enemy=control(game,front,other(side));
+  for (const u of game.units.filter(u=>u.front===front&&u.side===side)) {
+    const extra=Number(u.tile&&enemy.has(u.tile));
+    if (!u.dead&&u.tile&&u.used&&!u.out&&action.restore[front]>0&&
+      (u.type===(side===ARAB?"p":"h")||c.refit&&u.type==="d")) {
+      result.push({id:u.id,label:u.name+" 恢复",cost:(u.type==="d"?2:1)+extra,act:"restore"});
+    }
+    const sameHQ=u.tile&&stackAt(game,front,u.tile).some(v=>v.side===side&&v.type==="h"&&!v.out&&!v.suppressed);
+    const fieldRefit=c.fieldRefit&&!action.fieldUsed&&["t","m"].includes(u.type)&&sameHQ;
+    if (!u.dead&&u.damaged&&!u.out&&!coalition(u)&&(c.refit||c.reserveRefit||fieldRefit)) {
+      const local=side===ISRAEL||!u.tile||restriction(front,u.tile);
+      if (local&&(!u.tile||canStack(game,{...u,damaged:false},u.tile))) {
+        const supply=["i","a","x","n"].includes(u.type)?0:side===ARAB?1:2;
+        result.push({id:u.id,label:u.name+" 补员",cost:fieldRefit?0:Math.max(0,supply+extra-(c.discount??0)),act:"refit"});
+      }
+    }
+    if (u.dead&&!u.out&&!u.foreign&&(c.refit||c.rebuild)&&!coalition(u)) {
+      if (side===ISRAEL&&["i","m","t"].includes(u.type)) {
+        result.push({id:u.id,label:u.name+" 重建",cost:Math.max(0,(u.type==="i"?1:3)-(c.discount??0)),act:"rebuild"});
+      } else if(side===ARAB&&(u.division||["b","d"].includes(u.type))) {
+        result.push({id:u.id,label:(u.division?u.division+" 师编制":u.name)+" 重建",cost:u.division?5:u.type==="b"?4:2,act:"rebuild"});
+      } else if(side===ARAB&&game.options.independentRebuild&&combatTypes.has(u.type)&&u.type!=="a") {
+        result.push({id:u.id,label:u.name+" 独立单位重建",cost:3,act:"rebuild"});
+      }
+    }
+  }
+  if (c.refit&&side===ARAB) for (const b of game.batteries[front].filter(b=>!b.destroyed&&b.used&&!b.out)) {
+    result.push({id:b.tile,label:b.tile+" 固定防空恢复",cost:2+Number(enemy.has(b.tile)),act:"battery"});
+  }
+  return result;
+}
+
+function restoreItem(game,action,front,id,method) {
+  const item=restorativeItems(game,action,front).find(candidate=>candidate.id===id&&candidate.act===method);
+  const key=stockKey(action.side,front);
+  if (!item||item.cost>game.stock[key]) return false;
+  game.stock[key]-=item.cost;
+  if(method==="battery") game.batteries[front].find(b=>b.tile===id).used=false;
+  else {
+    const u=findUnit(game,id);
+    if (method==="restore") {
+      u.used=false;
+      action.restore[front]--;
+    } else if(method==="refit") {
+      u.damaged=false;
+      if(cards[action.id].fieldRefit) action.fieldUsed=true;
+    } else {
+      const rebuilds=u.division?game.units.filter(v=>v.front===front&&v.side===u.side&&v.division===u.division&&v.dead&&!v.out):[u];
+      for(const v of rebuilds) {
+        Object.assign(v,{dead:false,damaged:false,suppressed:false,used:false,rear:action.side===ISRAEL?"center":front==="sinai"?"egypt":"syria"});
+        if(action.side===ARAB) {
+          putAtSource(game,v);
+          if(v.type==="b") v.bridgeOpen=false;
+        }
+      }
+    }
+  }
+  log(game,item.label,`耗 ${item.cost} 物资。`,action.side);
+  return true;
+}
+
+const sovietArmor=[["39","t",6,2,5,2,3],["84","t",6,2,5,2,3],["135","t",6,2,5,2,3],["321G","m",4,5,5,2,3]];
+const sovietParatroops=[["98伞兵","x",3,4,4,3,3],["324伞兵","x",3,4,4,3,3],["苏军伞兵3","x",3,4,4,3,3]];
+const usParatroops=[["美军1","x",3,5,4,2,3],["美军2","x",3,5,4,2,3],["美军3","x",3,5,4,2,3]];
+
+function foreignReinforce(game,action) {
+  const c=cards[action.id];
+  if ((!c.para&&!c.armor)||action.extraAsked) return;
+  action.extraAsked=true;
+  const isArab=action.side===ARAB;
+  const count=c.para??c.armor;
+  if (game.intervention&&game.intervention!==action.side) {
+    action.foreignGoods=4*count;
+    if(!isArab) stockAdd(game,"israel",action.foreignGoods);
+    log(game,"大国单位改为物资","按大国介入规则，改获得 "+action.foreignGoods+" 物资。",action.side);
+    return;
+  }
+  const nation=isArab?"soviet":"us";
+  const owned=game.units.filter(u=>u.foreign===nation);
+  const specs=(isArab?(c.armor?sovietArmor:sovietParatroops):usParatroops)
+    .filter(([name])=>!owned.some(u=>u.name===name)).slice(0,count);
+  if(isArab&&c.para&&specs.length&&!owned.some(u=>u.type==="h")) specs.push(["苏军HQ","h",1,1,4,3,1]);
+  action.foreignPending=[];
+  for(const [name,type,attack,defense,move,quality,stack] of specs) {
+    const u={id:"foreign-"+action.side+"-"+name,name,type,typeName:{t:"装甲",m:"机步",x:"伞兵",h:"指挥部"}[type],
+      front:"golan",side:action.side,attack,defense,move,quality,stack,foreign:nation,dead:false,suppressed:false,
+      damaged:false,out:false,used:false,rear:null,aidPending:true};
+    game.units.push(u);
+    action.foreignPending.push(u.id);
+  }
+  if(action.side===ISRAEL) placePendingForeign(game,action);
+}
+
+const pendingForeign = (game,action)=>game.units.filter(u=>u.aidPending&&action.foreignPending?.includes(u.id));
+const foreignSources = (game,u,front)=>fields[front].sources.filter(source=>source.side===u.side&&
+  !stackAt(game,front,source.tile).some(v=>v.side!==u.side)).map(source=>({...source,front}));
+
+function parachuteGroup(game,u) {
+  const command=game.units.find(v=>v.foreign==="soviet"&&v.type==="h"&&v.aidPending);
+  return u.foreign==="soviet"&&u.type==="x"&&command?[u,command]:[u];
+}
+
+function dropZones(game,u,front) {
+  if(u.type!=="x"||game.intervention&&game.intervention!==u.side) return new Set();
+  const enemy=other(u.side);
+  const zoc=control(game,front,enemy);
+  return new Set([...fields[front].tiles].filter(tile=>terrain(front,tile)==="plain"&&!fields[front].towns[tile]&&
+    !zoc.has(tile)&&!stackAt(game,front,tile).length&&foreignArea(u,front,tile)&&
+    !(enemy===ARAB&&airDefense(game,front,tile))));
+}
+
+function placeForeign(game,u,front,tile,drop=false) {
+  if(!u?.aidPending) return false;
+  const group=parachuteGroup(game,u);
+  if(drop) {
+    if(!dropZones(game,u,front).has(tile)) return false;
+    for(const v of group) {
+      Object.assign(v,{front,tile,aidPending:false});
+      clearFixedAirDefense(game,v,[tile]);
+    }
+    game.intervention??=u.side;
+    log(game,"大国伞兵登场",fields[front].name+" · "+tile+" · "+group.map(v=>v.name).join("、"),u.side);
+    return true;
+  }
+  const source=foreignSources(game,u,front).find(s=>s.tile===tile);
+  if(!source) return false;
+  for(const v of group) {
+    sourceEquip(game,v,source);
+    v.aidPending=false;
+  }
+  log(game,"援助单位待命",group.map(v=>v.name).join("、")+" → "+fields[front].name+" "+source.name+" 补给源。",u.side);
+  return true;
+}
+
+function placePendingForeign(game,action) {
+  for(const u of pendingForeign(game,action)) {
+    if(!u.aidPending) continue;
+    const source=[...fronts].reverse().flatMap(front=>foreignSources(game,u,front))[0];
+    if(source) placeForeign(game,u,source.front,source.tile);
+    else {
+      u.aidPending=false;
+      u.rear=u.side===ARAB?"syria":"center";
+      log(game,"补给源暂不可用",u.name+" 留在后方。",u.side);
+    }
+  }
+}
+
+
+const unitPriority=u=>["t","m"].includes(u.type)?3:u.type==="h"?2:1;
+const frontGoal={sinai:"G13",golan:"G11"};
+
+function nextRear(u,front) {
+  if(u.rear==="center") return front==="sinai"?"south":"north";
+  return null;
+}
+
+function actReserve(game,u,front) {
+  const slots=availableSources(u);
+  if (slots.some(s=>s.front===front)) {
+    const best=slots.filter(s=>s.front===front).sort((a,b)=>actualDistance(a.tile,frontGoal[front])-actualDistance(b.tile,frontGoal[front]));
+    for(const source of best) {
+      if(!sourceEquip(game,u,source)) continue;
+      log(game,u.name+" 待进场",fields[source.front].name+"补给源 "+source.name,ISRAEL);
+      return true;
+    }
+  }
+  const target=nextRear(u,front);
+  if (!target) return false;
+  u.rear=target;
+  log(game,u.name+" 后方调动",target==="north"?"中部 → 北部":"中部 → 南部",ISRAEL);
+  return true;
+}
+
+function rearOpponent(game) {
+  const units=game.units.filter(u=>u.side===ISRAEL&&u.rear);
+  for(const u of units) actReserve(game,u,u.front);
+  game.rearDone=true;
+}
+
+function gatherIntelligence(game,front,side) {
+  const objectives=Object.entries(fields[front].points).filter(([,p])=>p[side]>0).map(([tile])=>tile);
+  const enemies=mapUnits(game,front,other(side)).filter(u=>combatTypes.has(u.type));
+  return [...new Set([...objectives, ...enemies.map(u=>u.tile)])];
+}
+
+function cpuMove(game,action,front,afterMob=false) {
+  const c=cards[action.id];
+  const group=game.units.filter(u=>u.front===front&&u.side===ISRAEL&&(u.tile||u.entry)&&!u.dead)
+    .sort((a,b)=>Number(Boolean(b.entry))-Number(Boolean(a.entry))||unitPriority(b)-unitPriority(a));
+  const intelligence=gatherIntelligence(game,front,ISRAEL);
+  let made=0;
+  for(const u of group) {
+    if(made>=4 || !["t","m","h","i","x","b","n"].includes(u.type)) continue;
+    const from=u.tile??u.entry;
+    const targets=intelligence.filter(tile=>!stackAt(game,front,tile).some(v=>v.side===ISRAEL&&v.id!==u.id&&combatTypes.has(v.type)));
+    if(u.tile&&fields[front].points[u.tile]?.israel&&combatTypes.has(u.type)) continue;
+    const routes=possibleMoves(game,u,afterMob?.5:c.move,afterMob?false:action.night);
+    if(u.type==="b") {
+      const sites=fields[front].sites;
+      if(!sites.length||activeBridge(u)||sites.includes(from)) continue;
+      const near=tile=>Math.min(...sites.map(site=>actualDistance(tile,site)));
+      const best=[...routes.values()].filter(route=>near(route.tile)<near(from)).sort((a,b)=>near(a.tile)-near(b.tile))[0];
+      if(best) {
+        move(game,u,best);
+        log(game,"以军舟桥机动",from+" → "+best.tile,ISRAEL);
+        made++;
+      }
+      continue;
+    }
+    let best=null;
+    let grade=0;
+    for(const route of routes.values()) {
+      const nearby=targets.length?Math.min(...targets.map(target=>actualDistance(route.tile,target))):8;
+      const base=targets.length?Math.min(...targets.map(target=>actualDistance(from,target))):8;
+      const point=fields[front].points[route.tile]?.israel??0;
+      const score=base-nearby + point*2.4 + Number(Boolean(u.entry))*3 - route.cost*.07;
+      if(score>grade) {grade=score;best=route;}
+    }
+    if(best) {
+      move(game,u,best);
+      log(game,fields[front].name+" · "+u.name+" 移动",from+" → "+best.tile,ISRAEL);
+      made++;
+    }
+  }
+}
+
+function cpuFire(game,action,front) {
+  const c=cards[action.id];
+  if(action.night||!c.fire) return;
+  const targets=mapUnits(game,front,ARAB).filter(u=>!u.suppressed&&combatTypes.has(u.type)&&
+    (front==="sinai"?!westCanal(u.tile):westCeasefire(u.tile)||actualDistance(u.tile,"G11")<=2))
+    .sort((a,b)=>Number(Boolean(fields[front].points[b.tile]))-Number(Boolean(fields[front].points[a.tile]))||b.attack-a.attack);
+  for(const target of targets.slice(0,2)) {
+    const gun=["gun","both"].includes(c.fire)&&availableGuns(game,front,ISRAEL,target.tile)[0];
+    if(gun) strike(game,action,front,target.tile,"gun",gun.id);
+    else if(game.air.israel[front]>0&&["air","both"].includes(c.fire)) {
+      strike(game,action,front,target.tile,"air");
+      break;
+    }
+  }
+}
+
+function adjustIsraeliBridges(game) {
+  const choice=mapUnits(game,"sinai",ISRAEL).filter(u=>u.type==="b"&&!u.suppressed&&fields.sinai.sites.includes(u.tile));
+  const open=choice.slice(0,Math.floor(game.stock.israel/2));
+  adjustBridges(game,open.map(u=>u.id),ISRAEL);
+  if(open.length) log(game,"以军展开舟桥",open.map(u=>u.tile).join("、")+" · 支出 "+open.length*2+" 物资。",ISRAEL);
+}
+
+function cpuBattle(game,action,front) {
+  const c=cards[action.id];
+  if(!c.attack) return;
+  const targets=[...new Set(mapUnits(game,front,ARAB).map(u=>u.tile))];
+  let best;
+  for(const tile of targets) {
+    const attackers=fightCandidates(game,action,front,tile);
+    if(!attackers.length) continue;
+    const values=fightOdds(game,action,front,tile,attackers);
+    if(values.base<1) continue;
+    const grade=values.column+(fields[front].points[tile]?.israel??0)+values.quality/4;
+    if(!best||grade>best.grade) best={tile,attackers,grade};
+  }
+  if(!best) return;
+  const gun=availableGuns(game,front,ISRAEL,best.tile)[0];
+  const satellite=satelliteApplies(game,action,front,best.tile);
+  const report=fight(game,action,{front,tile:best.tile,ids:best.attackers.map(u=>u.id)},{gun:gun?.id,satellite});
+  const advance=report?.advance[0]&&findUnit(game,report.advance[0]);
+  if(advance && (fields[front].points[report.tile]?.israel||actualDistance(report.tile,frontGoal[front])<actualDistance(advance.tile,frontGoal[front]))) {
+    advance.tile=report.tile;
+    clearFixedAirDefense(game,advance,[report.tile]);
+    log(game,advance.name+" 挺进",tileName(front,report.tile)+" · "+report.tile,ISRAEL);
+  }
+}
+
+function applyCpuCard(game,action) {
+  beginEffects(game,action);
+  const c=cards[action.id];
+  if(c.satellite&&!action.night) game.satellites.israel={front:"golan",tile:frontGoal.golan};
+  foreignReinforce(game,action);
+  if(action.mobilize.israel) {
+    const eligible=game.units.filter(u=>u.side===ISRAEL&&u.rear)
+      .sort((a,b)=>Number(a.rear==="center")-Number(b.rear==="center")||unitPriority(b)-unitPriority(a));
+    for(const u of eligible) {
+      if(!action.mobilize.israel) break;
+      if(actReserve(game,u,u.front)) action.mobilize.israel--;
+    }
+  }
+  for(const front of fronts) {
+    for(const item of restorativeItems(game,action,front).slice(0,c.refit?3:2)) restoreItem(game,action,front,item.id,item.act);
+    cpuFire(game,action,front);
+    if(c.move) cpuMove(game,action,front);
+    if(c.attack) cpuBattle(game,action,front);
+    if(c.kind==="动员"&&game.options.mobilizationMove) cpuMove(game,action,front,true);
+  }
+  spendCard(game,action);
+}
+
+
+function stepsFor(game,action) {
+  const c=cards[action.id];
+  const steps=[];
+  if ((c.grant || action.foreignGoods) && action.side===ARAB) steps.push("grant");
+  if (c.mobilize || c.para || c.armor) steps.push("mobilize");
+  if (c.refit || c.restore || c.rebuild || c.fieldRefit || c.reserveRefit) steps.push("restore");
+  if (c.satellite) steps.push("satellite");
+  if (c.fire&&!action.night) steps.push("fire");
+  if (choicesFor(c,action.night)) steps.push("choice");
+  if (c.flex) steps.push("order");
+  if (c.attackFirst) steps.push("declare","move");
+  else {
+    if (c.move) steps.push("move");
+    if (c.attack&&!(action.night&&c.orders)) steps.push("declare");
+  }
+  if(game.options.mobilizationMove&&c.kind==="动员") steps.push("move");
+  return steps.length?steps:["read"];
+}
+
+function startPlayer(game,action) {
+  beginEffects(game,action);
+  foreignReinforce(game,action);
+  action.steps=stepsFor(game,action);
+  action.index=0;
+  action.sub=action.steps[0];
+  action.grantTotal=(cards[action.id].grant??0)*2+(action.foreignGoods??0);
+  action.allocation=Math.floor(action.grantTotal/2);
+  action.choices={sinai:"move",golan:"attack"};
+  action.tool=cards[action.id].fire==="gun"?"gun":"air";
+  action.candidates=[];
+  action.gun=null;
+  action.air=false;
+  action.useSatellite=false;
+}
+
+const mapMode = (action,option,front) =>
+  !choicesFor(cards[action.id],action.night) || action.choices[front]===option;
+const movedAlready=(game,id)=>game.card?.moved.includes(id);
+const unitAvailable=(game,u)=>u.side===ARAB&&!u.dead&&!movedAlready(game,u.id)&&
+  !(cards[game.card.id].orders&&u.coalition);
+const battleUnitIDs=action=>action.declarations.flatMap(d=>d.ids);
+
+function validTargets(game,front) {
+  const action=game.card;
+  if (!action) return new Set();
+  const hostile=[...new Set(mapUnits(game,front,ISRAEL).map(u=>u.tile))];
+  if (action.sub==="fire") {
+    if (action.tool==="air"&&game.air.arab[front]>0) return new Set(hostile);
+    if (action.tool==="gun") return new Set(hostile.filter(tile=>availableGuns(game,front,ARAB,tile).length));
+    if (action.tool==="missile"&&action.missile[front]>0) return new Set(hostile);
+  }
+  if(action.sub==="satellite") return new Set(fields[front].tiles);
+  if(action.sub==="mobilize"&&action.dropMode) {
+    const u=findUnit(game,action.foreignSelected);
+    return u?.aidPending?dropZones(game,u,front):new Set();
+  }
+  if(action.sub==="result"&&action.followUnit) {
+    const u=findUnit(game,action.followUnit);
+    return u?.front===front?advanceDestinations(game,action,u.id):new Set();
+  }
+  if(action.sub==="declare"&&mapMode(action,"attack",front)) {
+    const used=battleUnitIDs(action);
+    return new Set(hostile.filter(tile=>!action.declarations.some(d=>d.front===front&&d.tile===tile)&&
+      fightCandidates(game,action,front,tile,used).length));
+  }
+  return new Set();
+}
+
+function declare(game) {
+  const action=game.card;
+  const entry=action.aim;
+  if(!entry) return "先选择一个高亮目标。";
+  const {front,tile}=entry;
+  const ids=action.candidates;
+  const who=fightCandidates(game,action,front,tile,battleUnitIDs(action)).filter(u=>ids.includes(u.id));
+  if(!who.length) return "勾选至少一个可用参战单位。";
+  if(cards[action.id].orders) {
+    const demanded=action.declarations.filter(d=>d.front===front).flatMap(d=>d.ids).length+who.length;
+    if(demanded>game.stock[stockKey(ARAB,front)]) return "本战场物资不足，请减少参战单位。";
+  }
+  if(fightOdds(game,action,front,tile,who).base<0) return "基础攻防比低于 1:2，请调整参战单位。";
+  action.declarations.push({front,tile,ids:who.map(u=>u.id)});
+  action.candidates=[];
+  action.aim=null;
+  log(game,"宣告战斗",fields[front].name+" · "+tile+" · "+who.map(u=>u.name).join("、"),ARAB);
+  return "";
+}
+
+function advanceAction(game) {
+  const action=game.card;
+  if(action.sub==="mobilize") placePendingForeign(game,action);
+  action.aim=null;
+  action.candidates=[];
+  const next=action.steps[++action.index];
+  if(next) action.sub=next;
+  else spendCard(game,action);
+}
+
+function startRoll(game) {
+  const action=game.card;
+  if(!action.declarations.length) return advanceAction(game);
+  action.fightIndex=0;
+  action.sub="roll";
+  action.gun=null;
+  action.air=false;
+  action.useSatellite=false;
+  return action.declarations[0];
+}
+
+function resolvePlayerFight(game) {
+  const action=game.card;
+  const entry=action.declarations[action.fightIndex];
+  action.result=fight(game,action,entry,{air:action.air,gun:action.gun,satellite:action.useSatellite}) ??
+    {front:entry.front,tile:entry.tile,resultText:"此战已无合资格攻方或守方。",notes:[],advance:[],bonus:[]};
+  action.gun=null;
+  action.air=false;
+  action.useSatellite=false;
+  action.advanced=[];
+  action.extraAdvanced=[];
+  action.followUnit=null;
+  action.sub="result";
+}
+
+function finishFight(game) {
+  const action=game.card;
+  action.fightIndex++;
+  if(action.fightIndex<action.declarations.length) {
+    action.sub="roll";
+    return action.declarations[action.fightIndex];
+  }
+  advanceAction(game);
+}
+
+function occupy(game,id) {
+  const a=game.card;
+  const {front,tile,advance}=a.result;
+  const u=findUnit(game,id);
+  if(!advance.includes(id)||a.advanced.includes(id)||!u.tile||!canStack(game,u,tile)) return false;
+  u.tile=tile;
+  a.advanced.push(id);
+  log(game,u.name+" 挺进",fields[front].name+" · "+tileName(front,tile)+" "+tile,ARAB);
+  return true;
+}
+
+function advanceDestinations(game,action,id) {
+  if(!action.result.bonus?.includes(id)||!action.advanced.includes(id)||action.extraAdvanced?.includes(id)) return new Set();
+  const u=findUnit(game,id);
+  if(u?.tile!==action.result.tile) return new Set();
+  return new Set(adjacent(u.front,u.tile).filter(tile=>legalEdge(game,u,u.tile,tile)&&canStack(game,u,tile)));
+}
+
+function continueAdvance(game,id,tile) {
+  const action=game.card;
+  if(!advanceDestinations(game,action,id).has(tile)) return false;
+  const u=findUnit(game,id);
+  u.tile=tile;
+  action.extraAdvanced.push(id);
+  action.followUnit=null;
+  log(game,u.name+" 额外挺进",fields[u.front].name+" · "+tile,ARAB);
+  return true;
+}
+
+function entryUnits(game,front) {
+  return game.units.filter(u=>u.front===front&&u.side===ARAB&&u.entry&&!u.tile&&!u.dead);
+}
+
+function surplus(game) {
+  return game.spare.reduce((total,id)=>total+resourceValue(game,id)*2,0);
+}
+
+
+const radius = 27;
+const hexHeight = Math.sqrt(3)*radius;
+const margin = 32;
+const center = tile => {
+  const [c,r] = coord(tile);
+  return [margin+c*radius*1.5,margin+(r-1-(c%2)/2)*hexHeight];
+};
+const colors = { plain:"#d9c5a0", hills:"#b1ae81", rough:"#6d7062", water:"#548994", marsh:"#9aab91" };
+const counterType = { t:"armor",m:"mechanized",i:"infantry",g:"garrison" };
+const simpleType = { p:"炮",b:"桥",d:"防",h:"HQ",x:"突",a:"两栖" };
+
+function hex(ctx,tile,inset=1) {
+  const [x,y]=center(tile);
+  ctx.beginPath();
+  for(let i=0;i<6;i++) {
+    const angle=i*Math.PI/3;
+    ctx.lineTo(x+radius*inset*Math.cos(angle),y+radius*inset*Math.sin(angle));
+  }
+  ctx.closePath();
+}
+
+function stroke(ctx,points) {
+  ctx.beginPath();
+  ctx.moveTo(...points[0]);
+  for (const point of points.slice(1)) ctx.lineTo(...point);
+  ctx.stroke();
+}
+
+function seam(ctx,tile,next) {
+  const [x,y]=center(tile);
+  const [a,b]=center(next);
+  const mid=[(x+a)/2,(y+b)/2];
+  const angle=Math.atan2(b-y,a-x)+Math.PI/2;
+  const delta=[Math.cos(angle)*(radius/2+.4),Math.sin(angle)*(radius/2+.4)];
+  stroke(ctx,[[mid[0]-delta[0],mid[1]-delta[1]],[mid[0]+delta[0],mid[1]+delta[1]]]);
+}
+
+function paintTerrain(ctx,field,width,height) {
+  const land=ctx.createLinearGradient(0,0,width,height);
+  land.addColorStop(0,field.front==="sinai"?"#b7a47d":"#9da483");
+  land.addColorStop(1,"#8c876c");
+  ctx.fillStyle=land;
+  ctx.fillRect(0,0,width,height);
+  for (const tile of field.tiles) {
+    const kind=terrain(field.front,tile);
+    const [x,y]=center(tile);
+    const [c,r]=coord(tile);
+    hex(ctx,tile,1.017);
+    const gradient=ctx.createLinearGradient(x-radius,y-radius,x+radius,y+radius);
+    gradient.addColorStop(0,colors[kind]);
+    gradient.addColorStop(1,kind==="water"?"#40808c":kind==="rough"?"#565b52":kind==="hills"?"#a69e79":"#c9b68f");
+    ctx.fillStyle=gradient;
+    ctx.fill();
+    ctx.strokeStyle="#55563c59";
+    ctx.lineWidth=.75;
+    ctx.stroke();
+    ctx.save();
+    ctx.clip();
+    const slopes=kind==="hills"||kind==="rough";
+    ctx.strokeStyle=slopes?"#454e3c43":kind==="water"?"#b0ced240":"#f5e4bf4f";
+    ctx.lineWidth=.65;
+    for(let line=0;line<(slopes?9:4);line++) {
+      ctx.beginPath();
+      for(let step=0;step<16;step++) {
+        const tx=x-radius+step*3.9;
+        const ty=y-radius+line*(slopes?6.1:15)+Math.sin(step/2.3+r*.8+c*.6)*(slopes?4:1.3);
+        ctx.lineTo(tx,ty);
+      }
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+  ctx.lineCap="round";
+  for(const tile of field.tiles) {
+    for(const next of adjacent(field.front,tile).filter(k=>k>tile)) {
+      const water=waterEdge(field.front,tile,next);
+      const left=field.front==="sinai"?deepSinai:westCeasefire;
+      if(water) {
+        ctx.lineWidth=5;
+        ctx.strokeStyle="#447d8d";
+        seam(ctx,tile,next);
+        ctx.lineWidth=1.05;
+        ctx.strokeStyle="#98bfbd";
+        seam(ctx,tile,next);
+      }
+      if(left(tile)!==left(next)) {
+        ctx.lineWidth=1.75;
+        ctx.strokeStyle=field.front==="sinai"?"#7c6246":"#f3e5c7";
+        ctx.setLineDash([4,3]);
+        seam(ctx,tile,next);
+        ctx.setLineDash([]);
+      }
+      if(restriction(field.front,tile)!==restriction(field.front,next)) {
+        ctx.lineWidth=1.45;
+        ctx.strokeStyle="#98584e";
+        ctx.setLineDash([3,4]);
+        seam(ctx,tile,next);
+        ctx.setLineDash([]);
+      }
+      if(road(field.front,tile,next)) {
+        ctx.lineWidth=2.9;
+        ctx.strokeStyle="#77664c9e";
+        stroke(ctx,[center(tile),center(next)]);
+        ctx.lineWidth=1.3;
+        ctx.strokeStyle="#fcf0cd";
+        stroke(ctx,[center(tile),center(next)]);
+      }
+    }
+  }
+  ctx.fillStyle="#2e4937";
+  ctx.textAlign="right";
+  ctx.font="600 11px monospace";
+  ctx.fillText("N ↑",width-12,16);
+}
+
+function makeCanvas(width,height) {
+  const canvas=document.createElement("canvas");
+  canvas.width=width*2;
+  canvas.height=height*2;
+  canvas.setAttribute("aria-hidden","true");
+  const ctx=canvas.getContext("2d");
+  ctx.scale(2,2);
+  return [canvas,ctx];
+}
+
+function initBoards(root,onTile) {
+  const boards={};
+  for (const front of fronts) {
+    const field=fields[front];
+    const all=[...field.tiles];
+    const width=Math.ceil(Math.max(...all.map(t=>center(t)[0]))+margin);
+    const height=Math.ceil(Math.max(...all.map(t=>center(t)[1]))+margin);
+    const section=document.createElement("section");
+    section.className="front scenario-front";
+    section.dataset.front=front;
+    const view=document.createElement("div");
+    view.className="map-scroll";
+    view.tabIndex=0;
+    view.setAttribute("aria-label",field.name+"地图，可滚动");
+    const visual=document.createElement("div");
+    visual.className="scenario-map";
+    visual.style.setProperty("--map-width",width+"px");
+    visual.style.setProperty("--map-height",height+"px");
+    const [ground,painter]=makeCanvas(width,height);
+    paintTerrain(painter,field,width,height);
+    const [overlay,ctx]=makeCanvas(width,height);
+    overlay.className="map-overlay";
+    const grid=document.createElement("div");
+    grid.className="map-grid";
+    const buttons=new Map();
+    for(const tile of all) {
+      const button=document.createElement("button");
+      button.type="button";
+      button.className="scenario-tile";
+      button.dataset.tile=tile;
+      const [x,y]=center(tile);
+      button.style.left=x/width*100+"%";
+      button.style.top=y/height*100+"%";
+      button.style.width=2*radius/width*100+"%";
+      button.style.height=hexHeight/height*100+"%";
+      button.tabIndex=tile===field.focus?0:-1;
+      grid.append(button);
+      buttons.set(tile,button);
+    }
+    grid.addEventListener("click",event=>{
+      const button=event.target.closest("[data-tile]");
+      if(button) onTile(front,button.dataset.tile);
+    });
+    grid.addEventListener("focusin",event=>{
+      const button=event.target.closest("[data-tile]");
+      if(!button) return;
+      const old=grid.querySelector('[tabindex="0"]');
+      if(old) old.tabIndex=-1;
+      button.tabIndex=0;
+    });
+    grid.addEventListener("keydown",event=>{
+      if(!["ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(event.key)) return;
+      const button=event.target.closest("[data-tile]");
+      if(!button) return;
+      const tile=button.dataset.tile;
+      const [c,r]=coord(tile);
+      const arrows={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]};
+      const [dc,dr]=arrows[event.key];
+      const neighbor=adjacent(front,tile).find(to=>{
+        const [x,y]=coord(to);
+        return dc?x===c+dc&&y===r:x===c&&y===r+dr;
+      });
+      if(neighbor) {
+        event.preventDefault();
+        buttons.get(neighbor).focus();
+      }
+    });
+    visual.append(ground,overlay,grid);
+    view.append(visual);
+    section.append(view);
+    root.append(section);
+    boards[front]={section,view,visual,buttons,ctx,width,height};
+  }
+  return boards;
+}
+
+function focusBoard(board,tile) {
+  const element=board.buttons.get(tile);
+  if (!element) return;
+  const x=element.offsetLeft-board.view.clientWidth/2;
+  const y=element.offsetTop-board.view.clientHeight/2;
+  board.view.scrollTo({left:Math.max(0,x),top:Math.max(0,y),behavior:"instant"});
+}
+
+function counter(u,count) {
+  const status=u.out?"断":u.suppressed?"压":u.damaged?"损":u.used?"用":u.type==="b"&&!activeBridge(u)?"机":"";
+  const v=unitStats(u);
+  const glyph=counterType[u.type]?`<span class="type ${counterType[u.type]}"></span>`:`<span class="special-type">${simpleType[u.type]??""}</span>`;
+  const stats=u.type==="d"?"A":u.type==="b"?"舟桥":(u.used && ["h","p"].includes(u.type)?"U":v.attack)+"·"+v.defense+"·"+v.move;
+  return `<span class="counter tile-counter ${u.side}${count>1?" stacked":""}"><span class="unit-name">${u.display??u.name}</span>
+    ${glyph}<span class="unit-quality">${v.quality}</span><span>${stats}</span>
+    ${count>1?`<span class="token-count">${count}</span>`:""}${status?`<span class="token-status">${status}</span>`:""}</span>`;
+}
+
+function plotRoute(ctx,path,color,dashed=false) {
+  if(!path?.length) return;
+  ctx.lineCap="round";
+  ctx.lineJoin="round";
+  if(path.length>1) {
+    ctx.lineWidth=5;
+    ctx.strokeStyle="#f3e6bf";
+    stroke(ctx,path.map(center));
+    ctx.setLineDash(dashed?[5,5]:[]);
+    ctx.lineWidth=2.8;
+    ctx.strokeStyle=color;
+    stroke(ctx,path.map(center));
+    ctx.setLineDash([]);
+  }
+  for(const tile of [path[0],path.at(-1)]) {
+    ctx.beginPath();
+    ctx.arc(...center(tile),9,0,Math.PI*2);
+    ctx.strokeStyle=color;
+    ctx.lineWidth=2;
+    ctx.stroke();
+  }
+}
+
+function drawBoards(boards,game,view) {
+  for(const [front,board] of Object.entries(boards)) {
+    const {ctx,width,height,buttons}=board;
+    const field=fields[front];
+    board.section.hidden=front!==view.front;
+    board.visual.style.setProperty("--zoom",view.zoom[front]);
+    if(board.section.hidden) continue;
+    ctx.clearRect(0,0,width,height);
+    const selections=view.controls?.[front];
+    const stacks=new Map();
+    for(const u of mapUnits(game,front)) {
+      if(!stacks.has(u.tile)) stacks.set(u.tile,[]);
+      stacks.get(u.tile).push(u);
+    }
+    for(const [tile,button] of buttons) {
+      const pile=stacks.get(tile)??[];
+      const selected=view.selected?.front===front&&view.selected.tile===tile;
+      const unit=pile.find(u=>u.id===view.unit)??pile.find(u=>!["d","b","p","h"].includes(u.type))??pile[0];
+      const arrow=selections?.arab.has(tile);
+      const blue=selections?.israel.has(tile);
+      if(arrow||blue) {
+        hex(ctx,tile,.94);
+        ctx.fillStyle=arrow&&blue?"#8664877a":blue?"#34688966":"#ac515079";
+        ctx.fill();
+      }
+      const point=field.points[tile];
+      const source=field.sources.find(s=>s.tile===tile);
+      const anti=game.batteries[front].find(b=>b.tile===tile);
+      const legal=view.moves?.has(tile);
+      const target=view.targets?.has(tile);
+      const declared=game.card?.declarations.some(d=>d.front===front&&d.tile===tile);
+      const bridge=pile.find(u=>u.type==="b");
+      button.className="scenario-tile"+(selected?" selected":"")+(legal?" legal":"")+(target?" target":"")+(declared?" declared":"");
+      button.setAttribute("aria-pressed",String(selected));
+      const name=tileName(front,tile);
+      const detail=[tile, name===tile?"":name, terrainNames[terrain(front,tile)],pile.map(u=>u.name).join("、"),
+        source?"补给源 "+source.name:"",target?"可选目标":"",legal?"可移动至此":""].filter(Boolean).join("，");
+      button.setAttribute("aria-label",detail);
+      button.title=detail;
+      const marker=point?`<i class="point-mark" aria-hidden="true"></i>`:"";
+      const supply=source?`<i class="entry-mark ${source.side}" aria-hidden="true">${source.name}</i>`:"";
+      const protection=anti?`<i class="battery-mark${anti.used||anti.out||anti.destroyed?" used":""}" aria-hidden="true">${anti.destroyed?"×":"防"}</i>`:"";
+      const crossing=bridge&&activeBridge(bridge)?'<i class="water-mark" aria-hidden="true">桥</i>':"";
+      const satellite=Object.values(game.satellites).some(s=>s?.front===front&&s.tile===tile)?'<i class="satellite-mark" aria-hidden="true">卫</i>':"";
+      const label=field.towns[tile]?`<span class="town-name">${field.towns[tile]}</span>`:"";
+      const markup=`<span class="grid-address">${tile}</span>${unit?counter(unit,pile.length):""}${marker}${supply}${protection}${crossing}${satellite}${label}`;
+      if(button.innerHTML!==markup) button.innerHTML=markup;
+    }
+    const current=view.selected?.front===front&&view.selected.tile;
+    if(view.trace&&current) plotRoute(ctx,pathToSource(view.trace,current),"#3d654c",true);
+    if(view.path?.front===front) plotRoute(ctx,view.path.tiles,"#846328");
+  }
+}
+
+function defaultFocus(front,round) {
+  return front==="sinai"?(round===1?"F09":"G13"):"G11";
+}
+
+
+const $=id=>document.getElementById(id);
+const storeKey="david-khanjar-scenario-five";
+const createView=()=>({front:"sinai",zoom:{sinai:1.22,golan:1.22},selected:null,unit:null,path:null,
+  zoc:false,supply:false,notice:"",jump:null,allocation:0,deploy:null,aid:[],logLimit:80});
+let game=loadGame();
+let view=createView();
+let boards=initBoards($("maps"),mapClick);
+view.jump=defaultFocus(view.front,game.round);
+
+function loadGame() {
+  try {
+    const saved=upgradeGame(JSON.parse(localStorage.getItem(storeKey)));
+    if(saved) return saved;
+  } catch { /* The game remains playable when storage is unavailable. */ }
+  return newGame();
+}
+
+const btn=(act,text,style="secondary",value="",disabled=false)=>
+  `<button type="button" class="${style}" data-action="${act}"${value?` data-value="${value}"`:""}${disabled?" disabled":""}>${text}</button>`;
+const main=(act,text,disabled=false)=>btn(act,text+'<span aria-hidden="true">→</span>',"primary","",disabled);
+const call=(text,style="")=>`<div class="callout ${style}">${text}</div>`;
+const selectBtn=(act,text,value,current)=>`<button type="button" class="chip${current?" selected-tool":""}" data-action="${act}" data-value="${value}" aria-pressed="${current}">${text}</button>`;
+const complete=(text="完成这一项")=>main("advance-card",text);
+
+function render() {
+  const current=document.activeElement;
+  const focused=current?.dataset.action;
+  const focusedValue=current?.dataset.value;
+  renderCalendar();
+  renderTracks();
+  renderHand();
+  renderCoach();
+  renderResources();
+  renderInspector();
+  renderLogs();
+  renderMap();
+  if (focused && !current.isConnected) {
+    [...document.querySelectorAll("[data-action]")].find(node=>node.dataset.action===focused&&node.dataset.value===focusedValue)
+      ?.focus({preventScroll:true});
+  }
+  try {localStorage.setItem(storeKey,JSON.stringify(game));} catch { /* Optional persistence. */ }
+}
+
+function renderCalendar() {
+  const reinforcementTurns=new Set([3,4,5,6,7,8]);
+  const turns=Array.from({length:finalRound},(_,index)=>{
+    const round=index+1;
+    const completed=game.roundsHistory.some(item=>item.round===round);
+    const marks=[reinforcementTurns.has(round)?"增援":"",councilRounds.has(round)?"安理会":""].filter(Boolean);
+    const marker=(councilRounds.has(round)?"◇":"")+(reinforcementTurns.has(round)?"＋":"");
+    const beyond=round>game.officialEnd;
+    return `<div class="calendar-turn ${round===game.round?"current":completed?"done":""}${beyond?" beyond":""}"${round===game.round?' aria-current="step"':""}
+      title="第 ${round} 回合 · ${dates[round]}${marks.length?" · "+marks.join("、"):""}">
+      <span class="calendar-num">${String(round).padStart(2,"0")}</span><span class="calendar-name">10/${round+5}</span>
+      <span class="calendar-event" aria-label="${marks.join("、")}">${marker}</span></div>`;
+  }).join("");
+  $("calendar").innerHTML=`<div class="calendar-head"><strong>回合轨 <span>1973 · 第 ${game.round} / ${finalRound} 回合</span></strong>
+    <span class="calendar-key">${game.ceasefire?"停战终局 · 第 "+game.officialEnd+" 回合　":""}＋ 增援　◇ 安理会</span></div><div class="calendar-grid">${turns}</div>`;
+  $("phases").innerHTML=phases.map((phase,i)=>`<span class="phase ${i===game.phase?"current":i<game.phase?"done":""}"${game.phase===i?' aria-current="step"':""}><span class="phase-index" aria-hidden="true">${i<game.phase?"✓":i+1}</span>${phase}</span>`).join("");
+}
+
+function renderTracks() {
+  $("round-note").textContent=game.phase===3&&!game.actionsEnded?sideName[game.turn]+"行动":sideName[game.first]+"先手";
+  $("rounds").innerHTML=sides.map(side=>`
+    <span class="track-side ${side}">${sideName[side]}</span>
+    ${Array.from({length:10},(_,i)=>`<span class="round-cell ${side}${i>=8?" night":""}${i===game.rounds[side]?" current":""}"${i===game.rounds[side]?' aria-current="true"':""}>${i}</span>`).join("")}
+    <span class="pass-left">跳过 ${game.passes[side]}/3</span>`).join("");
+}
+
+function renderResources() {
+  const rows=[
+    ["埃及",ARAB,game.stock.egypt,game.air.arab.sinai],
+    ["叙利亚",ARAB,game.stock.syria,game.air.arab.golan],
+    ["以色列",ISRAEL,game.stock.israel,game.air.israel.sinai+"/"+game.air.israel.golan]
+  ];
+  $("resources").innerHTML=rows.map(([name,side,goods,air])=>`<div class="resource-row">
+    <span class="nation"><i class="resource-dot ${side}"></i>${name}</span><small>物资 <strong>${goods}</strong></small><small>空军 <strong>${air}</strong></small>
+    </div>`).join("")+`<div class="score-summary"><span>累计分 <b>${game.points.arab} : ${game.points.israel}</b></span>
+    <span>舆论 <b>${game.opinion}/11</b> · 调停 <b>${game.mediation}/5</b></span></div>
+    <p class="campaign-mini">援助次数 · 苏联 ${game.aidCount.arab} / 美国 ${game.aidCount.israel}${game.ceasefire?" · 停战第 "+game.officialEnd+" 回合":""}</p>`;
+}
+
+function planTag(id,end,index) {
+  const c=cards[id];
+  return `<div class="plan-entry ${end>=8?"night":""}"><b>${c.name}</b><small>→${end} ${end>=8?"夜":"昼"}</small>
+    ${btn("earlier","←","",String(id),index===0)}${btn("toggle-card","×","",String(id))}</div>`;
+}
+
+function handCard(id,action,selected,showDesc=true) {
+  const c=cards[id];
+  return `<button type="button" class="hand-card" data-action="${action}" data-value="${id}" aria-pressed="${selected}"${action==="spare"&&!c.goods?" disabled":""}>
+      <span class="card-top"><span class="card-nr">#${id}</span><span>${c.kind}</span><span>${c.cost} 轮</span></span>
+      <span class="card-name">${c.name}</span>
+      ${showDesc?`<span class="card-desc">${c.desc}</span>`:""}
+      <span class="card-foot">兑换 ${resourceValue(game,id)*2} 物资</span>
+    </button>`;
+}
+
+function queueDisplay(side,list,label) {
+  const chips=list.map(id=>`<span class="${side}">${cards[id].name} · ${cards[id].cost} 轮</span>`).join("");
+  return `<div class="opp-preview"><b>${label}</b>${chips||"已无行动牌"}</div>`;
+}
+
+function renderHand() {
+  const panel=$("hand-panel");
+  const planning=game.phase===1;
+  panel.parentElement.classList.toggle("planning",planning);
+  if (planning&&game.prepare==="plan") {
+    const total=planSize(game.plan.arab);
+    let end=game.rounds.arab;
+    panel.innerHTML=`<div class="section-head"><h2>排出行动方案</h2><b class="plan-cost ${total>9?"invalid":""}">${total} / 6–9 轮</b></div>
+      <div class="plan-zone">${game.plan.arab.length?`<div class="plan-list">${game.plan.arab.map((id,i)=>planTag(id,end+=cards[id].cost,i)).join("")}</div>`:"<p>点击手牌加入方案，按从左到右的顺序执行。</p>"}</div>
+      <div class="hand-cards scenario-cards">${game.hand.arab.map(id=>handCard(id,"toggle-card",game.plan.arab.includes(id))).join("")}</div>`;
+  } else if(planning&&game.prepare==="spare") {
+    const total=surplus(game);
+    panel.innerHTML=`<div class="section-head"><h2>余牌与物资</h2><b class="plan-cost">物资面 ×2</b></div>
+      <p class="hand-empty">点击余牌兑换物资。其余牌保留到下一回合。</p>
+      <div class="hand-cards spares">${game.hand.arab.map(id=>handCard(id,"spare",game.spare.includes(id),false)).join("")}</div>
+      ${total?splitGoods(total,view.allocation):""}${queueDisplay(ARAB,game.queues.arab,"阿方方案")}${queueDisplay(ISRAEL,game.queues.israel,"以方方案")}`;
+  } else if(game.phase>=2) {
+    panel.innerHTML=`<div class="section-head"><h2>公开方案</h2><span class="map-caption">剩余行动牌</span></div>
+      ${queueDisplay(ARAB,game.queues.arab,"阿拉伯方")}${queueDisplay(ISRAEL,game.queues.israel,"以色列方")}`;
+  } else {
+    const text=game.round===1?"阿方 5 张手牌，以方 3 张手牌。":"按照保留的余牌，从牌库补足到 5 张。";
+    panel.innerHTML=`<div class="section-head"><h2>行动牌</h2><span class="map-caption">等待战备阶段</span></div><p class="hand-empty">${text}</p>`;
+  }
+}
+
+function splitGoods(total,count) {
+  return `<div class="allocation"><div class="split-labels"><span>埃及 <b data-split="egypt">${count}</b></span><span>物资 · ${total}</span><span>叙利亚 <b data-split="syria">${total-count}</b></span></div>
+    <input type="range" min="0" max="${total}" value="${count}" id="goods-split" aria-label="分给埃及的物资点数"
+      aria-valuetext="埃及 ${count}，叙利亚 ${total-count}"></div>`;
+}
+
+function renderLogs() {
+  const logs=game.logs;
+  $("log-count").textContent=logs.length?logs.length+" 条":"";
+  $("log").innerHTML=logs.length?logs.slice(0,view.logLimit).map(event=>`<li class="log-item ${event.side}"><b>${event.text}</b><p>R${event.round}${event.detail?" · "+event.detail:""}</p></li>`).join("")
+    :'<li class="log-empty">开始后在这里查看每一步的结算。</li>';
+  if(logs.length>view.logLimit) $("log").insertAdjacentHTML("beforeend",`<li>${btn("more-log","加载更早行动","chip")}</li>`);
+}
+
+function selection(front,tile) {
+  view.selected={front,tile};
+  view.front=front;
+}
+function jump(front,tile) {
+  view.front=front;
+  view.jump=tile;
+}
+function commitFocus(front,tile) {
+  selection(front,tile);
+  view.jump=tile;
+}
+
+function renderMap() {
+  $("zoc-button").setAttribute("aria-pressed",view.zoc);
+  $("supply-button").setAttribute("aria-pressed",view.supply);
+  fronts.forEach(front=>$(front+"-tab").setAttribute("aria-pressed",front===view.front));
+  const controls=view.zoc?Object.fromEntries(fronts.map(front=>[front,Object.fromEntries(sides.map(side=>[side,control(game,front,side)]))])):null;
+  const pile=view.selected?stackAt(game,view.selected.front,view.selected.tile):[];
+  const tracedUnit=pile.find(u=>u.id===view.unit)??pile[0];
+  const trace=view.supply&&tracedUnit?supplyMap(game,tracedUnit.front,tracedUnit.side):null;
+  const unit=view.unit&&findUnit(game,view.unit);
+  const canMove=game.card?.sub==="move"&&unit&&unit.front===view.front&&unitAvailable(game,unit)&&mapMode(game.card,"move",unit.front);
+  const scale=game.card&&cards[game.card.id].move;
+  view.moves=canMove?possibleMoves(game,unit,scale??.5,Boolean(scale&&game.card.night)):null;
+  drawBoards(boards,game,{...view,controls,trace,targets:validTargets(game,view.front)});
+  if(view.jump) {
+    focusBoard(boards[view.front],view.jump);
+    view.jump=null;
+  }
+}
+
+function unitRow(u) {
+  const stats=unitStats(u);
+  const status=[u.out&&"断补",u.suppressed&&"压制",u.damaged&&"受损",u.used&&"已用",
+    game.round===1&&u.tile&&u.side===ARAB&&restriction(u.front,u.tile)&&"首回合禁动"].filter(Boolean).join(" · ");
+  return `<button class="chip stack-row ${u.side}" type="button" data-action="unit" data-value="${u.id}" aria-pressed="${view.unit===u.id}">
+    <b>${u.display??u.name}</b><span>${u.coalition?u.coalition+" · ":""}${u.typeName}${status?" · "+status:""}</span><small>${stats.attack}/${stats.defense}/${stats.move} · 素质 ${u.quality}</small>
+    </button>`;
+}
+
+function renderInspector() {
+  const box=$("inspect");
+  box.hidden=!view.selected;
+  if(!view.selected) return;
+  const {front,tile}=view.selected;
+  const field=fields[front];
+  const pile=stackAt(game,front,tile);
+  const p=field.points[tile];
+  const battery=game.batteries[front].find(b=>b.tile===tile);
+  const u=pile.find(item=>item.id===view.unit)??pile[0];
+  box.innerHTML=`<p>${field.name} · ${terrainNames[terrain(front,tile)]}</p><h3>${tile} ${tileName(front,tile)===tile?"":tileName(front,tile)}</h3>
+    ${p?`<p class="stats">关键点战果 · 阿方 ${p.arab} / 以方 ${p.israel}</p>`:""}
+    ${pile.length?`<div class="stack-list">${pile.map(unitRow).join("")}</div>`:"<p>此格空置。</p>"}
+    ${u?.type==="b"?`<p class="stats">舟桥${activeBridge(u)?"展开":"不可通行"} · 已通行 ${u.crossed??0}/9 堆叠值</p>`:""}
+    ${game.phase===-1&&u?.free?btn("arm-deploy",view.deploy?"选择目的格":"调整该算子初设","chip",u.id):""}
+    ${battery?`<p>固定防空 · ${battery.destroyed?"已摧毁":battery.out?"断补":battery.used?"已使用":"可用"}</p>`:""}
+    ${view.supply&&u?`<p class="stats">补给路径预览</p>`:""}`;
+}
+
+const coach=(key,title,desc,body,ref="")=>`<div class="coach-meta"><span>${key}</span><span>第 ${game.round} 回合 · ${dates[game.round]}</span></div><h2>${title}</h2><p class="lede">${desc}</p>
+  ${view.notice?call(view.notice,view.warning?"warn":""):""}${body}${ref?`<small class="rule-ref">${ref}</small>`:""}`;
+
+function renderCoach() {
+  const phase=game.phase;
+  let content;
+  if(phase===-1) content=coach("全景剧本","准备开局","你负责埃及与叙利亚，电脑操作以色列。西奈、戈兰共用一条行动轮次轨。",
+    `<ul class="guide-list"><li><b class="arab">阿方</b><span>先手 · 轮次 0 · 四座舟桥展开</span></li>
+      <li><b class="israel">以方</b><span>轮次 6 · 首回合三张手牌</span></li></ul>
+      <details class="start-options"${Object.values(game.options).some(Boolean)?" open":""}><summary>开局可选规则</summary><div class="option-list">${Object.entries(scenarioOptions).map(([key,rule])=>
+        `<label><input type="checkbox" data-check="option" value="${key}"${game.options[key]?" checked":""}><span><b>${rule.label}</b><small>${rule.detail}</small></span></label>`).join("")}</div></details>
+      ${main("begin","开始第 1 回合")}
+      <p class="subtle"><a class="offline-download" href="david-scimitar-2-offline.html" download>下载离线版</a></p>`,"预设自由部署可在地图上调整");
+  else if(phase===0) {
+    const arriving=arrivingUnits(game);
+    const red=arriving.filter(u=>u.side===ARAB);
+    const blue=arriving.filter(u=>u.side===ISRAEL);
+    const entryList=red.map(u=>{
+      const sources=fields.golan.sources.filter(s=>s.side===ARAB && !stackAt(game,"golan",s.tile).some(v=>v.side===ISRAEL));
+      const opts=sources.map(s=>`<option value="${s.tile}"${game.arrivals[u.id]===s.tile?" selected":""}>${s.name} · ${s.tile}</option>`).join("");
+      return `<label class="arrival-select">${u.coalition??"阿方"} ${u.display??u.name}<select data-arrival="${u.id}">${opts||"<option>补给源封锁</option>"}</select></label>`;
+    }).join("");
+    const body=(blue.length?call("以军后方中部 · "+blue.map(u=>u.name==="Pontoon"?"舟桥":u.name).join("、")):"")+
+      (red.length?`<div class="arrival-list">${entryList}</div>`:"")+
+      main("reinforce",arriving.length?"安置增援并补牌":"进入战备阶段");
+    content=coach("增援阶段",arriving.length?`本回合 ${arriving.length} 枚增援`:"检查本回合增援",
+      arriving.length?"阿方增援选择符合条件的补给源，以方增援放入后方中部。单位等待移动机会再进地图。":"本回合增援格为空，保留当前盘面。",
+      body,"规则书 §6–7");
+  } else if(phase===1) content=preparationView();
+  else if(phase===2) content=bridgesView();
+  else if(phase===3) content=turnView();
+  else if(phase===4) content=supplyView();
+  else if(phase===5) content=rearsView();
+  else if(phase===6) content=councilView();
+  else content=endView();
+  $("coach").innerHTML=content;
+}
+
+function preparationView() {
+  if(game.prepare==="spare") {
+    return coach("战备阶段","物资分配","方案已公开。可将余牌按牌面物资值的两倍兑换，再分给埃及和叙利亚。",
+      main("finish-prep",surplus(game)?"领取物资并继续":"保留余牌，继续"),"规则书 §7.3、§20");
+  }
+  const nightOrder=game.plan.arab.some((id,i)=>cards[id].orders&&planSize(game.plan.arab.slice(0,i+1))+game.rounds.arab>=8);
+  const hint=mustCommand(game)?call("阿方已有单位越线，方案须包含至少一张指挥失灵。","warn"):
+    nightOrder?call("计划条令将落入夜间，只能按牌移动。","warn"):"";
+  return coach("战备阶段","制定行动方案",`阿方有 ${game.hand.arab.length} 张手牌，选出合计 6–9 行动轮的方案。第一次玩可套用建议方案。`,
+    hint+main("lock-plan","锁定并公开方案",!validPlan(game,ARAB,game.plan.arab))+btn("recommend","套用建议方案"),"规则书 §8.2");
+}
+
+function bridgesView() {
+  if(game.round===1) return coach("舟桥调整","首回合跳过调整","剧本五规定四座初设舟桥为展开面，本回合无需支付维护物资。",
+    main("begin-actions","执行行动方案"),"剧本五·首回合");
+  const boats=mapUnits(game,"sinai",ARAB).filter(u=>u.type==="b");
+  const cost=game.bridgesChosen.length*2;
+  const rows=boats.map(u=>{
+    const eligible=fields.sinai.sites.includes(u.tile)&&!u.suppressed;
+    return `<label><input type="checkbox" data-check="bridge" value="${u.id}"${game.bridgesChosen.includes(u.id)?" checked":""}${!eligible?" disabled":""}>${u.name} · ${u.tile}${!eligible?" · 当前不可展开":""}</label>`;
+  }).join("");
+  return coach("舟桥调整","选择继续展开的舟桥","每座展开消耗埃及 2 物资。机动面可以在随后获得移动机会时调整位置。",
+    `<div class="check-list">${rows||"当前没有可维护的舟桥。"}</div>${call(`本次维护 ${cost} 物资 · 库存 ${game.stock.egypt}`)}
+     ${main("begin-actions","确认舟桥并执行",cost>game.stock.egypt)}`,"规则书 §9");
+}
+
+function turnView() {
+  if(game.actionsEnded) return coach("行动结束","进入回合收尾","双方可结算的方案已完成，下一步逐张图检查补给。",
+    main("supply-phase","进入补给检查"),"规则书 §8.3、§13");
+  const action=game.card;
+  if(action) return activeCardView(action);
+  const ally=game.turn===ARAB;
+  const id=game.queues[game.turn][0];
+  const current=game.rounds[game.turn];
+  const end=current+(cards[id]?.cost??1);
+  return coach("方案执行",ally?"轮到你行动":"轮到以军行动",
+    ally?"结算最左一张牌或跳过一轮。结算后仍落后的一方继续。":"电脑使用已公开方案，处理可执行的牌效。",
+    call(`${cards[id]?.name??"跳过"} · ${current} → ${end} · ${end>=8?"夜间":"昼间"}`)+
+    main(ally?"play":"opponent",ally?(id?"结算 "+cards[id].name:"行动牌已用完"):(id?"观看 "+cards[id].name:"观看以军跳过"),ally&&!canPlay(game,ARAB))+
+    (ally?btn("pass",`跳过 1 轮 · 剩 ${game.passes.arab} 次`,"secondary","",!canPass(game,ARAB)):""),"规则书 §8.3–8.4");
+}
+
+function mapButtons(action,kind) {
+  const labels=kind==="move"?"移动":kind==="attack"?"战斗":"";
+  return `<div class="order-tags">${fronts.map(front=>selectBtn("go-front",fields[front].name+(labels?" "+labels:""),front,view.front===front)).join("")}</div>`;
+}
+
+function activeCardView(action) {
+  const c=cards[action.id];
+  const title=c.name;
+  const meta=`${action.night?"夜间":"昼间"} · 阿方第 ${game.rounds.arab} 行动轮`;
+  const front=view.front;
+  let text, body;
+  if(action.sub==="grant") {
+    text="根据双图规则，将所得物资乘二，再分给埃及和叙利亚。";
+    body=splitGoods(action.grantTotal??c.grant*2,action.allocation)+main("grant","领取并继续");
+  } else if(action.sub==="choice") {
+    text="分别为两张图选择移动、战斗或略过。";
+    body=fronts.map(f=>`<div class="choice-front"><span class="choice-label">${fields[f].name}</span><div class="choice-group">
+     ${[["move","移动"],["attack","战斗"],["skip","略过"]].map(([key,label])=>selectBtn("choice",label,f+":"+key,action.choices[f]===key)).join("")}</div></div>`).join("")+complete("执行两图选择");
+  } else if(action.sub==="order") {
+    text="这张作战牌允许自选移动和战斗的执行顺序。";
+    body=btn("order","先移动再战斗","primary","move")+btn("order","先战斗再移动","secondary","attack");
+  } else if(action.sub==="mobilize") {
+    text="每花 1 动员点，将一个后方单位移到本国补给源等待登场。点数仅在此牌有效。";
+    body=mobilizeUI(action,front);
+  } else if(action.sub==="restore") {
+    text="查看当前战场可恢复、补员或重建的算子。可按物资余额选择执行。";
+    const items=restorativeItems(game,action,front);
+    body=mapButtons(action)+`<details open><summary>${fields[front].name} · 可处理 ${items.length}</summary><div class="detail-stack">
+      ${items.map(item=>btn("restore",item.label+" · "+item.cost+" 物资","chip",item.act+":"+item.id,item.cost>game.stock[stockKey(ARAB,front)])).join("")||'<p class="subtle">当前没有合资格单位。</p>'}
+      </div></details>`+complete("完成恢复与补员");
+  } else if(action.sub==="satellite") {
+    text="在任一地图点选一个格放置卫星标记，本牌卫星仅放置一次。";
+    body=mapButtons(action)+complete("略过卫星标记");
+  } else if(action.sub==="fire") {
+    text=game.round===1?"选择打击类型，再点地图目标并掷骰。首回合阿方打击骰额外 +1。":"选择打击类型，再点地图目标并掷骰。";
+    body=fireUI(action,front);
+  } else if(action.sub==="move") {
+    const opts=fronts.filter(f=>mapMode(action,"move",f));
+    const here=opts.includes(front);
+    const waiting=entryUnits(game,front).filter(u=>!action.moved.includes(u.id));
+    text=opts.length?(c.move?"点选本方算子，绿色圆点是可到达的格子。堆叠含多个算子时，可在右下切换。":
+      "行进动员提供 0.5 系数移动。点选本方算子并选择绿色目的格。"):"双图均跳过移动。";
+    body=mapButtons(action,"move")+
+      (here&&waiting.length?`<details><summary>补给源待登场 · ${waiting.length}</summary><div class="detail-stack">
+        ${waiting.map(u=>btn("entry-unit",u.name+" · "+u.entry,"chip",u.id)).join("")}</div></details>`:"")+
+      (here?"":call("当前战场没有选择移动。"))+
+      complete("完成双图移动");
+  } else if(action.sub==="declare") {
+    text="先点高亮蓝方目标，再选参与的本方算子。可在两张地图宣告多场战斗。";
+    body=declarationUI(action);
+  } else if(action.sub==="roll") {
+    text="确认攻防比与支援，然后掷骰查辅助卡。";
+    body=rollUI(action);
+  } else if(action.sub==="result") {
+    const r=action.result;
+    text=r.resultText;
+    body=(r.notes.length?call(r.notes.join("、")):"")+
+      r.advance.filter(id=>!action.advanced.includes(id)).map(id=>btn("occupy",findUnit(game,id).name+" 挺进 "+r.tile,"secondary",id)).join("")+
+      (r.bonus??[]).filter(id=>advanceDestinations(game,action,id).size).map(id=>selectBtn("extra-advance",findUnit(game,id).name+" 额外挺进",id,action.followUnit===id)).join("")+
+      (action.followUnit?'<p class="subtle">选择地图上高亮的相邻格。</p>':"")+main("finish-fight","继续结算");
+  } else {
+    text=c.desc;
+    body=complete("完成这张牌");
+  }
+  return coach(meta,title,text,body);
+}
+
+function mobilizeUI(action,front) {
+  const stock=action.mobilize[front];
+  const rear=game.units.filter(u=>u.front===front&&u.side===ARAB&&u.rear&&!u.dead);
+  const chosen=findUnit(game,action.rearUnit);
+  const sources=chosen?.front===front?availableSources(chosen):[];
+  const pending=pendingForeign(game,action);
+  const picked=pending.find(u=>u.id===action.foreignSelected);
+  const placement=pending.length?`<details open><summary>大国援军 · ${pending.length} 枚待安置</summary><div class="detail-stack">
+    ${pending.map(u=>selectBtn("foreign-pick",u.name,u.id,u.id===picked?.id)).join("")}
+    ${picked?'<p class="subtle">选择当前战场的补给源，伞兵也可直接选格。</p>':""}
+    ${picked?foreignSources(game,picked,front).map(source=>btn("foreign-source",source.name+" · "+source.tile,"chip",source.tile)).join(""):""}
+    ${picked?.type==="x"?selectBtn("parachute","选择空降格","drop",Boolean(action.dropMode)):""}
+    </div></details>`:"";
+  return mapButtons(action)+placement+`<details open><summary>${fields[front].name} · 剩 ${stock} 动员点</summary><div class="detail-stack">
+    ${rear.map(u=>btn("rear-pick",u.name+" · "+u.typeName,u.id===action.rearUnit?"chip selected-tool":"chip",u.id,stock<1)).join("")||"后方暂无单位。"}
+    </div></details>${sources.length?`<div class="order-tags">${sources.map(s=>btn("dispatch",s.name+" "+s.tile,"chip",s.tile)).join("")}</div>`:""}`+
+    complete("结束动员");
+}
+
+function fireUI(action,front) {
+  const c=cards[action.id];
+  const modes=[...(["both","air"].includes(c.fire)?["air"]:[]),...(["both","gun"].includes(c.fire)?["gun"]:[]),...(c.missile?["missile"]:[])];
+  const aim=action.aim?.front===front?action.aim:null;
+  const guns=aim&&action.tool==="gun"?availableGuns(game,front,ARAB,aim.tile):[];
+  const targetUnits=aim?stackAt(game,front,aim.tile).filter(u=>u.side===ISRAEL&&!u.suppressed):[];
+  return mapButtons(action)+`<div class="order-tags">${modes.map(mode=>selectBtn("fire-mode",ordnance[mode],mode,mode===action.tool)).join("")}</div>`+
+    (aim?call("目标 · "+aim.tile+" "+tileName(front,aim.tile)):"")+
+    (guns.length?`<div class="order-tags">${guns.map(u=>selectBtn("fire-source",u.name+" 火力 "+u.attack,u.id,u.id===action.fireSource)).join("")}</div>`:"")+
+    (targetUnits.length>1?`<div class="order-tags"><span class="fold">单枚压制优先</span>
+      ${targetUnits.map(u=>selectBtn("strike-target",u.name,u.id,u.id===action.strikeTarget)).join("")}</div>`:"")+
+    (aim?btn("strike","掷骰执行"+ordnance[action.tool],"primary"):"")+complete("结束两图火力");
+}
+
+function declarationUI(action) {
+  const aim=action.aim;
+  const candidates=aim?fightCandidates(game,action,aim.front,aim.tile,battleUnitIDs(action)):[];
+  const attackers=candidates.filter(u=>action.candidates.includes(u.id));
+  const odds=attackers.length?fightOdds(game,action,aim.front,aim.tile,attackers):null;
+  const choices=candidates.map(u=>`<label><input type="checkbox" data-check="attack" value="${u.id}"${action.candidates.includes(u.id)?" checked":""}>${u.name} · ${u.tile} · 攻 ${unitStats(u).attack}</label>`).join("");
+  return mapButtons(action,"attack")+
+    (aim?call(aim.tile+" · "+tileName(aim.front,aim.tile)+(odds?` · ${odds.atk}:${odds.def} → ${odds.ratio}`:"")):`<p class="subtle">${mapMode(action,"attack",view.front)?"点击地图上亮起的目标。":"当前战场没有选择战斗。"}</p>`)+
+    (choices?`<div class="check-list">${choices}</div>`:"")+
+    (aim?btn("declare","宣告本场战斗","secondary","",!attackers.length):"")+
+    main("start-roll",action.declarations.length?`结算已宣告的 ${action.declarations.length} 场战斗`:"略过战斗");
+}
+
+function rollUI(action) {
+  const {front,tile,ids}=action.declarations[action.fightIndex];
+  const attackers=ids.map(id=>findUnit(game,id)).filter(u=>u?.tile&&!u.dead);
+  const attack=fightOdds(game,action,front,tile,attackers,{air:action.air,gun:action.gun});
+  const guns=action.night?[]:availableGuns(game,front,ARAB,tile);
+  const air=game.air.arab[front]>0&&!action.night;
+  return call(`${fields[front].name} · ${tile}　攻 ${attack.atk}｜防 ${attack.def}　表列 ${attack.ratio}<br>骰点修正 · 素质 ${attack.quality>=0?"+":""}${attack.quality} · 压制 +${attack.depressed}`)+
+    (air?selectBtn("air-support","空军支援","air",action.air):"")+
+    (satelliteApplies(game,action,front,tile)?selectBtn("satellite-support","消耗卫星标记","satellite",action.useSatellite):"")+
+    (guns.length?`<div class="order-tags">${guns.map(u=>selectBtn("gun-support",u.name+" 支援",u.id,action.gun===u.id)).join("")}</div>`:"")+
+    main("roll","掷 1D6 并查表");
+}
+
+function supplyView() {
+  const outs=game.units.filter(u=>u.tile&&u.out&&!u.dead);
+  return coach("回合收尾",game.supplyChecked?"查看断补标记":"检查两条战线的补给",
+    "各单位需要连回所属阵营的补给源。可在地图点选单位并查看线路。",
+    game.supplyChecked?call(outs.length?outs.length+" 个单位断补。点选算子可查看状态。":"双方单位补给连续。")+main("rear-phase","进入以军后方动员"):
+      main("check-supply","检查双方补给"),"规则书 §13");
+}
+
+function rearsView() {
+  const counts=Object.entries(rearNames).filter(([id])=>["north","center","south"].includes(id)).map(([id,name])=>
+    `<li><b class="israel">${name}</b><span>${game.units.filter(u=>u.rear===id).length} 枚</span></li>`).join("");
+  return coach("回合收尾","以军后方动员","每个以军后方单位可转移一次，去相邻区或相连补给源。先到补给源，再等移动牌登场。",
+    `<ul class="guide-list">${counts}</ul>`+(game.rearDone?main("council-phase","查看安理会条件"):main("rear-move","观看以军后方动员")),"规则书 §15");
+}
+
+function councilView() {
+  const report=game.report;
+  if(!report) {
+    const trigger=councilRounds.has(game.round)?`第 ${game.round} 回合的固定标记触发会议。`:
+      game.councilCards.arab||game.councilCards.israel?"行动方案中有安理会牌。":"本回合没有安理会标记或安理会牌。";
+    return coach("回合收尾","判断是否召开安理会",trigger,main("convene","结算本回合"),"规则书 §16");
+  }
+  let body="";
+  if(report.meeting) {
+    const total=`西奈和戈兰合计战果 · 阿方 ${report.battle.arab} : 以方 ${report.battle.israel}。`;
+    body=call(total+(report.scored?sideName[report.scored]+"获得 "+report.earned+" 分。":"双方均不加分。"))+
+      `<details><summary>查看取得战果的关键点</summary><table class="score-table"><tbody>${report.rows.filter(r=>r.value).map(r=>`<tr><td>${r.name}</td><td class="minor">${r.tile}</td><td>${sideName[r.side]} · ${r.value}</td></tr>`).join("")}</tbody></table></details>`;
+  } else body=call("安理会跳过，既有累计分保留。");
+  if(report.ceasefireRoll) body+=call("停战骰点 · "+report.ceasefireRoll.join(" / ")+(game.ceasefire?" · 第 "+game.officialEnd+" 回合终局":" · 以后各回合继续裁定"));
+  if(report.aidSide) body+=call((report.aidSide===ARAB?"苏联":"美国")+"援助 · 第 "+game.aidCount[report.aidSide]+" 次。");
+  body+=councilAidUI(report);
+  return coach("安理会",report.meeting?"战果与累计分":"本回合结算","战果来自当前占据的关键点，累计分另加剧本规定的消灭得分。",body);
+}
+
+function councilAidUI(report) {
+  if(report.aid.length) {
+    const checked=view.aid;
+    const need=report.aidNeed;
+    return `<div class="check-list">${report.aid.map(id=>`<label><input type="checkbox" data-check="aid" value="${id}"${checked.includes(id)?" checked":""}>${cards[id].name} · #${id}</label>`).join("")}</div>`+
+      main("select-aid",need===1?"确认本次援助牌":"选 2 张苏联援助牌",checked.length!==need);
+  }
+  const current=report.aidQueue[0];
+  if(current) {
+    const card=cards[current];
+    const {ids,zone}=aidReplacementOptions(game,ARAB,current);
+    const source={discard:"弃牌堆",deck:"牌库",hand:"手牌"}[zone];
+    return call(card.name+" · #"+current+" · "+card.desc)+
+      (ids.length?`<p class="subtle">${card.mustReplace?"须":"可"}替换${source}中的对应原牌。</p>`:"")+
+      `<div class="order-tags">${ids.map(id=>btn("aid-replace","替换 "+cards[id].name+" #"+id,"chip",String(id))).join("")}</div>`+
+      (!card.mustReplace||!ids.length?btn("aid-replace",card.mustReplace?"处理下一项":"直接加入弃牌堆","secondary","0"):"");
+  }
+  if(report.aidRemove) {
+    const options=[...game.discard.arab,...game.deck.arab];
+    return `<details open><summary>第二次援助 · 可移除 1 张原牌</summary><div class="detail-stack">
+      ${options.map(id=>btn("aid-remove",cards[id].name+" #"+id,"chip",String(id))).join("")}</div></details>`+
+      btn("aid-remove","保留现有牌组","secondary","0");
+  }
+  if(report.aidResource) {
+    const total=resourceValue(game,report.aidResource)*2;
+    const count=report.aidAllocation??Math.floor(total/2);
+    return call("牌库顶 · "+cards[report.aidResource].name+" · #"+report.aidResource)+
+      (total?splitGoods(total,count):"")+
+      btn("aid-supply","分配物资，原牌留在牌库顶","primary","keep")+btn("aid-supply","分配物资，合并洗牌","secondary","mix");
+  }
+  return main("end-phase","完成本回合");
+}
+
+function endView() {
+  const total=`累计分 · 阿方 ${game.points.arab} : 以方 ${game.points.israel}。`;
+  if(game.endReason) {
+    return coach("剧本结束",sideName[game.winner]+"获胜",game.endReason,
+      call(total)+`<div class="campaign-results"><table class="score-table"><thead><tr><th>回合</th><th>安理会</th><th>阿 : 以</th></tr></thead><tbody>${game.roundsHistory.map(r=>`<tr><td>第 ${r.round} 回合</td><td>${r.council?"安理会已召开":"跳过安理会"}</td><td>${r.arab} : ${r.israel}</td></tr>`).join("")}</tbody></table></div>`+
+      main("restart","再玩一局"));
+  }
+  const chooser=nextChooser(game);
+  return coach("回合复盘","第 "+game.round+" 回合完成",total+sideName[chooser]+"决定下一回合先手。",
+    chooser===ARAB?btn("next","下一回合阿方先手","primary",ARAB)+btn("next","下一回合以方先手","secondary",ISRAEL):
+      btn("next","进入第 "+(game.round+1)+" 回合","primary",ISRAEL),"规则书 §17");
+}
+
+function setNotice(text,warning=false) {
+  view.notice=text;
+  view.warning=warning;
+}
+function cleanSelection() {
+  view.selected=null;
+  view.unit=null;
+  view.path=null;
+  view.deploy=null;
+}
+function chooseUnit(unit) {
+  view.unit=unit.id;
+  if (unit.tile||unit.entry) selection(unit.front,unit.tile??unit.entry);
+  if(game.card?.sub==="move" && unit.side===ARAB) {
+    const locked=game.round===1&&unit.tile&&restriction(unit.front,unit.tile);
+    setNotice(locked?unit.name+" 位于首回合限制线内，本回合不能移动。":"已选 "+unit.name+"。绿色圆点标记合法目的格。",Boolean(locked));
+  }
+}
+
+function mapClick(front,tile) {
+  setNotice("");
+  const action=game.card;
+  if(view.deploy&&game.phase===-1) {
+    const u=findUnit(game,view.deploy);
+    if(u?.front===front&&relocateFree(game,u,tile)) {
+      view.deploy=null;
+      chooseUnit(u);
+      setNotice(u.name+" 已重新部署到 "+tile+"。");
+    } else setNotice("该格不符合这枚算子的可部署区域或堆叠条件。",true);
+    render();
+    return;
+  }
+  if(action?.sub==="move"&&view.moves?.has(tile)) {
+    const u=findUnit(game,view.unit);
+    const route=view.moves.get(tile);
+    if(u?.front===front&&unitAvailable(game,u)) {
+      const from=u.tile??u.entry;
+      move(game,u,route);
+      action.moved.push(u.id);
+      selection(front,tile);
+      view.path={front,tiles:route.path};
+      setNotice(u.name+" 抵达 "+tile+"，使用 "+route.cost+" 移动值。");
+      log(game,fields[front].name+" · "+u.name+" 移动",from+" → "+tile,ARAB);
+      render();
+      return;
+    }
+  }
+  if(action?.sub==="result"&&action.followUnit&&continueAdvance(game,action.followUnit,tile)) {
+    selection(front,tile);
+    view.unit=null;
+    setNotice("装甲或机步单位完成额外挺进。");
+    render();
+    return;
+  }
+  selection(front,tile);
+  view.unit=null;
+  const pile=stackAt(game,front,tile);
+  if(action && validTargets(game,front).has(tile)) {
+    if(action.sub==="mobilize"&&action.dropMode) {
+      if(placeForeign(game,findUnit(game,action.foreignSelected),front,tile,true)) {
+        action.foreignSelected=null;
+        action.dropMode=false;
+        setNotice("伞兵已在 "+tile+" 登场。");
+      }
+    } else if(action.sub==="satellite") {
+      game.satellites.arab={front,tile};
+      log(game,"放置卫星标记",fields[front].name+" · "+tile,ARAB);
+      advanceAction(game);
+    } else if(action.sub==="fire") {
+      action.aim={front,tile};
+      action.strikeTarget=null;
+      action.fireSource=availableGuns(game,front,ARAB,tile)[0]?.id??null;
+    } else if(action.sub==="declare") {
+      action.aim={front,tile};
+      const options=fightCandidates(game,action,front,tile,battleUnitIDs(action));
+      const remaining=game.stock[stockKey(ARAB,front)]-action.declarations.filter(d=>d.front===front).flatMap(d=>d.ids).length;
+      action.candidates=(cards[action.id].orders?options.slice(0,Math.max(0,remaining)):options).map(u=>u.id);
+    }
+  }
+  const next=action?.sub==="move"?pile.find(u=>u.side===ARAB&&unitAvailable(game,u)&&u.type!=="b")??pile.find(u=>u.side===ARAB):pile[0];
+  if(next) chooseUnit(next);
+  render();
+}
+
+function openPlanning() {
+  const units=revealReinforcements(game);
+  for(const side of sides) {
+    const same=units.filter(u=>u.side===side);
+    if(same.length) log(game,sideName[side]+" · 第 "+game.round+" 回合增援",
+      same.map(u=>u.name+" → "+(u.entry??rearNames[u.rear])).join("、"),side);
+  }
+  refill(game);
+  game.phase=1;
+}
+
+function startPlanExecution() {
+  if(game.round>1&&!adjustBridges(game,game.bridgesChosen)) return;
+  if(game.round>1) adjustIsraeliBridges(game);
+  log(game,"舟桥状态",game.round===1?"首回合四座展开，跳过付费调整。":`展开 ${game.bridgesChosen.length} 座，埃及支出 ${game.bridgesChosen.length*2} 物资。`,ARAB);
+  game.phase=3;
+  game.turn=game.first;
+  readyTurn(game);
+}
+
+function switchFront(front) {
+  const previous=view.front;
+  const action=game.card;
+  if(front===previous) return;
+  cleanSelection();
+  jump(front,defaultFocus(front,game.round));
+  if(action?.aim&&["declare","fire"].includes(action.sub)) {
+    action.aim=null;
+    action.candidates=[];
+  }
+}
+
+const actions={
+  begin(){game.phase=0;cleanSelection();log(game,"剧本五初设","双方按剧本一、二摆位，阿方先手。");},
+  reinforce:openPlanning,
+  recommend(){
+    game.plan.arab=suggestedPlan(game,ARAB);
+    if(!game.plan.arab.length) setNotice("当前手牌未找到合计 6–9 轮的方案。",true);
+  },
+  "toggle-card"(value){
+    const id=Number(value);
+    if(game.plan.arab.includes(id)) game.plan.arab=game.plan.arab.filter(x=>x!==id);
+    else game.plan.arab.push(id);
+  },
+  earlier(value) {
+    const i=game.plan.arab.indexOf(Number(value));
+    if(i>0) [game.plan.arab[i-1],game.plan.arab[i]]=[game.plan.arab[i],game.plan.arab[i-1]];
+  },
+  "lock-plan"(){
+    if(!validPlan(game,ARAB,game.plan.arab)) return;
+    game.plan.israel=suggestedPlan(game,ISRAEL);
+    commitPlans(game);
+    game.prepare="spare";
+    log(game,"公开双方方案",`阿方 ${planSize(game.plan.arab)} 轮 · 以方 ${planSize(game.plan.israel)} 轮。 `);
+  },
+  spare(value) {
+    const id=Number(value);
+    game.spare=game.spare.includes(id)?game.spare.filter(x=>x!==id):[...game.spare,id];
+    view.allocation=Math.ceil(surplus(game)/2);
+  },
+  "finish-prep"(){
+    const total=dropResourceCards(game,ARAB,game.spare);
+    if(total) {
+      grant(game,total,view.allocation);
+      log(game,"阿方余牌兑换",`埃及 +${view.allocation}，叙利亚 +${total-view.allocation}。`,ARAB);
+    }
+    if(game.hand.israel.length>1&&game.stock.israel<14) {
+      const spare=game.hand.israel.filter(id=>cards[id].goods).sort((a,b)=>cards[b].goods-cards[a].goods)[0];
+      if(spare) stockAdd(game,"israel",dropResourceCards(game,ISRAEL,[spare]));
+    }
+    game.phase=2;
+    game.bridgesChosen=mapUnits(game,"sinai",ARAB).filter(u=>activeBridge(u)&&fields.sinai.sites.includes(u.tile)).map(u=>u.id);
+    view.allocation=0;
+  },
+  "begin-actions":startPlanExecution,
+  "more-log"(){view.logLimit+=80;},
+  "front":switchFront,
+  "go-front":switchFront,
+  "zoom-in"(){view.zoom[view.front]=Math.min(1.86,view.zoom[view.front]+.21);view.jump=view.selected?.tile??defaultFocus(view.front,game.round);},
+  "zoom-out"(){view.zoom[view.front]=Math.max(.42,view.zoom[view.front]-.21);view.jump=view.selected?.tile??defaultFocus(view.front,game.round);},
+  "zoom-fit"(){
+    const b=boards[view.front];
+    view.zoom[view.front]=Math.min(b.view.clientWidth/b.width,b.view.clientHeight/b.height)*.99;
+    view.jump=defaultFocus(view.front,game.round);
+  },
+  "arm-deploy"(id){view.deploy=id;setNotice("选择同张地图上符合初设区域的目的格。");},
+  "unit"(id){chooseUnit(findUnit(game,id));},
+  play(){
+    const a=startAction(game,ARAB);
+    if(!a) return;
+    cleanSelection();
+    startPlayer(game,a);
+    game.card=a;
+  },
+  opponent(){
+    const a=startAction(game,ISRAEL);
+    if(a) {
+      applyCpuCard(game,a);
+      setNotice(game.turn===ISRAEL&&!game.actionsEnded?"以军轮次仍落后，继续处理下一张牌。":"以军已完成本次牌效。");
+    } else skip(game,ISRAEL);
+  },
+  pass(){skip(game,ARAB);},
+  "advance-card"(){cleanSelection();advanceAction(game);},
+  "grant"(){
+    const a=game.card;
+    const total=a.grantTotal??cards[a.id].grant*2;
+    grant(game,total,a.allocation);
+    log(game,"物资分配",`埃及 +${a.allocation}，叙利亚 +${total-a.allocation}`,ARAB);
+    advanceAction(game);
+  },
+  choice(value){const [f,option]=value.split(":");game.card.choices[f]=option;},
+  order(value){
+    const a=game.card;
+    if(value==="attack") [a.steps[a.index+1],a.steps[a.index+2]]=[a.steps[a.index+2],a.steps[a.index+1]];
+    advanceAction(game);
+  },
+  "rear-pick"(id){game.card.rearUnit=id;},
+  "foreign-pick"(id){game.card.foreignSelected=id;game.card.dropMode=false;},
+  parachute(){game.card.dropMode=!game.card.dropMode;},
+  "foreign-source"(tile){
+    const action=game.card;
+    if(placeForeign(game,findUnit(game,action.foreignSelected),view.front,tile)) {
+      setNotice("援军已在 "+tile+" 补给源待命。");
+      commitFocus(view.front,tile);
+      action.foreignSelected=null;
+      action.dropMode=false;
+    }
+  },
+  dispatch(tile){
+    const a=game.card;
+    const u=findUnit(game,a.rearUnit);
+    const source=availableSources(u).find(s=>s.tile===tile);
+    if(a.mobilize[u.front]>0&&source&&sourceEquip(game,u,source)) {
+      a.mobilize[u.front]--;
+      a.rearUnit=null;
+      commitFocus(u.front,tile);
+      log(game,u.name+" 动员待命",fields[u.front].name+" · "+source.name+" 补给源",ARAB);
+    } else setNotice("该补给源不可用。",true);
+  },
+  restore(value){
+    const [method,id]=value.split(":");
+    if(!restoreItem(game,game.card,view.front,id,method)) setNotice("当前无法处理该算子。",true);
+  },
+  "fire-mode"(mode){game.card.tool=mode;game.card.aim=null;},
+  "fire-source"(id){game.card.fireSource=id;},
+  "strike-target"(id){game.card.strikeTarget=game.card.strikeTarget===id?null:id;},
+  strike(){
+    const a=game.card;
+    const {front,tile}=a.aim;
+    const result=strike(game,a,front,tile,a.tool,a.fireSource);
+    if(result){
+      setNotice(result);
+      a.aim=null;
+    } else setNotice("该打击当前不可用。",true);
+  },
+  "entry-unit"(id){
+    const u=findUnit(game,id);
+    chooseUnit(u);
+    view.jump=u.entry;
+  },
+  declare(){const error=declare(game);setNotice(error||"已登记本场战斗。",Boolean(error));},
+  "start-roll"(){
+    const battle=startRoll(game);
+    if(battle) commitFocus(battle.front,battle.tile);
+  },
+  "air-support"(){game.card.air=!game.card.air;},
+  "satellite-support"(){game.card.useSatellite=!game.card.useSatellite;},
+  "gun-support"(id){game.card.gun=game.card.gun===id?null:id;},
+  roll(){resolvePlayerFight(game);},
+  occupy(id){if(occupy(game,id)) setNotice("已挺进。回合收尾时，该格的占领状态会用于计分。");},
+  "extra-advance"(id){
+    game.card.followUnit=game.card.followUnit===id?null:id;
+    if(game.card.followUnit) commitFocus(game.card.result.front,game.card.result.tile);
+  },
+  "finish-fight"(){
+    const battle=finishFight(game);
+    if(battle) commitFocus(battle.front,battle.tile);
+  },
+  "supply-phase"(){game.phase=4;view.supply=true;cleanSelection();},
+  "check-supply"(){
+    const units=checkSupplies(game);
+    log(game,"补给检查",units.length?`${units.length} 个单位断补。`:"所有在场单位有补给。");
+  },
+  "rear-phase"(){game.phase=5;},
+  "rear-move"(){rearOpponent(game);},
+  "council-phase"(){game.phase=6;},
+  convene(){const report=council(game);view.aid=report.aidNeed===1?[...report.aid]:[];},
+  "select-aid"(){
+    const report=game.report;
+    if(view.aid.length!==report.aidNeed) return;
+    report.aidQueue=[...view.aid];
+    report.aid=[];
+    report.aidRemove=game.aidCount.arab===2;
+    view.aid=[];
+  },
+  "aid-replace"(value){
+    const queue=game.report.aidQueue;
+    if(applySingleAid(game,ARAB,queue[0],Number(value))) queue.shift();
+  },
+  "aid-remove"(value){
+    if(Number(value)) retireCard(game,ARAB,Number(value));
+    game.report.aidRemove=false;
+  },
+  "aid-supply"(value){
+    const report=game.report;
+    settleRepeatedAid(game,ARAB,report.aidResource,
+      report.aidAllocation??resourceValue(game,report.aidResource),value==="mix");
+    report.aidResource=null;
+  },
+  "end-phase"(){endRound(game);game.phase=7;},
+  next(first){
+    nextRound(game,first);
+    cleanSelection();
+    view.supply=false;
+    view.jump=defaultFocus(view.front,game.round);
+  },
+  restart:reset
+};
+
+function reset() {
+  game=newGame();
+  view=createView();
+  view.jump=defaultFocus(view.front,game.round);
+  window.scrollTo(0,0);
+}
+
+document.addEventListener("click",event=>{
+  const target=event.target.closest("button[data-action]");
+  if(!target||target.disabled||!actions[target.dataset.action]) return;
+  setNotice("");
+  actions[target.dataset.action](target.dataset.value);
+  render();
+});
+document.addEventListener("change",event=>{
+  const who=event.target.dataset.check;
+  const id=event.target.value;
+  const toggle=items=>event.target.checked?[...items,id]:items.filter(v=>v!==id);
+  if(event.target.dataset.arrival) {
+    game.arrivals[event.target.dataset.arrival]=id;
+  } else if(who==="option"&&game.phase===-1) {
+    game.options[id]=event.target.checked;
+  } else if(who==="attack") game.card.candidates=toggle(game.card.candidates);
+  else if(who==="bridge") game.bridgesChosen=toggle(game.bridgesChosen);
+  else if(who==="aid") view.aid=toggle(view.aid.map(String)).slice(-game.report.aidNeed).map(Number);
+  else return;
+  const selector=`[data-check="${who}"][value="${id}"]`;
+  render();
+  document.querySelector(selector)?.focus({preventScroll:true});
+});
+document.addEventListener("input",event=>{
+  if(event.target.id!=="goods-split") return;
+  const value=Number(event.target.value);
+  const total=Number(event.target.max);
+  if(game.card?.sub==="grant") game.card.allocation=value;
+  else if(game.report?.aidResource) game.report.aidAllocation=value;
+  else view.allocation=value;
+  document.querySelector('[data-split="egypt"]').textContent=value;
+  document.querySelector('[data-split="syria"]').textContent=total-value;
+  event.target.setAttribute("aria-valuetext",`埃及 ${value}，叙利亚 ${total-value}`);
+});
+$("zoc-button").addEventListener("click",()=>{view.zoc=!view.zoc;render();});
+$("supply-button").addEventListener("click",()=>{view.supply=!view.supply;render();});
+$("rule-button").addEventListener("click",()=>$("rules").showModal());
+$("reset-button").addEventListener("click",()=>{
+  if(game.phase<0||game.endReason) {reset();render();}
+  else {$("reset-dialog").returnValue="cancel";$("reset-dialog").showModal();}
+});
+$("reset-dialog").addEventListener("close",event=>{
+  if(event.target.returnValue!=="restart") return;
+  reset();
+  render();
+});
+
+render();
+
+</script>
+</body>
+</html>
